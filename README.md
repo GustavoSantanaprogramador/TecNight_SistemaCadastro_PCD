@@ -1,4 +1,4 @@
-# TecNight_SistemaCadastro_PCD
+# TecNight - ACESSA+
 O Acessa+ é um sistema de cadastro e censo de pessoas com deficiência em Jaraguá do Sul.
 O sistema está em processo de desenvolvimento, feito com java swing e banco de dados.
  [ Clique no link para acessar o figma do projeto](https://www.figma.com/file/wsH6DgAGYAG96cnKUjWvur/Sistema-de-cadastro-e-censo-de-pessoas-Lahra-e-Gustavo?type=design&node-id=1453-3999&mode=design&t=rb2xS8STPbKzldRe-0)
