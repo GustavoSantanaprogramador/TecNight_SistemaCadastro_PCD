@@ -14,6 +14,7 @@ public class Projeto_TecNightSenai {
         System.out.println("bom dia!");
         System.out.println("Bom tarde");
                 System.out.println("Lahra passou por aqui");
+                   System.out.println("huahauahuauh");
 
         
         

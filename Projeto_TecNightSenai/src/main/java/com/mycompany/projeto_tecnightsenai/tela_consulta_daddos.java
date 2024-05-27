@@ -142,8 +142,11 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 new tela_consulta_daddos().setVisible(true);
             }
         });
+        
+        
     }
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bnt_3;
     private javax.swing.ButtonGroup buttonGroup1;
