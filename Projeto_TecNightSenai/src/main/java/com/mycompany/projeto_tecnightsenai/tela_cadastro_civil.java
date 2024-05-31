@@ -4,11 +4,13 @@
  */
 package com.mycompany.projeto_tecnightsenai;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -62,7 +64,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         buttonGroup3 = new javax.swing.ButtonGroup();
         btn_2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        tx_02 = new javax.swing.JTextField();
+        tx_relatorio = new javax.swing.JTextField();
         btn_4 = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -108,7 +110,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
-        btn_5 = new javax.swing.JButton();
+        btn_save_relatorio = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -119,6 +121,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        btn_delete_relatorio = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -176,9 +179,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         jLabel2.setText("Descreva a situação fisica do civil...");
 
-        tx_02.addActionListener(new java.awt.event.ActionListener() {
+        tx_relatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tx_02ActionPerformed(evt);
+                tx_relatorioActionPerformed(evt);
             }
         });
 
@@ -304,28 +307,24 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addGap(120, 120, 120)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jTextField4)
+                                    .addComponent(jTextField6))
+                                .addGap(93, 93, 93)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel7)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jTextField4)
-                                            .addComponent(jTextField6))
-                                        .addGap(93, 93, 93)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel7)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jRadioButton2)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jRadioButton3)))))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                        .addComponent(jRadioButton2)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jRadioButton3))))
+                            .addComponent(jLabel6))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
@@ -340,11 +339,12 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(jLabel10))
                 .addGap(3, 3, 3)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_yes)
-                    .addComponent(btn_no1))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_yes)
+                        .addComponent(btn_no1)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -511,26 +511,14 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Estrutura", jPanel5);
 
-        btn_5.setText("Salvar");
-        btn_5.addActionListener(new java.awt.event.ActionListener() {
+        btn_save_relatorio.setText("Salvar relatorio");
+        btn_save_relatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_5ActionPerformed(evt);
+                btn_save_relatorioActionPerformed(evt);
             }
         });
 
         jPanel1.setBackground(new java.awt.Color(30, 101, 40));
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Pictures\\loguinho_prefeitura.png")); // NOI18N
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Downloads\\cadastro_branco.png")); // NOI18N
-
-        jLabel16.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Downloads\\banco_branco.png")); // NOI18N
-
-        jLabel18.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Downloads\\grafico_brancos.png")); // NOI18N
-
-        jLabel19.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Downloads\\projeto_branco.png")); // NOI18N
-
-        jLabel20.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Downloads\\sair_branco.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -550,7 +538,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel17)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -570,8 +558,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addGap(124, 124, 124))
         );
 
-        jLabel17.getAccessibleContext().setAccessibleName("");
-
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -590,7 +576,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel13.setMinimumSize(new java.awt.Dimension(100, 16));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel14.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Downloads\\cadastro_branco.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -613,6 +598,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btn_delete_relatorio.setText("Excluir relatorio");
+
         javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
         btn_2.setLayout(btn_2Layout);
         btn_2Layout.setHorizontalGroup(
@@ -626,14 +613,15 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                         .addGap(168, 168, 168)
                         .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(btn_2Layout.createSequentialGroup()
-                                .addComponent(btn_5)
+                                .addComponent(btn_save_relatorio)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_delete_relatorio)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btn_4))
-                            .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2)
-                                .addComponent(tx_02)
-                                .addComponent(jTabbedPane2)))
-                        .addGap(271, 278, Short.MAX_VALUE))))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tx_relatorio, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(150, 150, Short.MAX_VALUE))))
         );
         btn_2Layout.setVerticalGroup(
             btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -644,11 +632,12 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tx_02, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_4)
-                    .addComponent(btn_5))
+                    .addComponent(btn_save_relatorio)
+                    .addComponent(btn_delete_relatorio))
                 .addContainerGap(69, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -672,14 +661,14 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_5ActionPerformed
+    private void btn_save_relatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_relatorioActionPerformed
 
         tela_cadastro_civil.this.dispose();
         tela_consulta_daddos objeto1 = new tela_consulta_daddos();
         objeto1.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_5ActionPerformed
+    }//GEN-LAST:event_btn_save_relatorioActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
@@ -700,24 +689,31 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
 
         try {
-            FileWriter arquivo = new FileWriter("D:\\Users\\lnunes\\Desktop\\prova_mikael\\arquivinho2.txt");
+           String desktopPath = System.getProperty("user.home") + "/Desktop/";
+            File desktopDir = new File(desktopPath);
+            if (!desktopDir.exists()) {
+                desktopDir.mkdirs(); // Cria o diretório se não existir
+            }
+            String filePath = desktopPath + "RELATORIO.txt";
+            FileWriter arquivo = new FileWriter(filePath);
             PrintWriter escrever = new PrintWriter(arquivo);
 
-            escrever.printf("Oque ta escrito no segundo campo é: " + tx_02.getText());
+            escrever.printf("Relatorio descritivo sobre civil: " + tx_relatorio.getText());
 
             arquivo.close();
 
-            // TODO add your handling code here:
+            JOptionPane.showMessageDialog(null, "Arquivo exportado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
             Logger.getLogger(tela_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro ao exportar o arquivo!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
         // TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_4ActionPerformed
 
-    private void tx_02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_02ActionPerformed
+    private void tx_relatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_relatorioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tx_02ActionPerformed
+    }//GEN-LAST:event_tx_relatorioActionPerformed
 
     private void jTabbedPane2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane2AncestorAdded
         // TODO add your handling code here:
@@ -779,8 +775,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_2;
     private javax.swing.JButton btn_4;
-    private javax.swing.JButton btn_5;
+    private javax.swing.JButton btn_delete_relatorio;
     private javax.swing.JRadioButton btn_no1;
+    private javax.swing.JButton btn_save_relatorio;
     private javax.swing.JRadioButton btn_yes;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -862,6 +859,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField tx_02;
+    private javax.swing.JTextField tx_relatorio;
     // End of variables declaration//GEN-END:variables
 }

@@ -238,17 +238,17 @@
                           <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="btn_5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_save_relatorio" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btn_delete_relatorio" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btn_4" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tx_02" max="32767" attributes="0"/>
-                                  <Component id="jTabbedPane2" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="tx_relatorio" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTabbedPane2" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="271" pref="278" max="32767" attributes="0"/>
+                          <EmptySpace min="271" pref="150" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -263,11 +263,12 @@
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tx_02" min="-2" pref="86" max="-2" attributes="0"/>
+                  <Component id="tx_relatorio" min="-2" pref="86" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn_4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_save_relatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_delete_relatorio" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="69" max="32767" attributes="0"/>
               </Group>
@@ -281,9 +282,9 @@
             <Property name="text" type="java.lang.String" value="Descreva a situa&#xe7;&#xe3;o fisica do civil..."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tx_02">
+        <Component class="javax.swing.JTextField" name="tx_relatorio">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tx_02ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tx_relatorioActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_4">
@@ -364,36 +365,29 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextField3" pref="262" max="32767" attributes="0"/>
+                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTextField6" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jTextField3" pref="262" max="32767" attributes="0"/>
-                                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jTextField6" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
+                                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -414,11 +408,13 @@
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jTextField3" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn_yes" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn_no1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_yes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_no1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -836,12 +832,12 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btn_5">
+        <Component class="javax.swing.JButton" name="btn_save_relatorio">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Salvar"/>
+            <Property name="text" type="java.lang.String" value="Salvar relatorio"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_save_relatorioActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel1">
@@ -873,7 +869,7 @@
                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace pref="54" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -899,49 +895,16 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel17">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\lnunes\Pictures\loguinho_prefeitura.png"/>
-                </Property>
-              </Properties>
-              <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\lnunes\Downloads\cadastro_branco.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\lnunes\Downloads\banco_branco.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\lnunes\Downloads\grafico_brancos.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\lnunes\Downloads\projeto_branco.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\lnunes\Downloads\sair_branco.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1005,13 +968,15 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="10" style="0"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\lnunes\Downloads\cadastro_branco.png"/>
-                </Property>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="btn_delete_relatorio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Excluir relatorio"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

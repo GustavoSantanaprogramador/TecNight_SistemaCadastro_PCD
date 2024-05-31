@@ -187,53 +187,18 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\jaragua_do_sul 4.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\Group cadastro de pessoas.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\grafico-de-barras 1.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\pesquisando-dados-no-banco-de-dados 1.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\sair 1.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\Cadastro de Projetos.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\placeholder (1) 1.png"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -308,11 +273,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\gsantana\Desktop\icones\cadeira de rodas.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -347,11 +307,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\gsantana\Desktop\icones\unido.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -399,11 +354,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel4">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\Group 27520.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -415,11 +365,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Users\gsantana\Downloads\do-utilizador 1 (2).png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
