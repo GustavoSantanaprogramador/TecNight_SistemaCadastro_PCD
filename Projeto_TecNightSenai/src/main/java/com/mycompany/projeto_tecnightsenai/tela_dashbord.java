@@ -1,19 +1,19 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.projeto_tecnightsenai;
 
 /**
  *
- * @author lnunes
+ * @author lahra
  */
-public class tela_consulta_daddos extends javax.swing.JFrame {
+public class tela_dashbord extends javax.swing.JPanel {
 
     /**
-     * Creates new form atividade_02
+     * Creates new form tela_dashbord
      */
-    public tela_consulta_daddos() {
+    public tela_dashbord() {
         initComponents();
     }
 
@@ -26,12 +26,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        bnt_3 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbl_users = new javax.swing.JTable();
         menu_lateral = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -52,52 +47,8 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         label_img_consulta_preto = new javax.swing.JLabel();
         label_img_civil_login = new javax.swing.JLabel();
-        tx_filtro_bairro = new javax.swing.JTextField();
-        tx_filtro_nome = new javax.swing.JTextField();
-        label_filtro_bairro = new javax.swing.JLabel();
-        label_filtro_nome = new javax.swing.JLabel();
-        label_filtro_tipo_def = new javax.swing.JLabel();
-        tx_filtro_tipo_def = new javax.swing.JTextField();
-
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\do-utilizador 1.png")); // NOI18N
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1711, 954));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        bnt_3.setBackground(new java.awt.Color(30, 101, 40));
-        bnt_3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        bnt_3.setForeground(new java.awt.Color(255, 255, 255));
-        bnt_3.setText("+ ADICIONAR");
-        bnt_3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bnt_3ActionPerformed(evt);
-            }
-        });
-
-        tbl_users.setBackground(new java.awt.Color(226, 226, 226));
-        tbl_users.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Lahra Souza", "Sim", "Intelectual", "Feminino", "Aguas Claras", "Autonomo", "Editar"},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Nome", "Possui deficiência", "Tipo deficiência", "Gênero", "Bairro", "Nivel de autonomia", "Ações"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tbl_users);
 
         menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
 
@@ -157,7 +108,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
-                .addGap(18, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(60, 60, 60)
                 .addComponent(jLabel4)
@@ -182,7 +133,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                         .addComponent(jLabel9)
                         .addGap(82, 82, 82)
                         .addComponent(jLabel7)))
-                .addGap(106, 106, 106))
+                .addGap(124, 124, 124))
         );
 
         menu_decima.setBackground(new java.awt.Color(255, 255, 255));
@@ -198,7 +149,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         });
 
         label_cadastro_civil.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        label_cadastro_civil.setText("Consulta de dados");
+        label_cadastro_civil.setText("Dashbord");
         label_cadastro_civil.setMaximumSize(new java.awt.Dimension(200, 47));
         label_cadastro_civil.setMinimumSize(new java.awt.Dimension(100, 16));
 
@@ -207,7 +158,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setText("Olá, Fulano Silva!");
 
-        label_img_consulta_preto.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados (1) 1.png")); // NOI18N
+        label_img_consulta_preto.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\grafico-de-barras (1) 1.png")); // NOI18N
 
         label_img_civil_login.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\do-utilizador 1.png")); // NOI18N
 
@@ -220,15 +171,15 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addComponent(label_img_consulta_preto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menu_decimaLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(menu_decimaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 686, Short.MAX_VALUE)
+                        .addComponent(jLabel11)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(label_img_civil_login)
                 .addGap(24, 24, 24))
         );
@@ -248,152 +199,43 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        tx_filtro_bairro.setText("Bairro 1");
-
-        tx_filtro_nome.setText("Fulano de ciclano");
-
-        label_filtro_bairro.setText("Filtrar por bairro:");
-
-        label_filtro_nome.setText("Filtrar por nome:");
-
-        label_filtro_tipo_def.setText("Filtrar por tipo de deficiência:");
-
-        tx_filtro_tipo_def.setText("Deficiencia X");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(label_filtro_bairro)
-                                        .addGap(134, 134, 134))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(tx_filtro_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(91, 91, 91)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_filtro_tipo_def)
-                                    .addComponent(tx_filtro_tipo_def, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(89, 89, 89)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label_filtro_nome))
-                                .addGap(378, 378, 378)
-                                .addComponent(bnt_3))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1093, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(107, 107, 107))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(label_filtro_bairro)
-                            .addComponent(label_filtro_tipo_def)
-                            .addComponent(label_filtro_nome))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tx_filtro_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tx_filtro_tipo_def, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(bnt_3)))
-                .addGap(61, 61, 61)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bnt_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_3ActionPerformed
-       
-        
-      tela_consulta_daddos.this.dispose();
-      tela_cadastro_civil objeto2 = new tela_cadastro_civil();
-      objeto2.setVisible(true);
-    // TODO add your handling code here:
-    }//GEN-LAST:event_bnt_3ActionPerformed
 
     private void menu_decimaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_menu_decimaAncestorAdded
 
         // TODO add your handling code here:
     }//GEN-LAST:event_menu_decimaAncestorAdded
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tela_consulta_daddos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tela_consulta_daddos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tela_consulta_daddos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tela_consulta_daddos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new tela_consulta_daddos().setVisible(true);
-            }
-        });
-        
-        
-    }
-
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bnt_3;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -408,19 +250,11 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_cadastro_civil;
-    private javax.swing.JLabel label_filtro_bairro;
-    private javax.swing.JLabel label_filtro_nome;
-    private javax.swing.JLabel label_filtro_tipo_def;
     private javax.swing.JLabel label_img_civil_login;
     private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_img_consulta_preto;
     private javax.swing.JPanel menu_decima;
     private javax.swing.JPanel menu_lateral;
-    private javax.swing.JTable tbl_users;
-    private javax.swing.JTextField tx_filtro_bairro;
-    private javax.swing.JTextField tx_filtro_nome;
-    private javax.swing.JTextField tx_filtro_tipo_def;
     // End of variables declaration//GEN-END:variables
 }

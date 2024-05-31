@@ -156,9 +156,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        label_img_cadastro_branco = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        label_img_consulta_branco = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -167,6 +167,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        label_img_cadastro_preto = new javax.swing.JLabel();
         btn_delete_relatorio = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
@@ -231,6 +232,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
+        btn_4.setBackground(new java.awt.Color(76, 175, 79));
+        btn_4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_4.setForeground(new java.awt.Color(255, 255, 255));
         btn_4.setText("Export relatorio");
         btn_4.setToolTipText("");
         btn_4.addActionListener(new java.awt.event.ActionListener() {
@@ -239,7 +243,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
-        panel_cadastro.setBackground(new java.awt.Color(103, 178, 106));
+        panel_cadastro.setBackground(new java.awt.Color(143, 198, 144));
+        panel_cadastro.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         panel_cadastro.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 panel_cadastroAncestorAdded(evt);
@@ -316,6 +321,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
+        btn_save_identificacao.setBackground(new java.awt.Color(143, 198, 144));
+        btn_save_identificacao.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_save_identificacao.setForeground(new java.awt.Color(255, 255, 255));
         btn_save_identificacao.setText("Salvar");
 
         javax.swing.GroupLayout panel_identificacaoLayout = new javax.swing.GroupLayout(panel_identificacao);
@@ -421,7 +429,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_numero_civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tx_cpf_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
                 .addComponent(btn_save_identificacao)
                 .addGap(22, 22, 22))
         );
@@ -478,6 +486,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             .addGap(0, 70, Short.MAX_VALUE)
         );
 
+        btn_save_pcd.setBackground(new java.awt.Color(143, 198, 144));
+        btn_save_pcd.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_save_pcd.setForeground(new java.awt.Color(255, 255, 255));
         btn_save_pcd.setText("Salvar");
         btn_save_pcd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -548,7 +559,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                         .addComponent(cb_def, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(panel_laudo_med, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(panel_pcdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_nome_def)
                     .addComponent(jLabel24))
@@ -603,6 +614,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         tx_numero_casa.setText("numero");
 
+        btn_save_endereco.setBackground(new java.awt.Color(143, 198, 144));
+        btn_save_endereco.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_save_endereco.setForeground(new java.awt.Color(255, 255, 255));
         btn_save_endereco.setText("Salvar");
 
         javax.swing.GroupLayout panel_enderecoLayout = new javax.swing.GroupLayout(panel_endereco);
@@ -669,7 +683,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addComponent(label_numero)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tx_numero_casa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addComponent(btn_save_endereco)
                 .addGap(20, 20, 20))
         );
@@ -712,6 +726,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         label_escolaridade.setText("Nivel de escolaridade?");
 
+        btn_save_estrutura.setBackground(new java.awt.Color(143, 198, 144));
+        btn_save_estrutura.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_save_estrutura.setForeground(new java.awt.Color(255, 255, 255));
         btn_save_estrutura.setText("Salvar");
 
         javax.swing.GroupLayout panel_estruturaLayout = new javax.swing.GroupLayout(panel_estrutura);
@@ -788,13 +805,16 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(cb_escolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(radio_s_locomoçao)
                     .addComponent(radio_n_locomoçao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
                 .addComponent(btn_save_estrutura)
                 .addGap(21, 21, 21))
         );
 
         panel_cadastro.addTab("Estrutura", panel_estrutura);
 
+        btn_save_relatorio.setBackground(new java.awt.Color(76, 175, 79));
+        btn_save_relatorio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_save_relatorio.setForeground(new java.awt.Color(255, 255, 255));
         btn_save_relatorio.setText("Salvar relatorio");
         btn_save_relatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -806,11 +826,11 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\jaragua_do_sul 4.png")); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
+        label_img_cadastro_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\grafico-de-barras 1.png")); // NOI18N
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
+        label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\placeholder (1) 1.png")); // NOI18N
 
@@ -837,8 +857,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                                         .addComponent(jLabel20)))
                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(label_img_consulta_branco, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(label_img_cadastro_branco, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -860,14 +880,14 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label_img_cadastro_branco)
                 .addGap(60, 60, 60)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
                 .addGap(67, 67, 67)
-                .addComponent(jLabel5)
+                .addComponent(label_img_consulta_branco)
                 .addGap(37, 37, 37)
                 .addComponent(jLabel16)
                 .addGap(25, 25, 25)
@@ -910,7 +930,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\do-utilizador 1.png")); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel11.setText("Olá, Mikael!");
+        jLabel11.setText("Olá, Fulano Silva!");
+
+        label_img_cadastro_preto.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27465.png")); // NOI18N
 
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
@@ -919,11 +941,13 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             .addGroup(menu_decimaLayout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(jLabel14)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_img_cadastro_preto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
                 .addGap(25, 25, 25))
         );
@@ -933,14 +957,19 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addComponent(jLabel14))
+                        .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel14)
+                        .addComponent(label_img_cadastro_preto)
+                        .addGroup(menu_decimaLayout.createSequentialGroup()
+                            .addGap(8, 8, 8)
+                            .addComponent(jLabel11)))
                     .addComponent(jLabel10))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
+        btn_delete_relatorio.setBackground(new java.awt.Color(212, 0, 0));
+        btn_delete_relatorio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_delete_relatorio.setForeground(new java.awt.Color(255, 255, 255));
         btn_delete_relatorio.setText("Excluir relatorio");
 
         javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
@@ -970,7 +999,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_2Layout.createSequentialGroup()
                 .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(50, 50, 50)
                 .addComponent(panel_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2)
@@ -981,7 +1010,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(btn_4)
                     .addComponent(btn_save_relatorio)
                     .addComponent(btn_delete_relatorio))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
             .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -1152,9 +1181,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
@@ -1194,6 +1221,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JLabel label_data_nasc;
     private javax.swing.JLabel label_deficiencia;
     private javax.swing.JLabel label_escolaridade;
+    private javax.swing.JLabel label_img_cadastro_branco;
+    private javax.swing.JLabel label_img_cadastro_preto;
+    private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_isaude;
     private javax.swing.JLabel label_laudo_foto;
     private javax.swing.JLabel label_localidade;
