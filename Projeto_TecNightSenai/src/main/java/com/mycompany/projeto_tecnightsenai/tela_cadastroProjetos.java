@@ -247,7 +247,7 @@ public class tela_cadastroProjetos extends javax.swing.JFrame {
                                 .addComponent(jButton3)
                                 .addGap(56, 56, 56)
                                 .addComponent(jButton4)))
-                        .addGap(0, 81, Short.MAX_VALUE)))
+                        .addGap(0, 62, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
