@@ -618,6 +618,11 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         btn_save_endereco.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_save_endereco.setForeground(new java.awt.Color(255, 255, 255));
         btn_save_endereco.setText("Salvar");
+        btn_save_endereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_save_enderecoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_enderecoLayout = new javax.swing.GroupLayout(panel_endereco);
         panel_endereco.setLayout(panel_enderecoLayout);
@@ -1178,6 +1183,10 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_label_sairMouseClicked
+
+    private void btn_save_enderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_enderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_save_enderecoActionPerformed
 
     /**
      * @param args the command line arguments
