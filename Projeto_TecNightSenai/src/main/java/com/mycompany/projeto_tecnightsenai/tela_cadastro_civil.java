@@ -110,6 +110,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         radio_nivel_nenhuma = new javax.swing.JRadioButton();
         label_laudo_foto = new javax.swing.JLabel();
         panel_laudo_med = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         btn_save_pcd = new javax.swing.JButton();
         panel_endereco = new javax.swing.JPanel();
         label_mun = new javax.swing.JLabel();
@@ -151,9 +152,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         menu_decima = new javax.swing.JPanel();
         label_cadastro_civil = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        label_img_cadastro_preto = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         btn_delete_relatorio = new javax.swing.JButton();
         menu_lateral = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -162,13 +163,13 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         tela_cadastro_civil = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         label_img_consulta_branco = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         label_sair = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -475,15 +476,23 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         panel_laudo_med.setBackground(new java.awt.Color(0, 102, 0));
         panel_laudo_med.setForeground(new java.awt.Color(0, 153, 0));
 
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\camera 1.png")); // NOI18N
+
         javax.swing.GroupLayout panel_laudo_medLayout = new javax.swing.GroupLayout(panel_laudo_med);
         panel_laudo_med.setLayout(panel_laudo_medLayout);
         panel_laudo_medLayout.setHorizontalGroup(
             panel_laudo_medLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_laudo_medLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(22, 22, 22))
         );
         panel_laudo_medLayout.setVerticalGroup(
             panel_laudo_medLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGroup(panel_laudo_medLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btn_save_pcd.setBackground(new java.awt.Color(143, 198, 144));
@@ -559,7 +568,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                         .addComponent(cb_def, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(panel_laudo_med, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(panel_pcdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_nome_def)
                     .addComponent(jLabel24))
@@ -734,7 +743,12 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         btn_save_estrutura.setBackground(new java.awt.Color(143, 198, 144));
         btn_save_estrutura.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_save_estrutura.setForeground(new java.awt.Color(255, 255, 255));
-        btn_save_estrutura.setText("Salvar");
+        btn_save_estrutura.setText("Cadastrar civil");
+        btn_save_estrutura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_save_estruturaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_estruturaLayout = new javax.swing.GroupLayout(panel_estrutura);
         panel_estrutura.setLayout(panel_estruturaLayout);
@@ -846,12 +860,12 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\do-utilizador 1.png")); // NOI18N
-
         jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setText("Olá, Fulano Silva!");
 
-        label_img_cadastro_preto.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27465.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_cadastrocivil_preto.png")); // NOI18N
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_login.png")); // NOI18N
 
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
@@ -861,29 +875,29 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_img_cadastro_preto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
                 .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel10)
-                .addGap(25, 25, 25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(34, 34, 34))
         );
         menu_decimaLayout.setVerticalGroup(
             menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_decimaLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14)
-                        .addComponent(label_img_cadastro_preto)
+                        .addComponent(jLabel5)
                         .addGroup(menu_decimaLayout.createSequentialGroup()
-                            .addGap(8, 8, 8)
+                            .addGap(10, 10, 10)
                             .addComponent(jLabel11)))
-                    .addComponent(jLabel10))
-                .addContainerGap(9, Short.MAX_VALUE))
+                    .addComponent(jLabel6))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         btn_delete_relatorio.setBackground(new java.awt.Color(212, 0, 0));
@@ -893,8 +907,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\jaragua_do_sul 4.png")); // NOI18N
-
         tela_cadastro_civil.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
         tela_cadastro_civil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -902,24 +914,10 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\grafico-de-barras 1.png")); // NOI18N
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-
         label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
         label_img_consulta_branco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_img_consulta_brancoMouseClicked(evt);
-            }
-        });
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\placeholder (1) 1.png")); // NOI18N
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
             }
         });
 
@@ -932,6 +930,17 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Cadastro de Projetos.png")); // NOI18N
 
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_projeto_social.png")); // NOI18N
+
         javax.swing.GroupLayout menu_lateralLayout = new javax.swing.GroupLayout(menu_lateral);
         menu_lateral.setLayout(menu_lateralLayout);
         menu_lateralLayout.setHorizontalGroup(
@@ -939,68 +948,66 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             .addGroup(menu_lateralLayout.createSequentialGroup()
                 .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addContainerGap()
                         .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(menu_lateralLayout.createSequentialGroup()
-                                    .addGap(51, 51, 51)
+                                    .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel16)
+                                        .addComponent(jLabel15))
+                                    .addGap(67, 67, 67))
+                                .addGroup(menu_lateralLayout.createSequentialGroup()
+                                    .addComponent(label_sair)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel19)
-                                        .addComponent(jLabel20)))
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(label_img_consulta_branco, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel20))))
+                            .addComponent(jLabel17)
+                            .addGroup(menu_lateralLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
                                 .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_sair)
-                                    .addComponent(jLabel9))
-                                .addGap(8, 8, 8))))
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel18)
+                                    .addComponent(label_img_consulta_branco)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel4)))))
+                    .addGroup(menu_lateralLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(tela_cadastro_civil))
                     .addGroup(menu_lateralLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tela_cadastro_civil)
-                            .addComponent(jLabel1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                        .addComponent(jLabel3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menu_lateralLayout.setVerticalGroup(
             menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menu_lateralLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel3)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel17)
-                .addGap(45, 45, 45)
-                .addComponent(tela_cadastro_civil)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
-                .addGap(67, 67, 67)
-                .addComponent(label_img_consulta_branco)
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tela_cadastro_civil)
+                .addGap(83, 83, 83)
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel16)
-                .addGap(25, 25, 25)
-                .addComponent(jLabel6)
-                .addGap(74, 74, 74)
+                .addGap(60, 60, 60)
+                .addComponent(label_img_consulta_branco)
+                .addGap(69, 69, 69)
                 .addComponent(jLabel18)
-                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(jLabel19)
-                        .addGap(107, 107, 107)
-                        .addComponent(jLabel20))
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
-                        .addGap(82, 82, 82)
-                        .addComponent(label_sair)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addGap(72, 72, 72)
+                .addComponent(jLabel9)
+                .addGap(69, 69, 69)
+                .addComponent(label_sair)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addGap(107, 107, 107)
+                .addComponent(jLabel20)
                 .addGap(124, 124, 124))
         );
 
@@ -1009,7 +1016,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         btn_2Layout.setHorizontalGroup(
             btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(1, 1, 1)
                 .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1026,7 +1033,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tx_relatorio, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(panel_cadastro, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(271, 300, Short.MAX_VALUE))))
+                        .addGap(111, 111, Short.MAX_VALUE))))
         );
         btn_2Layout.setVerticalGroup(
             btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1046,7 +1053,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                             .addComponent(btn_save_relatorio)
                             .addComponent(btn_delete_relatorio))
                         .addGap(0, 113, Short.MAX_VALUE))
-                    .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, 949, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1146,20 +1153,17 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_save_pcdActionPerformed
 
+    private void btn_save_enderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_enderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_save_enderecoActionPerformed
+
     private void tela_cadastro_civilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tela_cadastro_civilMouseClicked
 
-        tela_cadastro_civil.this.dispose();
+         tela_cadastro_civil.this.dispose();
         tela_cadastro_civil objeto = new tela_cadastro_civil();
         objeto.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_tela_cadastro_civilMouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        tela_cadastro_civil.this.dispose();
-        tela_consulta_daddos objeto = new tela_consulta_daddos();
-        objeto.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
 
     private void label_img_consulta_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_img_consulta_brancoMouseClicked
 
@@ -1169,14 +1173,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_label_img_consulta_brancoMouseClicked
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-
-        tela_cadastro_civil.this.dispose();
-        Tela_ProjetosSociasDescrisao objeto = new Tela_ProjetosSociasDescrisao();
-        objeto.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel6MouseClicked
-
     private void label_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_sairMouseClicked
 
         JOptionPane.showMessageDialog(null, "Você saiu do sistema!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
@@ -1184,9 +1180,22 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_label_sairMouseClicked
 
-    private void btn_save_enderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_enderecoActionPerformed
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+
+        tela_cadastro_civil.this.dispose();
+        tela_dashbord objeto2 = new tela_dashbord();
+        objeto2.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_save_enderecoActionPerformed
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void btn_save_estruturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_estruturaActionPerformed
+       tela_cadastro_civil.this.dispose();
+        tela_consulta_daddos objeto2 = new  tela_consulta_daddos();
+        objeto2.setVisible(true);
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_save_estruturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1246,7 +1255,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_nome_def;
     private javax.swing.JComboBox<String> cb_tipo_residencia;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1259,8 +1267,11 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
@@ -1298,7 +1309,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JLabel label_data_nasc;
     private javax.swing.JLabel label_deficiencia;
     private javax.swing.JLabel label_escolaridade;
-    private javax.swing.JLabel label_img_cadastro_preto;
     private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_isaude;
     private javax.swing.JLabel label_laudo_foto;

@@ -50,7 +50,7 @@ public class tela_login extends javax.swing.JFrame {
         jLabel1.setText("E-mail:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, -1, -1));
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("emaildofulano@gmail.com");
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 310, 34));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -61,13 +61,16 @@ public class tela_login extends javax.swing.JFrame {
         jPasswordField1.setText("jPasswordField1");
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 430, 310, 34));
 
+        jButton1.setBackground(new java.awt.Color(143, 198, 144));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Novo Funcionario");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 20, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 20, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(27, 202, 63));
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -87,6 +90,10 @@ public class tela_login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+   tela_login.this.dispose();
+      tela_novo_cadastro objeto2 = new tela_novo_cadastro();
+      objeto2.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
