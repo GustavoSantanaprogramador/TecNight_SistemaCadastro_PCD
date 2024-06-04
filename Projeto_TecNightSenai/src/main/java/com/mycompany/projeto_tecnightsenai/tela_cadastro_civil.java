@@ -170,6 +170,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jMenu1.setText("jMenu1");
 
@@ -475,8 +476,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         panel_laudo_med.setBackground(new java.awt.Color(0, 102, 0));
         panel_laudo_med.setForeground(new java.awt.Color(0, 153, 0));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\camera 1.png")); // NOI18N
 
         javax.swing.GroupLayout panel_laudo_medLayout = new javax.swing.GroupLayout(panel_laudo_med);
         panel_laudo_med.setLayout(panel_laudo_medLayout);
@@ -863,10 +862,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setText("Olá, Fulano Silva!");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_cadastrocivil_preto.png")); // NOI18N
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_login.png")); // NOI18N
-
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
         menu_decimaLayout.setHorizontalGroup(
@@ -907,39 +902,29 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
 
-        tela_cadastro_civil.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
         tela_cadastro_civil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tela_cadastro_civilMouseClicked(evt);
             }
         });
 
-        label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
         label_img_consulta_branco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_img_consulta_brancoMouseClicked(evt);
             }
         });
 
-        label_sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\sair 1.png")); // NOI18N
         label_sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_sairMouseClicked(evt);
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Cadastro de Projetos.png")); // NOI18N
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_projeto_social.png")); // NOI18N
 
         javax.swing.GroupLayout menu_lateralLayout = new javax.swing.GroupLayout(menu_lateral);
         menu_lateral.setLayout(menu_lateralLayout);
@@ -1011,6 +996,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addGap(124, 124, 124))
         );
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "lahra souza nunes", "gustavo santana", "matheus soares" }));
+
         javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
         btn_2.setLayout(btn_2Layout);
         btn_2Layout.setHorizontalGroup(
@@ -1029,6 +1016,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btn_delete_relatorio)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
                                 .addComponent(btn_4))
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tx_relatorio, javax.swing.GroupLayout.Alignment.LEADING)
@@ -1051,9 +1040,10 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                         .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_4)
                             .addComponent(btn_save_relatorio)
-                            .addComponent(btn_delete_relatorio))
+                            .addComponent(btn_delete_relatorio)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 113, Short.MAX_VALUE))
-                    .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, 949, Short.MAX_VALUE))
+                    .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1254,6 +1244,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_municipio;
     private javax.swing.JComboBox<String> cb_nome_def;
     private javax.swing.JComboBox<String> cb_tipo_residencia;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;

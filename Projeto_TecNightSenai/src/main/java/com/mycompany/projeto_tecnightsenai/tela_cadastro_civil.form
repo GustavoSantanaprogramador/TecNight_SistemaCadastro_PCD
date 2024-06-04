@@ -245,6 +245,8 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btn_delete_relatorio" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Component id="btn_4" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -274,10 +276,11 @@
                               <Component id="btn_4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_save_relatorio" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_delete_relatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="113" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="menu_lateral" pref="949" max="32767" attributes="0"/>
+                      <Component id="menu_lateral" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -864,11 +867,6 @@
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel7">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\camera 1.png"/>
-                        </Property>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1442,18 +1440,8 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_cadastrocivil_preto.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_login.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1577,68 +1565,47 @@
             <Component class="javax.swing.JLabel" name="jLabel20">
             </Component>
             <Component class="javax.swing.JLabel" name="tela_cadastro_civil">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\Group 27475.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tela_cadastro_civilMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="label_img_consulta_branco">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\pesquisando-dados-no-banco-de-dados 1.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_img_consulta_brancoMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="label_sair">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\sair 1.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_sairMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\Cadastro de Projetos.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_logo_prefeitura.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_dashbord_branco.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_projeto_social.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="lahra souza nunes"/>
+                <StringItem index="1" value="gustavo santana"/>
+                <StringItem index="2" value="matheus soares"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
