@@ -8,6 +8,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -24,6 +31,15 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
      */
     public tela_cadastro_civil() {
         initComponents();
+        
+    }
+    public String formatoData(String data) {
+        String dateStr = data;//Data no formato DD/MM/YYYY
+        DateTimeFormatter formatterInput = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatterOutput = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.parse(dateStr, formatterInput); // Converte a string para LocalDate
+        String formattedDate = date.format(formatterOutput); // Formata a data para o novo formato
+        return formattedDate;// retorno -> YYYY/MM/DD
     }
 
     /**
@@ -60,9 +76,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
         btn_2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         tx_relatorio = new javax.swing.JTextField();
@@ -86,14 +99,14 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         radio_masc = new javax.swing.JRadioButton();
         radio_n_b = new javax.swing.JRadioButton();
         radio_n_def = new javax.swing.JRadioButton();
-        tx_nome = new javax.swing.JTextField();
-        tx_cpf = new javax.swing.JTextField();
-        txt_sobrenome = new javax.swing.JTextField();
-        tx_data = new javax.swing.JFormattedTextField();
+        tx_nome_civil = new javax.swing.JTextField();
+        txt_sobrenome_civil = new javax.swing.JTextField();
         tx_nome_tutor = new javax.swing.JTextField();
-        txt_numero_civil = new javax.swing.JTextField();
         tx_cpf_tutor = new javax.swing.JTextField();
         btn_save_identificacao = new javax.swing.JButton();
+        txt_data_nasc = new javax.swing.JFormattedTextField();
+        txt_nmr_civil = new javax.swing.JFormattedTextField();
+        txt_cpf_civil = new javax.swing.JFormattedTextField();
         panel_pcd = new javax.swing.JPanel();
         label_tipo_de_def = new javax.swing.JLabel();
         cb_def = new javax.swing.JComboBox<>();
@@ -304,16 +317,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         radio_n_def.setText("Não");
 
-        tx_nome.addActionListener(new java.awt.event.ActionListener() {
+        tx_nome_civil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tx_nomeActionPerformed(evt);
-            }
-        });
-
-        tx_data.setText("___/____");
-        tx_data.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tx_dataActionPerformed(evt);
+                tx_nome_civilActionPerformed(evt);
             }
         });
 
@@ -328,31 +334,67 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         btn_save_identificacao.setForeground(new java.awt.Color(255, 255, 255));
         btn_save_identificacao.setText("Salvar");
 
+        try {
+            txt_data_nasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txt_nmr_civil.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txt_cpf_civil.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout panel_identificacaoLayout = new javax.swing.GroupLayout(panel_identificacao);
         panel_identificacao.setLayout(panel_identificacaoLayout);
         panel_identificacaoLayout.setHorizontalGroup(
             panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_identificacaoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_save_identificacao)
+                .addGap(35, 35, 35))
             .addGroup(panel_identificacaoLayout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tx_cpf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txt_numero_civil, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(tx_nome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-                        .addComponent(label_nome, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(tx_data, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label_cpf, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tx_nome_civil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                    .addComponent(label_nome)
+                    .addComponent(label_cpf)
                     .addComponent(label_data_nasc)
-                    .addComponent(label_numero_civil))
+                    .addComponent(label_numero_civil)
+                    .addComponent(txt_data_nasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_nmr_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_cpf_civil))
+                .addGap(115, 115, 115)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_identificacaoLayout.createSequentialGroup()
+                        .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panel_identificacaoLayout.createSequentialGroup()
+                                .addComponent(radio_s_def)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(panel_identificacaoLayout.createSequentialGroup()
+                                .addComponent(radio_fem)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radio_masc)
+                                .addGap(1, 1, 1)
+                                .addComponent(radio_n_b)
+                                .addGap(173, 173, 173)))
+                        .addComponent(radio_n_def)
+                        .addGap(41, 41, 41))
                     .addGroup(panel_identificacaoLayout.createSequentialGroup()
-                        .addGap(120, 120, 120)
+                        .addGap(5, 5, 5)
                         .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label_nome_tutor)
                             .addGroup(panel_identificacaoLayout.createSequentialGroup()
                                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(label_sobrenome)
-                                    .addComponent(txt_sobrenome, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                                    .addComponent(txt_sobrenome_civil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                                     .addComponent(label_sexo)
                                     .addComponent(tx_nome_tutor)
                                     .addComponent(tx_cpf_tutor))
@@ -364,27 +406,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                                         .addComponent(radio_vida_status)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(radio_obito_status))))
-                            .addComponent(label_cpf_tutor))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_identificacaoLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panel_identificacaoLayout.createSequentialGroup()
-                                .addComponent(radio_fem)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(radio_masc)
-                                .addGap(1, 1, 1)
-                                .addComponent(radio_n_b)
-                                .addGap(173, 173, 173))
-                            .addGroup(panel_identificacaoLayout.createSequentialGroup()
-                                .addComponent(radio_s_def)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addComponent(radio_n_def)
-                        .addGap(220, 220, 220))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_identificacaoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_save_identificacao)
-                .addGap(35, 35, 35))
+                            .addComponent(label_cpf_tutor))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_identificacaoLayout.setVerticalGroup(
             panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,9 +419,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(label_deficiencia))
                 .addGap(3, 3, 3)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_sobrenome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_sobrenome_civil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tx_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tx_nome_civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(radio_s_def)
                         .addComponent(radio_n_def)))
                 .addGap(18, 18, 18)
@@ -408,30 +431,33 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(label_status))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tx_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(radio_masc)
-                        .addComponent(radio_n_b)
-                        .addComponent(radio_vida_status)
-                        .addComponent(radio_obito_status))
-                    .addComponent(radio_fem))
-                .addGap(26, 26, 26)
+                    .addGroup(panel_identificacaoLayout.createSequentialGroup()
+                        .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(radio_masc)
+                            .addComponent(radio_n_b)
+                            .addComponent(radio_vida_status)
+                            .addComponent(radio_obito_status)
+                            .addComponent(radio_fem))
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_identificacaoLayout.createSequentialGroup()
+                        .addComponent(txt_cpf_civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_data_nasc)
                     .addComponent(label_nome_tutor))
                 .addGap(5, 5, 5)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tx_nome_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tx_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_data_nasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_numero_civil)
                     .addComponent(label_cpf_tutor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_numero_civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tx_cpf_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                    .addComponent(tx_cpf_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_nmr_civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                 .addComponent(btn_save_identificacao)
                 .addGap(22, 22, 22))
         );
@@ -1079,13 +1105,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tx_nome_tutorActionPerformed
 
-    private void tx_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_dataActionPerformed
+    private void tx_nome_civilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nome_civilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tx_dataActionPerformed
-
-    private void tx_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tx_nomeActionPerformed
+    }//GEN-LAST:event_tx_nome_civilActionPerformed
 
     private void radio_s_defActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_s_defActionPerformed
         // TODO add your handling code here:
@@ -1179,12 +1201,48 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void btn_save_estruturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_estruturaActionPerformed
-       tela_cadastro_civil.this.dispose();
-        tela_consulta_daddos objeto2 = new  tela_consulta_daddos();
-        objeto2.setVisible(true);
-
-
-        // TODO add your handling code here:
+            
+            
+ 
+        try {
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://localhost/projeto_AcessaMais";
+            String usuario = "root";
+            String senha = "";
+            
+            conexao = DriverManager.getConnection(url, usuario,senha);
+            
+           
+            String sql = "INSERT INTO cadastro_civil(cpf_civil, nome_civil,sobrenome_civil, date_criacao, data_nasc,nome_tutor_civil,cpf_tutor_civil ) VALUES(?,?,?,now(),?)";
+            statement = conexao.prepareStatement(sql);
+            
+            String data = txt_data_nasc.getText();
+            String datanascimento = formatoData(data);
+  
+            statement.setString(1, txt_cpf_civil.getText());
+            statement.setString(2, tx_nome_civil.getText());
+            statement.setString(3, txt_sobrenome_civil.getText());
+            statement.setString(4, datanascimento);
+            statement.setString(5, tx_nome_tutor.getText());
+            statement.setString(6, tx_cpf_tutor.getText());
+            
+            
+            
+          //  statement.setString(5, txt_nmr_civil.getText());
+            
+            statement.execute();
+            
+             statement.close();
+             JOptionPane.showMessageDialog(null, "CIVIL CADASTRADO COM SUCESSO");
+            // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(tela_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+         
+        
     }//GEN-LAST:event_btn_save_estruturaActionPerformed
 
     /**
@@ -1235,9 +1293,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JButton btn_save_pcd;
     private javax.swing.JButton btn_save_relatorio;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JComboBox<String> cb_bairro;
     private javax.swing.JComboBox<String> cb_def;
     private javax.swing.JComboBox<String> cb_escolaridade;
@@ -1352,15 +1407,15 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JRadioButton radio_vida_status;
     private javax.swing.JLabel tela_cadastro_civil;
     private javax.swing.JTextField tx_cep;
-    private javax.swing.JTextField tx_cpf;
     private javax.swing.JTextField tx_cpf_tutor;
-    private javax.swing.JFormattedTextField tx_data;
-    private javax.swing.JTextField tx_nome;
+    private javax.swing.JTextField tx_nome_civil;
     private javax.swing.JTextField tx_nome_tutor;
     private javax.swing.JTextField tx_numero_casa;
     private javax.swing.JTextField tx_relatorio;
     private javax.swing.JTextField tx_rua;
-    private javax.swing.JTextField txt_numero_civil;
-    private javax.swing.JTextField txt_sobrenome;
+    private javax.swing.JFormattedTextField txt_cpf_civil;
+    private javax.swing.JFormattedTextField txt_data_nasc;
+    private javax.swing.JFormattedTextField txt_nmr_civil;
+    private javax.swing.JTextField txt_sobrenome_civil;
     // End of variables declaration//GEN-END:variables
 }
