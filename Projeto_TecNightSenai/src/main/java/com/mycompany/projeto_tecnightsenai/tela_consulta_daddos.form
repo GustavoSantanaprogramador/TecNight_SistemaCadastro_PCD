@@ -112,7 +112,7 @@
                           <Component id="jScrollPane1" min="-2" pref="591" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="89" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="menu_lateral" max="32767" attributes="0"/>
+                      <Component id="menu_lateral" pref="875" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -150,58 +150,13 @@
                   <Color blue="e2" green="e2" red="e2" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="7" rowCount="5">
-                    <Column editable="true" title="Nome" type="java.lang.String">
-                      <Data value="Lahra Souza"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Possui defici&#xea;ncia" type="java.lang.String">
-                      <Data value="Sim"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Tipo defici&#xea;ncia" type="java.lang.String">
-                      <Data value="Intelectual"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="G&#xea;nero" type="java.lang.String">
-                      <Data value="Feminino"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Bairro" type="java.lang.String">
-                      <Data value="Aguas Claras"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Nivel de autonomia" type="java.lang.String">
-                      <Data value="Autonomo"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="A&#xe7;&#xf5;es" type="java.lang.Object">
-                      <Data value="Editar"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
+                  <Table columnCount="3" rowCount="5">
+                    <Column editable="true" title="id" type="java.lang.Object"/>
+                    <Column editable="true" title="Nome" type="java.lang.Object"/>
+                    <Column editable="true" title="Cpf" type="java.lang.Object"/>
                   </Table>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
@@ -508,6 +463,14 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="btn_pesquisa">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="pesquisa"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_pesquisaActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

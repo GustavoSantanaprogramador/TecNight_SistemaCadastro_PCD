@@ -22,6 +22,7 @@ public class tela_dashbord extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public tela_dashbord() {
+       
         initComponents();
     }
 
