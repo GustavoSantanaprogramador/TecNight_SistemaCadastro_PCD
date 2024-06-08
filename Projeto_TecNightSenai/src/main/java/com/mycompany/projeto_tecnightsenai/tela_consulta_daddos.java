@@ -4,7 +4,15 @@
  */
 package com.mycompany.projeto_tecnightsenai;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +27,36 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+    public void PopularJTable(String sql){
+        
+        try {
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
+            PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
+            banco.execute();
+            ResultSet resultado = banco.executeQuery(sql);
+            DefaultTableModel model = (DefaultTableModel)tbl_users.getModel();
+            model.setNumRows(0);
+            
+            while(resultado.next())
+            {
+                model.addRow(new Object[]
+                {
+                    resultado.getString("id_civil"),
+                     resultado.getString("nome_civil"),
+                     resultado.getString("cpf_civil"),
+                    
+                });
+                
+                
+            }
+            banco.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(tela_consulta_daddos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,9 +98,9 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        btn_pesquisa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1711, 954));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -79,24 +117,17 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         tbl_users.setBackground(new java.awt.Color(226, 226, 226));
         tbl_users.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Lahra Souza", "Sim", "Intelectual", "Feminino", "Aguas Claras", "Autonomo", "Editar"},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Nome", "Possui deficiência", "Tipo deficiência", "Gênero", "Bairro", "Nivel de autonomia", "Ações"
+                "id", "Nome", "Cpf"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        ));
+        tbl_users.setToolTipText("");
         jScrollPane1.setViewportView(tbl_users);
 
         menu_decima.setBackground(new java.awt.Color(255, 255, 255));
@@ -266,6 +297,13 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addGap(124, 124, 124))
         );
 
+        btn_pesquisa.setText("pesquisa");
+        btn_pesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pesquisaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -293,6 +331,8 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btn_pesquisa)
+                                        .addGap(18, 18, 18)
                                         .addComponent(btn_add_civil))
                                     .addComponent(label_filtro_nome))))
                         .addGap(0, 118, Short.MAX_VALUE))))
@@ -313,7 +353,8 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                             .addComponent(tx_filtro_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tx_filtro_tipo_def, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_add_civil))
+                            .addComponent(btn_add_civil)
+                            .addComponent(btn_pesquisa))
                         .addGap(43, 43, 43)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 89, Short.MAX_VALUE))
@@ -380,6 +421,15 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void btn_pesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisaActionPerformed
+
+                        this.PopularJTable("SELECT * FROM cadastro_civil");
+                    
+                    
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_pesquisaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -423,6 +473,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add_civil;
+    private javax.swing.JButton btn_pesquisa;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
