@@ -96,12 +96,10 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-<<<<<<< HEAD
-=======
         btn_pesquisa = new javax.swing.JButton();
->>>>>>> 2607f4298f1da34e28b073989b779f870002790f
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1711, 954));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -332,8 +330,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btn_pesquisa)
-                                        .addGap(18, 18, 18)
                                         .addComponent(btn_add_civil))
                                     .addComponent(label_filtro_nome))))
                         .addGap(0, 118, Short.MAX_VALUE))))
@@ -354,16 +350,11 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                             .addComponent(tx_filtro_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tx_filtro_tipo_def, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_add_civil)
-                            .addComponent(btn_pesquisa))
+                            .addComponent(btn_add_civil))
                         .addGap(43, 43, 43)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 89, Short.MAX_VALUE))
-<<<<<<< HEAD
-                    .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, 875, Short.MAX_VALUE))
-=======
                     .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> 2607f4298f1da34e28b073989b779f870002790f
                 .addContainerGap())
         );
 

@@ -163,7 +163,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         btn_save_estrutura = new javax.swing.JButton();
         btn_save_relatorio = new javax.swing.JButton();
         menu_decima = new javax.swing.JPanel();
-        label_cadastro_civil = new javax.swing.JLabel();
+        label_cadastro = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -889,10 +889,10 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
-        label_cadastro_civil.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        label_cadastro_civil.setText("Cadastro de civil");
-        label_cadastro_civil.setMaximumSize(new java.awt.Dimension(200, 47));
-        label_cadastro_civil.setMinimumSize(new java.awt.Dimension(100, 16));
+        label_cadastro.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        label_cadastro.setText("Cadastro de civil");
+        label_cadastro.setMaximumSize(new java.awt.Dimension(200, 47));
+        label_cadastro.setMinimumSize(new java.awt.Dimension(100, 16));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
@@ -909,7 +909,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -922,7 +922,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14)
                         .addComponent(jLabel5)
                         .addGroup(menu_decimaLayout.createSequentialGroup()
@@ -1363,7 +1363,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel label_bairro;
-    private javax.swing.JLabel label_cadastro_civil;
+    private javax.swing.JLabel label_cadastro;
     private javax.swing.JLabel label_cep;
     private javax.swing.JLabel label_condicoes;
     private javax.swing.JLabel label_cpf;
