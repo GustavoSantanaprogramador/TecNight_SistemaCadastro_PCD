@@ -1226,8 +1226,14 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             conexao = DriverManager.getConnection(url, usuario,senha);
             
            
-            String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc,nome_tutor_civil,cpf_tutor_civil ) VALUES(?,?,?,now(),?,?,?)";
+            String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc,nome_tutor_civil,cpf_tutor_civil,possui_deficiencia ) VALUES(?,?,?,now(),?,?,?,?)";
             statement = conexao.prepareStatement(sql);
+            String groupRadio = "";
+            if(radio_s_def.isSelected()) {
+                groupRadio+="Possui deficiência";
+            } else {
+                groupRadio+="Não possui deficiência";
+            }
             
             String data = txt_data_nasc.getText();
             String datanascimento = formatoData(data);
@@ -1238,6 +1244,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             statement.setString(4, datanascimento);
             statement.setString(5, tx_nome_tutor.getText());
             statement.setString(6, txt_cpf_tutor.getText());
+            statement.setString(7, groupRadio);
             
             
             
