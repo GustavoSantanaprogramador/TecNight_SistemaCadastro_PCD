@@ -1226,7 +1226,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             conexao = DriverManager.getConnection(url, usuario,senha);
             
            
-            String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc ) VALUES(?,?,?,now(),?)";
+            String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc,nome_tutor_civil,cpf_tutor_civil ) VALUES(?,?,?,now(),?,?,?)";
             statement = conexao.prepareStatement(sql);
             
             String data = txt_data_nasc.getText();
