@@ -395,7 +395,7 @@ public class tela_cadastroProjetos extends javax.swing.JFrame {
             Connection conexao = null;
             PreparedStatement statement = null;
             
-            String url ="jdbc:mysql://localhost:3306/TecNigt_projetoDB";
+            String url ="jdbc:mysql://localhost:3306/projeto_AcessaMais";
             String usuario = "root";
             String senha = "";
             
