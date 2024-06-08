@@ -102,11 +102,11 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         tx_nome_civil = new javax.swing.JTextField();
         txt_sobrenome_civil = new javax.swing.JTextField();
         tx_nome_tutor = new javax.swing.JTextField();
-        tx_cpf_tutor = new javax.swing.JTextField();
         btn_save_identificacao = new javax.swing.JButton();
         txt_data_nasc = new javax.swing.JFormattedTextField();
         txt_nmr_civil = new javax.swing.JFormattedTextField();
         txt_cpf_civil = new javax.swing.JFormattedTextField();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         panel_pcd = new javax.swing.JPanel();
         label_tipo_de_def = new javax.swing.JLabel();
         cb_def = new javax.swing.JComboBox<>();
@@ -333,6 +333,11 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         btn_save_identificacao.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_save_identificacao.setForeground(new java.awt.Color(255, 255, 255));
         btn_save_identificacao.setText("Salvar");
+        btn_save_identificacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_save_identificacaoActionPerformed(evt);
+            }
+        });
 
         try {
             txt_data_nasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -348,6 +353,12 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         try {
             txt_cpf_civil.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -396,8 +407,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                                     .addComponent(label_sobrenome)
                                     .addComponent(txt_sobrenome_civil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                                     .addComponent(label_sexo)
-                                    .addComponent(tx_nome_tutor)
-                                    .addComponent(tx_cpf_tutor))
+                                    .addComponent(tx_nome_tutor))
                                 .addGap(93, 93, 93)
                                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label_deficiencia)
@@ -406,8 +416,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                                         .addComponent(radio_vida_status)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(radio_obito_status))))
-                            .addComponent(label_cpf_tutor))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(label_cpf_tutor)
+                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
         panel_identificacaoLayout.setVerticalGroup(
             panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,8 +466,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(label_cpf_tutor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tx_cpf_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_nmr_civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nmr_civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                 .addComponent(btn_save_identificacao)
                 .addGap(22, 22, 22))
@@ -1215,7 +1226,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             conexao = DriverManager.getConnection(url, usuario,senha);
             
            
-            String sql = "INSERT INTO cadastro_civil(cpf_civil, nome_civil,sobrenome_civil, date_criacao, data_nasc,nome_tutor_civil,cpf_tutor_civil ) VALUES(?,?,?,now(),?)";
+            String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc ) VALUES(?,?,?,now(),?)";
             statement = conexao.prepareStatement(sql);
             
             String data = txt_data_nasc.getText();
@@ -1233,9 +1244,10 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
           //  statement.setString(5, txt_nmr_civil.getText());
             
             statement.execute();
-            
+               
              statement.close();
              JOptionPane.showMessageDialog(null, "CIVIL CADASTRADO COM SUCESSO");
+          
             // TODO add your handling code here:
         } catch (SQLException ex) {
             Logger.getLogger(tela_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
@@ -1244,6 +1256,10 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
          
         
     }//GEN-LAST:event_btn_save_estruturaActionPerformed
+
+    private void btn_save_identificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_identificacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_save_identificacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1300,6 +1316,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_nome_def;
     private javax.swing.JComboBox<String> cb_tipo_residencia;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
@@ -1407,7 +1424,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JRadioButton radio_vida_status;
     private javax.swing.JLabel tela_cadastro_civil;
     private javax.swing.JTextField tx_cep;
-    private javax.swing.JTextField tx_cpf_tutor;
     private javax.swing.JTextField tx_nome_civil;
     private javax.swing.JTextField tx_nome_tutor;
     private javax.swing.JTextField tx_numero_casa;

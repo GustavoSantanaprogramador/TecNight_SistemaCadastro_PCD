@@ -392,7 +392,6 @@
                                               <Component id="txt_sobrenome_civil" pref="262" max="32767" attributes="0"/>
                                               <Component id="label_sexo" min="-2" max="-2" attributes="0"/>
                                               <Component id="tx_nome_tutor" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="tx_cpf_tutor" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -406,10 +405,11 @@
                                           </Group>
                                       </Group>
                                       <Component id="label_cpf_tutor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jFormattedTextField1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="179" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -470,8 +470,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tx_cpf_tutor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txt_nmr_civil" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jFormattedTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="154" max="32767" attributes="0"/>
                           <Component id="btn_save_identificacao" min="-2" max="-2" attributes="0"/>
@@ -584,8 +584,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tx_nome_tutorActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tx_cpf_tutor">
-                </Component>
                 <Component class="javax.swing.JButton" name="btn_save_identificacao">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -599,6 +597,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_save_identificacaoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="txt_data_nasc">
                   <Properties>
@@ -615,6 +616,13 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="txt_cpf_civil">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="###.###.###-##" subtype="-1" type="5"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="###.###.###-##" subtype="-1" type="5"/>
