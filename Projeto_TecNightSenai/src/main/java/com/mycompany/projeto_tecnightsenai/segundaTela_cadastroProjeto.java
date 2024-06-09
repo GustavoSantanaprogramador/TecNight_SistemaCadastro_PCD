@@ -4,6 +4,14 @@
  */
 package com.mycompany.projeto_tecnightsenai;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gusta_cnviuot
@@ -31,6 +39,8 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaMissao = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -76,15 +86,25 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
 
         jLabel2.setText("Descreva a missão do Projeto Social");
 
+        jTextAreaMissao.setColumns(20);
+        jTextAreaMissao.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaMissao);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 258, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 238, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         jLabel3.setText("Descreva sobre o Projeto Social");
@@ -103,6 +123,11 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
         jButton1.setText("EXCLUIR");
 
         jButton2.setText("FINALIZAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("VOLTAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -130,12 +155,12 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
                                 .addComponent(jLabel3))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(212, 212, 212)
                                         .addComponent(jButton1)
                                         .addGap(51, 51, 51)
-                                        .addComponent(jButton3)))
+                                        .addComponent(jButton3))
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(53, 53, 53)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton2)
@@ -179,6 +204,42 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            // TODO add your handling code here:
+            
+            
+            // conexao db
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jbc:mysql://localhost:3306/projeto_AcessaMais";
+            String usuario = "root";
+            String senha = "";
+            
+            conexao= DriverManager.getConnection(url,usuario,senha);
+            
+            String sql = "INSERT INTO sobre_projeto (missao_projeto) VALUES (?)";
+            statement = conexao.prepareStatement(sql);
+            
+            statement.setString(1,jTextAreaMissao.getText());
+            statement.execute();
+            statement.close();
+            JOptionPane.showMessageDialog(null, "Dados gravados");
+            
+            // this.textAreaSobre("SELECT * FROM projeto_sobre ");
+           
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(segundaTela_cadastroProjeto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,5 +287,7 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextAreaMissao;
     // End of variables declaration//GEN-END:variables
 }
