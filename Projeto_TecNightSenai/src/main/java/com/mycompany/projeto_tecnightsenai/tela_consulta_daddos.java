@@ -43,6 +43,9 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                     resultado.getString("id_civil"),
                      resultado.getString("nome_civil"),
                      resultado.getString("cpf_civil"),
+                     resultado.getString("possui_deficiencia"),
+                     resultado.getString("tipo_deficiencia"),
+                     resultado.getString("bairro_civil"),
                     
                 });
                 
@@ -97,6 +100,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btn_pesquisa = new javax.swing.JButton();
+        btn_pesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1711, 954));
@@ -116,16 +120,24 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         tbl_users.setBackground(new java.awt.Color(226, 226, 226));
         tbl_users.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "id", "Nome", "Cpf"
+                "id", "Nome", "Cpf", "Possui deficiência", "Tipo deficiência", "Bairro"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, true, true, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tbl_users.setToolTipText("");
         jScrollPane1.setViewportView(tbl_users);
 
@@ -303,6 +315,13 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
             }
         });
 
+        btn_pesquisar.setText("Pesquisar");
+        btn_pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pesquisarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -330,6 +349,8 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btn_pesquisar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btn_add_civil))
                                     .addComponent(label_filtro_nome))))
                         .addGap(0, 118, Short.MAX_VALUE))))
@@ -350,7 +371,8 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                             .addComponent(tx_filtro_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tx_filtro_tipo_def, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_add_civil))
+                            .addComponent(btn_add_civil)
+                            .addComponent(btn_pesquisar))
                         .addGap(43, 43, 43)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 89, Short.MAX_VALUE))
@@ -426,6 +448,12 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_pesquisaActionPerformed
 
+    private void btn_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisarActionPerformed
+
+      this.PopularJTable("SELECT * FROM cadastro_civil");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_pesquisarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -470,6 +498,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add_civil;
     private javax.swing.JButton btn_pesquisa;
+    private javax.swing.JButton btn_pesquisar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
