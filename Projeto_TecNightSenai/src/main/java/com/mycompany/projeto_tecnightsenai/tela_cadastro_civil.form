@@ -177,7 +177,9 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="resizable" type="boolean" value="false"/>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1100, 430]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -193,61 +195,54 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,83,0,0,5,21"/>
   </AuxValues>
 
-  <Layout>
-    <DimensionLayout dim="0">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btn_2" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-      </Group>
-    </DimensionLayout>
-    <DimensionLayout dim="1">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="btn_2" max="32767" attributes="0"/>
-          </Group>
-      </Group>
-    </DimensionLayout>
-  </Layout>
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="btn_2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+          <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="6" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="18" weightX="0.0" weightY="0.0"/>
+        </Constraint>
+      </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="menu_lateral" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="menu_decima" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="menu_decima" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="btn_save_relatorio" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btn_delete_relatorio" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Component id="btn_4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="panel_cadastro" min="-2" pref="1047" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="btn_save_relatorio" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                          <Component id="btn_delete_relatorio" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                                          <Component id="btn_4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="tx_relatorio" alignment="0" min="-2" pref="1004" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="tx_relatorio" alignment="0" max="32767" attributes="0"/>
-                              <Component id="panel_cadastro" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="271" pref="111" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -259,22 +254,25 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="menu_decima" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="panel_cadastro" min="-2" pref="530" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="panel_cadastro" min="-2" pref="376" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="tx_relatorio" min="-2" pref="86" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btn_4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_save_relatorio" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_delete_relatorio" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="113" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="menu_lateral" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="menu_lateral" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -330,9 +328,17 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d9" green="d9" red="d9" type="rgb"/>
                 </Property>
+                <Property name="autoscrolls" type="boolean" value="true"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Default Cursor"/>
                 </Property>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[1200, 550]"/>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[1000, 495]"/>
+                </Property>
+                <Property name="requestFocusEnabled" type="boolean" value="false"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -345,137 +351,137 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btn_save_identificacao" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="tx_nome_civil" alignment="0" pref="262" max="32767" attributes="0"/>
-                              <Component id="label_nome" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_cpf" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_data_nasc" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_numero_civil" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_data_nasc" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_nmr_civil" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
-                              <Component id="txt_cpf_civil" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="radio_s_def" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="radio_fem" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="radio_masc" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                          <Component id="radio_n_b" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="radio_n_def" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="label_nome" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="340" pref="340" max="-2" attributes="0"/>
+                                  <Component id="label_sobrenome" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="338" pref="338" max="-2" attributes="0"/>
+                                  <Component id="label_deficiencia" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                  <Component id="tx_nome_civil" min="-2" pref="262" max="-2" attributes="0"/>
+                                  <EmptySpace min="120" pref="120" max="-2" attributes="0"/>
+                                  <Component id="txt_sobrenome_civil" min="-2" pref="262" max="-2" attributes="0"/>
+                                  <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
+                                  <Component id="radio_s_def" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                  <Component id="radio_n_def" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="label_cpf" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="360" pref="360" max="-2" attributes="0"/>
+                                  <Component id="label_sexo" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="374" pref="374" max="-2" attributes="0"/>
+                                  <Component id="label_status" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="txt_cpf_civil" min="-2" pref="262" max="-2" attributes="0"/>
+                                  <EmptySpace min="122" pref="122" max="-2" attributes="0"/>
+                                  <Component id="radio_fem" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="radio_masc" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="radio_n_b" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="radio_vida_status" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="radio_obito_status" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="label_numero_civil" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="281" pref="281" max="-2" attributes="0"/>
+                                  <Component id="label_cpf_tutor" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="label_data_nasc" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="274" pref="274" max="-2" attributes="0"/>
+                                  <Component id="label_nome_tutor" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="txt_data_nasc" pref="138" max="32767" attributes="0"/>
+                                      <Component id="txt_nmr_civil" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="244" pref="244" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="label_nome_tutor" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="label_sobrenome" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txt_sobrenome_civil" pref="262" max="32767" attributes="0"/>
-                                              <Component id="label_sexo" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tx_nome_tutor" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="label_deficiencia" min="-2" max="-2" attributes="0"/>
-                                              <Component id="label_status" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="radio_vida_status" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="radio_obito_status" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <Component id="label_cpf_tutor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txt_cpf_tutor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txt_cpf_tutor" alignment="0" min="-2" pref="262" max="-2" attributes="0"/>
+                                      <Component id="tx_nome_tutor" alignment="1" min="-2" pref="262" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="179" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="label_nome" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_sobrenome" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_deficiencia" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txt_sobrenome_civil" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tx_nome_civil" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="radio_s_def" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="radio_n_def" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_nome" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_sobrenome" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_deficiencia" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="tx_nome_civil" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_sobrenome_civil" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="radio_s_def" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radio_n_def" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="label_cpf" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_status" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label_cpf" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_sexo" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_status" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="radio_masc" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radio_n_b" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radio_vida_status" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radio_obito_status" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radio_fem" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
                                   <Component id="txt_cpf_civil" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="radio_fem" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radio_masc" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radio_n_b" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="radio_vida_status" min="-2" max="-2" attributes="0"/>
+                              <Component id="radio_obito_status" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label_data_nasc" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_nome_tutor" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                  <Component id="tx_nome_tutor" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txt_data_nasc" min="-2" pref="21" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="label_data_nasc" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_nome_tutor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label_numero_civil" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_cpf_tutor" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tx_nome_tutor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_data_nasc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txt_nmr_civil" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_cpf_tutor" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="label_numero_civil" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_cpf_tutor" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_nmr_civil" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_cpf_tutor" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="154" max="32767" attributes="0"/>
-                          <Component id="btn_save_identificacao" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -556,6 +562,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Feminino"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radio_femActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="radio_masc">
                   <Properties>
@@ -584,30 +593,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tx_nome_tutorActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_save_identificacao">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="90" green="c6" red="8f" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_save_identificacaoActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txt_data_nasc">
-                  <Properties>
-                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                      <Format format="##/##/####" subtype="-1" type="5"/>
-                    </Property>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JFormattedTextField" name="txt_nmr_civil">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
@@ -628,6 +613,16 @@
                       <Format format="###.###.###-##" subtype="-1" type="5"/>
                     </Property>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="txt_data_nasc">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="##/##/####" subtype="-1" type="5"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_data_nascActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -653,6 +648,41 @@
                           <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="label_nome_def" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_tipo_de_def" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cb_nome_def" alignment="0" pref="172" max="32767" attributes="0"/>
+                                      <Component id="cb_tipo_def" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                                          <Component id="label_laudo_foto" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="radio_cuidador" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="radio_nao_cuidador" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lbl_foto" min="-2" pref="209" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                  <Component id="btn_select_img" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Component id="tempo_def" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
                                   <Component id="radio_nivel_aut" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="radio_nivel_pouca" min="-2" max="-2" attributes="0"/>
@@ -660,47 +690,8 @@
                                   <Component id="radio_nivel_nenhuma" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="label_nivel_autonomia" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="label_nome_def" min="-2" max="-2" attributes="0"/>
-                                      <Component id="label_tipo_de_def" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cb_nome_def" alignment="0" pref="172" max="32767" attributes="0"/>
-                                      <Component id="cb_def" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                              <Component id="label_laudo_foto" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="285" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jTextField7" min="-2" pref="144" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="panel_laudo_med" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
                           </Group>
-                          <EmptySpace pref="403" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btn_save_pcd" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <EmptySpace pref="212" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -721,36 +712,42 @@
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="cb_def" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="panel_laudo_med" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="11" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="label_nome_def" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cb_tipo_def" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tempo_def" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cb_nome_def" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="label_nome_def" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cb_nome_def" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                          <Component id="radio_cuidador" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="radio_nao_cuidador" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="label_nivel_autonomia" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="radio_nivel_aut" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radio_nivel_pouca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radio_nivel_nenhuma" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_select_img" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="lbl_foto" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="label_nivel_autonomia" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radio_nivel_aut" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radio_nivel_pouca" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radio_nivel_nenhuma" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
-                          <Component id="btn_save_pcd" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -761,14 +758,17 @@
                     <Property name="text" type="java.lang.String" value="Tipo de defici&#xea;ncia:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="cb_def">
+                <Component class="javax.swing.JComboBox" name="cb_tipo_def">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                      <StringArray count="7">
+                        <StringItem index="0" value="F&#xed;sica"/>
+                        <StringItem index="1" value="Mental"/>
+                        <StringItem index="2" value="Intelectual"/>
+                        <StringItem index="3" value="Sensorial"/>
+                        <StringItem index="4" value="Multiplas defici&#xea;ncias"/>
+                        <StringItem index="5" value="Visual"/>
+                        <StringItem index="6" value="Auditiva"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -784,11 +784,20 @@
                 <Component class="javax.swing.JComboBox" name="cb_nome_def">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                      <StringArray count="13">
+                        <StringItem index="0" value="Paralisia Cerebral"/>
+                        <StringItem index="1" value="Distrofia Muscular"/>
+                        <StringItem index="2" value="Amputa&#xe7;&#xe3;o"/>
+                        <StringItem index="3" value="Esquizofrenia"/>
+                        <StringItem index="4" value="Transtorno Bipolar"/>
+                        <StringItem index="5" value="Surdez Profunda"/>
+                        <StringItem index="6" value="Perda Auditiva Neurossensorial"/>
+                        <StringItem index="7" value="S&#xed;ndrome de Down"/>
+                        <StringItem index="8" value="Retardo Mental"/>
+                        <StringItem index="9" value="Austismo"/>
+                        <StringItem index="10" value="Glaucoma"/>
+                        <StringItem index="11" value="Cegueira"/>
+                        <StringItem index="12" value="Baixa vis&#xe3;o"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -801,25 +810,17 @@
                     <Property name="text" type="java.lang.String" value="A quanto tempo possui?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="1 ano e 10 meses"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField7ActionPerformed"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel24">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Possui um cuidador?"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+                <Component class="javax.swing.JRadioButton" name="radio_cuidador">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Sim"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+                <Component class="javax.swing.JRadioButton" name="radio_nao_cuidador">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
                   </Properties>
@@ -849,57 +850,29 @@
                     <Property name="text" type="java.lang.String" value="Insira foto do laudo m&#xe9;dico:"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JPanel" name="panel_laudo_med">
+                <Component class="javax.swing.JFormattedTextField" name="tempo_def">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="66" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="99" red="0" type="rgb"/>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="##/##/####" subtype="-1" type="5"/>
                     </Property>
                   </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="27" max="32767" attributes="0"/>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel7">
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Component class="javax.swing.JButton" name="btn_save_pcd">
+                </Component>
+                <Component class="javax.swing.JButton" name="btn_select_img">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="90" green="c6" red="8f" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
+                    <Property name="text" type="java.lang.String" value="Selecione a imagem"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_save_pcdActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_select_imgActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lbl_foto">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                        <MatteColorBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -932,11 +905,11 @@
                                       <Component id="cb_bairro" min="-2" pref="179" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="label_cep" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="label_rua" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tx_cep" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
-                                      <Component id="tx_rua" min="-2" pref="179" max="-2" attributes="0"/>
+                                      <Component id="tx_rua" pref="179" max="32767" attributes="0"/>
+                                      <Component id="txt_cep_civil" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -952,12 +925,7 @@
                               </Group>
                               <Component id="tx_numero_casa" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="301" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btn_save_endereco" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace pref="170" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -973,9 +941,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="cb_municipio" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tx_cep" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="radio_urbano" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="radio_rural" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_cep_civil" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -993,9 +961,7 @@
                           <Component id="label_numero" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="tx_numero_casa" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="175" max="32767" attributes="0"/>
-                          <Component id="btn_save_endereco" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace pref="65" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1034,11 +1000,8 @@
                 <Component class="javax.swing.JComboBox" name="cb_municipio">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="municipio 1"/>
-                        <StringItem index="1" value="municipio 2"/>
-                        <StringItem index="2" value="municipio 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                      <StringArray count="1">
+                        <StringItem index="0" value="Jaragu&#xe1; do Sul"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1050,10 +1013,10 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
-                        <StringItem index="0" value="tipo 1"/>
-                        <StringItem index="1" value="tipo 2"/>
-                        <StringItem index="2" value="tipo 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                        <StringItem index="0" value="Casa"/>
+                        <StringItem index="1" value="Apartamento"/>
+                        <StringItem index="2" value="Kitnet"/>
+                        <StringItem index="3" value="Casa germinada"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1064,11 +1027,45 @@
                 <Component class="javax.swing.JComboBox" name="cb_bairro">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="bairro 1"/>
-                        <StringItem index="1" value="bairro 2"/>
-                        <StringItem index="2" value="bairro 3"/>
-                        <StringItem index="3" value="bairro 4"/>
+                      <StringArray count="38">
+                        <StringItem index="0" value="&#xc1;gua Verde"/>
+                        <StringItem index="1" value="&#xc1;guas Claras"/>
+                        <StringItem index="2" value="Amizade"/>
+                        <StringItem index="3" value="Barra do Rio Cerro"/>
+                        <StringItem index="4" value="Barra do Rio Molha"/>
+                        <StringItem index="5" value="Boa Vista"/>
+                        <StringItem index="6" value="Bra&#xe7;o do Ribeir&#xe3;o Cavalo"/>
+                        <StringItem index="7" value="Centen&#xe1;rio"/>
+                        <StringItem index="8" value="Centro"/>
+                        <StringItem index="9" value="Chico de Paulo "/>
+                        <StringItem index="10" value="Czerniewicz"/>
+                        <StringItem index="11" value="Estrada Nova"/>
+                        <StringItem index="12" value="Ilha da Figueira"/>
+                        <StringItem index="13" value="Jaragu&#xe1; 84"/>
+                        <StringItem index="14" value="Jaragu&#xe1; 99"/>
+                        <StringItem index="15" value="Jaragu&#xe1; Esquerdo"/>
+                        <StringItem index="16" value="Jo&#xe3;o Pessoa"/>
+                        <StringItem index="17" value="Nereu Ramos"/>
+                        <StringItem index="18" value="Nova Bras&#xed;lia"/>
+                        <StringItem index="19" value="Parque Malwee"/>
+                        <StringItem index="20" value="Rau"/>
+                        <StringItem index="21" value="Ribeir&#xe3;o Cavalo"/>
+                        <StringItem index="22" value="Rio Cerro I "/>
+                        <StringItem index="23" value="Rio Cerro II "/>
+                        <StringItem index="24" value="Rio da Luz"/>
+                        <StringItem index="25" value="Rio Molha"/>
+                        <StringItem index="26" value="Santa Luzia"/>
+                        <StringItem index="27" value="Santo Ant&#xf4;nio"/>
+                        <StringItem index="28" value="S&#xe3;o Lu&#xed;s "/>
+                        <StringItem index="29" value="Tifa Martins "/>
+                        <StringItem index="30" value="Tifa Monos"/>
+                        <StringItem index="31" value="Tr&#xea;s Rios do Norte"/>
+                        <StringItem index="32" value="Tr&#xea;s Rios do Sul"/>
+                        <StringItem index="33" value="Vieira "/>
+                        <StringItem index="34" value="Vila Baependi"/>
+                        <StringItem index="35" value="Vila Lalau"/>
+                        <StringItem index="36" value="Vila Lenzi"/>
+                        <StringItem index="37" value="Vila Nova"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1076,15 +1073,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tx_cep">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="00000000"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JTextField" name="tx_rua">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="rua nome"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="radio_urbano">
                   <Properties>
@@ -1102,26 +1091,13 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tx_numero_casa">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="numero"/>
-                  </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_save_endereco">
+                <Component class="javax.swing.JFormattedTextField" name="txt_cep_civil">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="90" green="c6" red="8f" type="rgb"/>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                      <Format format="#####-###" subtype="-1" type="5"/>
                     </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_save_enderecoActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1129,6 +1105,9 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d9" green="d9" red="d9" type="rgb"/>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[1200, 400]"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -1142,27 +1121,33 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btn_save_estrutura" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="label_condicoes" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radio_ativo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="radio_desempregado" min="-2" max="-2" attributes="0"/>
-                                  <Component id="radio_aposentado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="radio_inativo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="radio_dependente" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="label_locomocao" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="radio_s_locomoçao" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="radio_n_locomoçao" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="cb_condEconomica" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="label_escolaridade" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cb_escolaridade" alignment="0" min="-2" pref="224" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cb_escolaridade" min="-2" pref="224" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="radio_s_recebe" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="radio_n_recebe" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <Component id="label_isaude" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="radio_s_acessibilidade" min="-2" max="-2" attributes="0"/>
@@ -1175,14 +1160,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="radio_n_isaude" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="label_escolaridade" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="446" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btn_save_estrutura" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <EmptySpace pref="313" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1196,71 +1175,41 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radio_ativo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="radio_s_acessibilidade" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="radio_n_acessibilidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cb_condEconomica" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="radio_aposentado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radio_desempregado" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="label_isaude" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_locomocao" alignment="3" min="-2" pref="11" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radio_inativo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="radio_s_isaude" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="radio_n_isaude" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radio_s_locomoçao" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radio_n_locomoçao" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="radio_dependente" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="label_locomocao" min="-2" pref="11" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="label_escolaridade" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="label_escolaridade" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="cb_escolaridade" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radio_s_locomoçao" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radio_n_locomoçao" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radio_s_recebe" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radio_n_recebe" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="170" max="32767" attributes="0"/>
+                          <EmptySpace pref="60" max="32767" attributes="0"/>
                           <Component id="btn_save_estrutura" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JRadioButton" name="radio_ativo">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Ativo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radio_aposentado">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Aposentado"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radio_desempregado">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Desempregado"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radio_inativo">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Inativo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radio_dependente">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Dependente"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="label_condicoes">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Condi&#xe7;&#xf5;es sociecon&#xf4;micas:"/>
@@ -1283,7 +1232,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel27">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Encontra acessibilidade no acesso local?"/>
+                    <Property name="text" type="java.lang.String" value="Encontra acessibilidade no comercio local?"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="radio_s_acessibilidade">
@@ -1314,11 +1263,14 @@
                 <Component class="javax.swing.JComboBox" name="cb_escolaridade">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="opcao 1"/>
-                        <StringItem index="1" value="opcao 2"/>
-                        <StringItem index="2" value="opcao 3"/>
-                        <StringItem index="3" value="opcao 4"/>
+                      <StringArray count="7">
+                        <StringItem index="0" value="Educa&#xe7;&#xe3;o infatil"/>
+                        <StringItem index="1" value="Ensino Fundamental"/>
+                        <StringItem index="2" value="Ensino m&#xe9;dio"/>
+                        <StringItem index="3" value="Ensino Superior"/>
+                        <StringItem index="4" value="P&#xf3;s graduado"/>
+                        <StringItem index="5" value="Mestrado"/>
+                        <StringItem index="6" value="N&#xe3;o possui escolaridade"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1334,10 +1286,10 @@
                 <Component class="javax.swing.JButton" name="btn_save_estrutura">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="90" green="c6" red="8f" type="rgb"/>
+                      <Color blue="0" green="66" red="0" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="1"/>
+                      <Font name="Arial" size="18" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1347,6 +1299,38 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_save_estruturaActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="cb_condEconomica">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="6">
+                        <StringItem index="0" value="Ativo"/>
+                        <StringItem index="1" value="Desempregado"/>
+                        <StringItem index="2" value="Pensionista"/>
+                        <StringItem index="3" value="Aposentado"/>
+                        <StringItem index="4" value="Dependente"/>
+                        <StringItem index="5" value="Estudante"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Recebe auxilio/beneficio?"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="radio_s_recebe">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Sim"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="radio_n_recebe">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -1394,11 +1378,17 @@
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="label_cadastro" min="-2" pref="328" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace pref="490" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1411,12 +1401,12 @@
                               <Component id="label_cadastro" min="-2" pref="39" max="-2" attributes="0"/>
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
-                          <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="16" max="32767" attributes="0"/>
                   </Group>
@@ -1538,7 +1528,7 @@
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="145" max="32767" attributes="0"/>
                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tela_cadastro_civil" min="-2" max="-2" attributes="0"/>

@@ -77,6 +77,8 @@
                                       <Group type="102" attributes="0">
                                           <Component id="tx_filtro_nome" min="-2" pref="131" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btn_pesquisar" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="btn_add_civil" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="label_filtro_nome" min="-2" max="-2" attributes="0"/>
@@ -107,6 +109,7 @@
                               <Component id="tx_filtro_tipo_def" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="tx_filtro_nome" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_add_civil" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_pesquisar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="591" max="-2" attributes="0"/>
@@ -150,10 +153,12 @@
                   <Color blue="e2" green="e2" red="e2" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="3" rowCount="5">
-                    <Column editable="true" title="id" type="java.lang.Object"/>
+                  <Table columnCount="5" rowCount="5">
                     <Column editable="true" title="Nome" type="java.lang.Object"/>
                     <Column editable="true" title="Cpf" type="java.lang.Object"/>
+                    <Column editable="true" title="Possui Defici&#xea;ncia" type="java.lang.Object"/>
+                    <Column editable="true" title="Tipo defici&#xea;ncia" type="java.lang.Object"/>
+                    <Column editable="false" title="Bairro" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -469,6 +474,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_pesquisaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_pesquisar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pesquisar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_pesquisarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
