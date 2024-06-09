@@ -1335,6 +1335,10 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                
              statement.close();
              JOptionPane.showMessageDialog(null, "CIVIL CADASTRADO COM SUCESSO");
+             
+                tela_cadastro_civil.this.dispose();
+                tela_consulta_daddos objeto = new tela_consulta_daddos();
+                objeto.setVisible(true);
           
             // TODO add your handling code here:
         } catch (SQLException ex) {

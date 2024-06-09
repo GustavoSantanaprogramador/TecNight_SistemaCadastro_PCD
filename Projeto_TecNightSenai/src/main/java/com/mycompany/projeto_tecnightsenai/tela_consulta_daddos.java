@@ -36,21 +36,17 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel)tbl_users.getModel();
             model.setNumRows(0);
             
-            while(resultado.next())
-            {
-                model.addRow(new Object[]
-                {
-                    resultado.getString("id_civil"),
-                     resultado.getString("nome_civil"),
-                     resultado.getString("cpf_civil"),
-                     resultado.getString("possui_deficiencia"),
-                     resultado.getString("tipo_deficiencia"),
-                     resultado.getString("bairro_civil"),
-                    
-                });
-                
-                
-            }
+                while(resultado.next())
+                 {
+                     model.addRow(new Object[]
+                     {
+                         resultado.getString("nome_civil") + " " + resultado.getString("sobrenome_civil"),
+                         resultado.getString("cpf_civil"),
+                         resultado.getString("possui_deficiencia"),
+                         resultado.getString("tipo_deficiencia"),
+                         resultado.getString("bairro_civil"),
+                     });   
+                 }
             banco.close();
             con.close();
         } catch (SQLException ex) {
@@ -120,18 +116,18 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         tbl_users.setBackground(new java.awt.Color(226, 226, 226));
         tbl_users.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "id", "Nome", "Cpf", "Possui deficiência", "Tipo deficiência", "Bairro"
+                "Nome", "Cpf", "Possui Deficiência", "Tipo deficiência", "Bairro"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, true, true, true, false, true
+                true, true, true, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
