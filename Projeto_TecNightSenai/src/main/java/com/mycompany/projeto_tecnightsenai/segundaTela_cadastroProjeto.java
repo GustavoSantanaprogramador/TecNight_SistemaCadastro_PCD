@@ -95,16 +95,13 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
         );
 
         jLabel3.setText("Descreva sobre o Projeto Social");
@@ -214,7 +211,7 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
             Connection conexao = null;
             PreparedStatement statement = null;
             
-            String url = "jbc:mysql://localhost:3306/projeto_AcessaMais";
+            String url = "jdbc:mysql://localhost:3306/projeto_AcessaMais";
             String usuario = "root";
             String senha = "";
             
@@ -228,7 +225,7 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
             statement.close();
             JOptionPane.showMessageDialog(null, "Dados gravados");
             
-            // this.textAreaSobre("SELECT * FROM projeto_sobre ");
+         
            
             
             
