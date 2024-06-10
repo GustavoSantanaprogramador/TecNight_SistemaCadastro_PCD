@@ -136,6 +136,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         tx_relatorio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         btn_delete_relatorio = new javax.swing.JButton();
@@ -182,7 +183,7 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 748, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 852, Short.MAX_VALUE)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menu_decimaLayout.createSequentialGroup()
                         .addComponent(label_img_civil_login)
@@ -438,6 +439,8 @@ public class tela_dashbord extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icone_logo_prefeitura.png"))); // NOI18N
+
         javax.swing.GroupLayout menu_lateralLayout = new javax.swing.GroupLayout(menu_lateral);
         menu_lateral.setLayout(menu_lateralLayout);
         menu_lateralLayout.setHorizontalGroup(
@@ -473,17 +476,22 @@ public class tela_dashbord extends javax.swing.JFrame {
                         .addComponent(tela_cadastro_civil))
                     .addGroup(menu_lateralLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel3)))
+                        .addComponent(jLabel3))
+                    .addGroup(menu_lateralLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menu_lateralLayout.setVerticalGroup(
             menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addGap(34, 34, 34)
+                .addGap(74, 74, 74)
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tela_cadastro_civil)
@@ -590,7 +598,7 @@ public class tela_dashbord extends javax.swing.JFrame {
                                     .addComponent(btn_delete_relatorio)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btn_4))))
-                        .addGap(0, 264, Short.MAX_VALUE))))
+                        .addGap(0, 294, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -768,6 +776,7 @@ public class tela_dashbord extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
