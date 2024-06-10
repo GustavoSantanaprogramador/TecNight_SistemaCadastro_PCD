@@ -413,9 +413,7 @@ public class tela_cadastroProjetos extends javax.swing.JFrame {
             
             conexao = DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "INSERT INTO projeto_social(nome_fantasia, cnpj,razao_social,atividade_projeto,endereco_projeto,bairro_projeto,uf_projeto"
-                    + "cep_projeto, num_telefoneFixo, num_celular,nome_contato,email, rede_social)"
-                    + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO projeto_social(nome_fantasia, cnpj,razao_social,atividade_projeto,endereco_projeto,bairro_projeto,uf_projeto , cep_projeto, num_telefoneFixo, num_celular,nome_contato,email, rede_social) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
             
             
             statement = conexao.prepareStatement(sql);
@@ -438,7 +436,7 @@ public class tela_cadastroProjetos extends javax.swing.JFrame {
             statement.execute();
             statement.close();
             JOptionPane.showMessageDialog(null, "Dados gravados");
-           
+            
             
             
         } catch (SQLException ex) {
