@@ -34,7 +34,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         initComponents();
     }
     
-private void PanelDashbord(){
+     private void PanelDashbordPcd(){
     
         try {
              Connection conexao = null;
@@ -53,6 +53,63 @@ private void PanelDashbord(){
         if (rs.next()) {
             int total = rs.getInt("total");
             label_pessoas_cadastradas.setText(String.valueOf(total));
+        }
+        
+        conexao.close();
+        
+        } catch (SQLException ex) {
+           Logger.getLogger(tela_dashbord.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
+     
+         private void PanelDashbordDificuldade(){
+    
+        try {
+             Connection conexao = null;
+        PreparedStatement statement = null;
+
+        String url = "jdbc:mysql://localhost/projeto_AcessaMais";
+        String usuario = "root";
+        String senha = "admin";
+
+        conexao = DriverManager.getConnection(url, usuario, senha);
+
+        String sql = "SELECT COUNT(*) AS total FROM cadastro_civil WHERE possui_dificuldadeLocomocao = 'Sim'";
+        statement = conexao.prepareStatement(sql);
+        ResultSet rs = statement.executeQuery();
+
+        if (rs.next()) {
+            int total = rs.getInt("total");
+            label_dificuldade_locomocao.setText(String.valueOf(total));
+        }
+        
+        conexao.close();
+        
+        } catch (SQLException ex) {
+           Logger.getLogger(tela_dashbord.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+         }
+     
+         private void PanelDashbordAcessoSaude(){
+    
+        try {
+             Connection conexao = null;
+        PreparedStatement statement = null;
+
+        String url = "jdbc:mysql://localhost/projeto_AcessaMais";
+        String usuario = "root";
+        String senha = "admin";
+
+        conexao = DriverManager.getConnection(url, usuario, senha);
+
+        String sql = "SELECT COUNT(*) AS total FROM cadastro_civil WHERE acesso_saude = 'Não'";
+        statement = conexao.prepareStatement(sql);
+        ResultSet rs = statement.executeQuery();
+
+        if (rs.next()) {
+            int total = rs.getInt("total");
+           label_acesso_saude.setText(String.valueOf(total));
         }
         
         conexao.close();
@@ -86,8 +143,7 @@ private void PanelDashbord(){
         jPanel3 = new javax.swing.JPanel();
         label_dashbord_n_sem_ensino = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        label_dificuldade_locomocao = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         label_dashbord_n_sem_ensino1 = new javax.swing.JLabel();
@@ -95,7 +151,7 @@ private void PanelDashbord(){
         jLabel24 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         label_dashbord_n_sem_ensino2 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
+        label_acesso_saude = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         menu_lateral = new javax.swing.JPanel();
@@ -201,49 +257,50 @@ private void PanelDashbord(){
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("pessoas cadastradas");
+        jLabel5.setText("das pessoas cadastradas");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(label_pessoas_cadastradas)
-                    .addComponent(label_dashbord_npcd))
-                .addGap(16, 16, 16))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(label_dashbord_npcd)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(label_pessoas_cadastradas))
+                        .addGap(16, 16, 16))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(label_dashbord_npcd)
-                .addGap(18, 18, 18)
+                .addGap(45, 45, 45)
                 .addComponent(label_pessoas_cadastradas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(206, 5, 4));
 
         label_dashbord_n_sem_ensino.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         label_dashbord_n_sem_ensino.setForeground(new java.awt.Color(255, 255, 255));
-        label_dashbord_n_sem_ensino.setText("PCD com +18 que não ");
+        label_dashbord_n_sem_ensino.setText("Pessoas com dificuldade");
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("concluiram ensino");
+        jLabel8.setText("de locomoção:");
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("fundamental:");
-
-        jLabel12.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("20%");
+        label_dificuldade_locomocao.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        label_dificuldade_locomocao.setForeground(new java.awt.Color(255, 255, 255));
+        label_dificuldade_locomocao.setText("0");
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -257,20 +314,17 @@ private void PanelDashbord(){
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(label_dashbord_n_sem_ensino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(label_dashbord_n_sem_ensino, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(124, 124, 124))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel13)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel12)))
-                        .addGap(22, 22, 22))))
+                            .addComponent(label_dificuldade_locomocao))
+                        .addGap(22, 22, 22))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,16 +333,11 @@ private void PanelDashbord(){
                 .addComponent(label_dashbord_n_sem_ensino)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label_dificuldade_locomocao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel13)
-                        .addGap(16, 16, 16))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jLabel13)
+                .addGap(16, 16, 16))
         );
 
         jPanel4.setBackground(new java.awt.Color(206, 5, 4));
@@ -342,11 +391,11 @@ private void PanelDashbord(){
 
         label_dashbord_n_sem_ensino2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         label_dashbord_n_sem_ensino2.setForeground(new java.awt.Color(255, 255, 255));
-        label_dashbord_n_sem_ensino2.setText("PCD sem acesso a");
+        label_dashbord_n_sem_ensino2.setText("Pessoas sem acesso a");
 
-        jLabel25.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("2%");
+        label_acesso_saude.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        label_acesso_saude.setForeground(new java.awt.Color(255, 255, 255));
+        label_acesso_saude.setText("0");
 
         jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
@@ -370,7 +419,7 @@ private void PanelDashbord(){
                         .addGap(0, 108, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel26)
-                            .addComponent(jLabel25))
+                            .addComponent(label_acesso_saude))
                         .addGap(22, 22, 22))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel21)
@@ -383,9 +432,9 @@ private void PanelDashbord(){
                 .addComponent(label_dashbord_n_sem_ensino2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel21)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label_acesso_saude)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel26)
                 .addGap(16, 16, 16))
         );
@@ -415,8 +464,6 @@ private void PanelDashbord(){
                 jLabel1MouseClicked(evt);
             }
         });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
 
         javax.swing.GroupLayout menu_lateralLayout = new javax.swing.GroupLayout(menu_lateral);
         menu_lateral.setLayout(menu_lateralLayout);
@@ -559,12 +606,15 @@ private void PanelDashbord(){
                                         .addComponent(jLabel6)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(btn_atualizar)
-                                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGap(37, 37, 37)
-                                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addGap(264, 264, 264)
+                                                    .addComponent(btn_atualizar))
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                    .addGap(43, 43, 43)
+                                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGap(35, 35, 35)
                                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGap(14, 14, 14))
@@ -699,7 +749,9 @@ private void PanelDashbord(){
 
     private void btn_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atualizarActionPerformed
 
-         PanelDashbord();
+         PanelDashbordPcd();
+         PanelDashbordDificuldade();
+         PanelDashbordAcessoSaude();
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_atualizarActionPerformed
 
@@ -745,9 +797,7 @@ private void PanelDashbord(){
     private javax.swing.JButton btn_delete_relatorio;
     private javax.swing.JButton btn_save_relatorio;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -761,7 +811,6 @@ private void PanelDashbord(){
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -775,11 +824,13 @@ private void PanelDashbord(){
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel label_acesso_saude;
     private javax.swing.JLabel label_cadastro_civil;
     private javax.swing.JLabel label_dashbord_n_sem_ensino;
     private javax.swing.JLabel label_dashbord_n_sem_ensino1;
     private javax.swing.JLabel label_dashbord_n_sem_ensino2;
     private javax.swing.JLabel label_dashbord_npcd;
+    private javax.swing.JLabel label_dificuldade_locomocao;
     private javax.swing.JLabel label_img_civil_login;
     private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_img_consulta_preto;
