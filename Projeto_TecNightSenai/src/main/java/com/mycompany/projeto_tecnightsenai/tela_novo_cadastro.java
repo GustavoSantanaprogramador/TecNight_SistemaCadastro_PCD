@@ -4,6 +4,12 @@
  */
 package com.mycompany.projeto_tecnightsenai;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -35,7 +41,6 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         cb_tipo_cadastro_novo_fun = new javax.swing.JComboBox<>();
         tx_nome_novo_fun = new javax.swing.JTextField();
-        tx_cpf_novo_fun = new javax.swing.JTextField();
         tx_email_novo_fun = new javax.swing.JTextField();
         tx_senha_novo_fun = new javax.swing.JTextField();
         btn_save_novo_fun = new javax.swing.JButton();
@@ -43,6 +48,7 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         cb_unidade_cras_novo_fun = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,17 +76,8 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
 
         cb_tipo_cadastro_novo_fun.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Funcionário" }));
         getContentPane().add(cb_tipo_cadastro_novo_fun, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 320, 34));
-
-        tx_nome_novo_fun.setText("Fulano silva");
         getContentPane().add(tx_nome_novo_fun, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 320, 33));
-
-        tx_cpf_novo_fun.setText("Cpf do silva");
-        getContentPane().add(tx_cpf_novo_fun, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, 320, 33));
-
-        tx_email_novo_fun.setText("email do fulano");
         getContentPane().add(tx_email_novo_fun, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 310, 33));
-
-        tx_senha_novo_fun.setText("123senha");
         getContentPane().add(tx_senha_novo_fun, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 500, 310, 33));
 
         btn_save_novo_fun.setBackground(new java.awt.Color(103, 178, 106));
@@ -101,7 +98,7 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(240, 240, 240));
 
-        cb_unidade_cras_novo_fun.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CRAS 1", "CRAS 2", "CADASTRO 3", "CADASTRO 4" }));
+        cb_unidade_cras_novo_fun.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CRAS Ilha da Figueira", "CRAS  João Pessoa", "CRAS Centro", "CRAS Ribeirão Cavalo", "CRAS  Jaraguá 84", "CRAS Vila Lenzi", "CRAS Santo Antônio", " " }));
         cb_unidade_cras_novo_fun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb_unidade_cras_novo_funActionPerformed(evt);
@@ -110,6 +107,12 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setText("Unidade CRAS:");
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,6 +124,10 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(cb_unidade_cras_novo_fun, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,12 +136,14 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cb_unidade_cras_novo_fun, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addGap(165, 165, 165)
+                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 1060, 530));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\bacgorund_novo_user.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\bacgorund_novo_user.png")); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, 0, 1850, 870));
 
         pack();
@@ -142,13 +151,39 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
 
     private void btn_save_novo_funActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_novo_funActionPerformed
      
+        
+        
+        
+        try {
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://localhost/projeto_AcessaMais";
+            String usuario = "root";
+            String senha = "";
+            
+            conexao = DriverManager.getConnection(url, usuario,senha);
+            
+           
+            String sql = "INSERT INTO cadastro_civil(unidade_cras, tipo_cadastro,nome_cadastro) VALUES(?,?)";
+            statement = conexao.prepareStatement(sql);
+            
+            
+            String ComboBox_TipoCad = (String) cb_tipo_cadastro_novo_fun.getSelectedItem();
+            String ComboBox_UniCras = (String) cb_unidade_cras_novo_fun.getSelectedItem();
+            
+            
+            
             JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-        tela_novo_cadastro.this.dispose();
-      tela_login objeto2 = new   tela_login();
-      objeto2.setVisible(true);
-
-
-        // TODO add your handling code here:
+            tela_novo_cadastro.this.dispose();
+            tela_login objeto2 = new   tela_login();
+            objeto2.setVisible(true);
+            
+            
+            // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(tela_novo_cadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_save_novo_funActionPerformed
 
     private void cb_unidade_cras_novo_funActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_unidade_cras_novo_funActionPerformed
@@ -194,6 +229,7 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
     private javax.swing.JButton btn_save_novo_fun;
     private javax.swing.JComboBox<String> cb_tipo_cadastro_novo_fun;
     private javax.swing.JComboBox<String> cb_unidade_cras_novo_fun;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -203,7 +239,6 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField tx_cpf_novo_fun;
     private javax.swing.JTextField tx_email_novo_fun;
     private javax.swing.JTextField tx_nome_novo_fun;
     private javax.swing.JTextField tx_senha_novo_fun;

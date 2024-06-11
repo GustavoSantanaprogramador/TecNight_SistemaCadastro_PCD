@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -109,29 +109,13 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="tx_nome_novo_fun">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Fulano silva"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="440" y="410" width="320" height="33"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="tx_cpf_novo_fun">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cpf do silva"/>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="440" y="510" width="320" height="33"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JTextField" name="tx_email_novo_fun">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="email do fulano"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="990" y="410" width="310" height="33"/>
@@ -139,9 +123,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="tx_senha_novo_fun">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="123senha"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="990" y="500" width="310" height="33"/>
@@ -209,6 +190,11 @@
                   </Group>
                   <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
               </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                  <Component id="jFormattedTextField1" min="-2" pref="322" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -218,7 +204,9 @@
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="cb_unidade_cras_novo_fun" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace pref="368" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                  <Component id="jFormattedTextField1" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace pref="168" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -227,11 +215,15 @@
         <Component class="javax.swing.JComboBox" name="cb_unidade_cras_novo_fun">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="CRAS 1"/>
-                <StringItem index="1" value="CRAS 2"/>
-                <StringItem index="2" value="CADASTRO 3"/>
-                <StringItem index="3" value="CADASTRO 4"/>
+              <StringArray count="8">
+                <StringItem index="0" value="CRAS Ilha da Figueira"/>
+                <StringItem index="1" value="CRAS  Jo&#xe3;o Pessoa"/>
+                <StringItem index="2" value="CRAS Centro"/>
+                <StringItem index="3" value="CRAS Ribeir&#xe3;o Cavalo"/>
+                <StringItem index="4" value="CRAS  Jaragu&#xe1; 84"/>
+                <StringItem index="5" value="CRAS Vila Lenzi"/>
+                <StringItem index="6" value="CRAS Santo Ant&#xf4;nio"/>
+                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -250,12 +242,19 @@
             <Property name="text" type="java.lang.String" value="Unidade CRAS:"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="###.###.###-##" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\bacgorund_novo_user.png"/>
+          <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\bacgorund_novo_user.png"/>
         </Property>
       </Properties>
       <Constraints>

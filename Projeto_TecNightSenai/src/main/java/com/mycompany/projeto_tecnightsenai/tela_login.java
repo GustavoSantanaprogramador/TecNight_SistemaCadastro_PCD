@@ -4,6 +4,11 @@
  */
 package com.mycompany.projeto_tecnightsenai;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
@@ -35,6 +40,7 @@ public class tela_login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txt_login_senha = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        btn_login = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -50,16 +56,12 @@ public class tela_login extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("E-mail:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, -1, -1));
-
-        txt_login_email.setText("emaildofulano@gmail.com");
         getContentPane().add(txt_login_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 310, 34));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Senha:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, -1, -1));
-
-        txt_login_senha.setText("jPasswordField1");
         getContentPane().add(txt_login_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 430, 310, 34));
 
         jButton1.setBackground(new java.awt.Color(143, 198, 144));
@@ -73,18 +75,21 @@ public class tela_login extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 20, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(27, 202, 63));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Entrar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_login.setBackground(new java.awt.Color(27, 202, 63));
+        btn_login.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
+        btn_login.setText("Entrar");
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_loginActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 540, -1, -1));
+        getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 540, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/BACKGROUND_LOGIN.png"))); // NOI18N
+        jButton2.setText("Esqueci minha senha");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 620, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 810));
 
         jLabel4.setText("jLabel4");
@@ -95,27 +100,62 @@ public class tela_login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-   tela_login.this.dispose();
+      tela_login.this.dispose();
       tela_novo_cadastro objeto2 = new tela_novo_cadastro();
       objeto2.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-  
-     JPasswordField senhaField = new JPasswordField();
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+   
+        
+        try{
+            
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
+            
+         
+            
+            String email = txt_login_email.getText();
+            String senha = txt_login_senha.getText();
+            
+            Statement stm = con.createStatement();
+            
+           String sql = "SELECT * FROM usuario WHERE email_usuario= ? AND senha_usuario= ?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, email);
+            pstmt.setString(2, senha);
+            ResultSet rs = pstmt.executeQuery();
+
+            if(rs.next()){
+                dispose();
+              tela_cadastro_civil cad = new tela_cadastro_civil();
+              cad.show();
+            }else{
+                JOptionPane.showMessageDialog(this, "E-mail ou senha incorretos");
+                txt_login_email.setText("");
+                txt_login_senha.setText("");
+            }
+            
+            con.close();
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    // JPasswordField senhaField = new JPasswordField();
 
       
-        int option = JOptionPane.showConfirmDialog(null, senhaField, "Atualize sua senha!", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+      //  int option = JOptionPane.showConfirmDialog(null, senhaField, "Atualize sua senha!", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 
        
-        if (option == JOptionPane.OK_OPTION) {
-            tela_login.this.dispose();
-            tela_cadastro_civil objeto2 = new tela_cadastro_civil();
-            objeto2.setVisible(true);
+    //    if (option == JOptionPane.OK_OPTION) {
+        //    tela_login.this.dispose();
+         //   tela_cadastro_civil objeto2 = new tela_cadastro_civil();
+          //  objeto2.setVisible(true);
                  // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-    }
+    }//GEN-LAST:event_btn_loginActionPerformed
+    //}
     /**
      * @param args the command line arguments
      */
@@ -152,6 +192,7 @@ public class tela_login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_login;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
