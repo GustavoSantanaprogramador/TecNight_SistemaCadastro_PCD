@@ -33,17 +33,18 @@ public class tela_dashbord extends javax.swing.JFrame {
        
         initComponents();
     }
-    
-     private void PanelDashbordPcd(){
-    
-        try {
-             Connection conexao = null;
+        Connection conexao = null;
         PreparedStatement statement = null;
 
         String url = "jdbc:mysql://localhost/projeto_AcessaMais";
         String usuario = "root";
         String senha = "admin";
 
+        
+    private void PanelDashbordPcd(){
+    
+        try {
+           
         conexao = DriverManager.getConnection(url, usuario, senha);
 
         String sql = "SELECT COUNT(*) AS total FROM cadastro_civil WHERE possui_deficiencia = 'Sim'";
@@ -60,18 +61,12 @@ public class tela_dashbord extends javax.swing.JFrame {
         } catch (SQLException ex) {
            Logger.getLogger(tela_dashbord.class.getName()).log(Level.SEVERE, null, ex);
         }
-}
+    }
      
-         private void PanelDashbordDificuldade(){
+    private void PanelDashbordDificuldade(){
     
         try {
-             Connection conexao = null;
-        PreparedStatement statement = null;
-
-        String url = "jdbc:mysql://localhost/projeto_AcessaMais";
-        String usuario = "root";
-        String senha = "admin";
-
+             
         conexao = DriverManager.getConnection(url, usuario, senha);
 
         String sql = "SELECT COUNT(*) AS total FROM cadastro_civil WHERE possui_dificuldadeLocomocao = 'Sim'";
@@ -89,18 +84,12 @@ public class tela_dashbord extends javax.swing.JFrame {
            Logger.getLogger(tela_dashbord.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-         }
+    }
      
-         private void PanelDashbordAcessoSaude(){
+    private void PanelDashbordAcessoSaude(){
     
         try {
-             Connection conexao = null;
-        PreparedStatement statement = null;
-
-        String url = "jdbc:mysql://localhost/projeto_AcessaMais";
-        String usuario = "root";
-        String senha = "admin";
-
+           
         conexao = DriverManager.getConnection(url, usuario, senha);
 
         String sql = "SELECT COUNT(*) AS total FROM cadastro_civil WHERE acesso_saude = 'Não'";
@@ -117,7 +106,29 @@ public class tela_dashbord extends javax.swing.JFrame {
         } catch (SQLException ex) {
            Logger.getLogger(tela_dashbord.class.getName()).log(Level.SEVERE, null, ex);
         }
-}
+    }
+        
+    private void PanelDashbordDesempregoPCD(){
+    
+        try {
+           
+        conexao = DriverManager.getConnection(url, usuario, senha);
+
+        String sql = "SELECT COUNT(*) AS total FROM cadastro_civil WHERE nivel_socieconomico = 'Desempregado'";
+        statement = conexao.prepareStatement(sql);
+        ResultSet rs = statement.executeQuery();
+
+        if (rs.next()) {
+            int total = rs.getInt("total");
+         label_desempregos.setText(String.valueOf(total));
+        }
+        
+        conexao.close();
+        
+        } catch (SQLException ex) {
+           Logger.getLogger(tela_dashbord.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -147,7 +158,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         label_dashbord_n_sem_ensino1 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
+        label_desempregos = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         label_dashbord_n_sem_ensino2 = new javax.swing.JLabel();
@@ -314,14 +325,12 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(label_dashbord_n_sem_ensino, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel13)
                             .addComponent(label_dificuldade_locomocao))
                         .addGap(22, 22, 22))
+                    .addComponent(label_dashbord_n_sem_ensino, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -332,7 +341,7 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(label_dashbord_n_sem_ensino)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(label_dificuldade_locomocao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -346,9 +355,9 @@ public class tela_dashbord extends javax.swing.JFrame {
         label_dashbord_n_sem_ensino1.setForeground(new java.awt.Color(255, 255, 255));
         label_dashbord_n_sem_ensino1.setText("PCD desempregados: ");
 
-        jLabel23.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("80%");
+        label_desempregos.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        label_desempregos.setForeground(new java.awt.Color(255, 255, 255));
+        label_desempregos.setText("0");
 
         jLabel24.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
@@ -368,7 +377,7 @@ public class tela_dashbord extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel24)
-                            .addComponent(jLabel23))
+                            .addComponent(label_desempregos))
                         .addGap(22, 22, 22))))
         );
         jPanel4Layout.setVerticalGroup(
@@ -376,15 +385,11 @@ public class tela_dashbord extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(label_dashbord_n_sem_ensino1)
-                .addGap(22, 22, 22)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel24)
-                        .addGap(16, 16, 16))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel23)
-                        .addContainerGap(54, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(label_desempregos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24)
+                .addGap(16, 16, 16))
         );
 
         jPanel5.setBackground(new java.awt.Color(143, 198, 144));
@@ -515,7 +520,7 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(74, 74, 74)
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tela_cadastro_civil)
@@ -579,6 +584,9 @@ public class tela_dashbord extends javax.swing.JFrame {
             }
         });
 
+        btn_atualizar.setBackground(new java.awt.Color(0, 102, 0));
+        btn_atualizar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btn_atualizar.setForeground(new java.awt.Color(255, 255, 255));
         btn_atualizar.setText("Atualizar");
         btn_atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -593,39 +601,40 @@ public class tela_dashbord extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1025, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(135, 135, 135)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1025, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGap(135, 135, 135)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addGap(264, 264, 264)
-                                                    .addComponent(btn_atualizar))
+                                                .addComponent(jLabel6)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                     .addGap(43, 43, 43)
-                                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGap(35, 35, 35)
-                                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(14, 14, 14))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(147, 147, 147)
-                                    .addComponent(btn_save_relatorio)
-                                    .addGap(31, 31, 31)
-                                    .addComponent(btn_delete_relatorio)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn_4))))
-                        .addGap(0, 179, Short.MAX_VALUE))))
+                                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(35, 35, 35)
+                                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGap(14, 14, 14))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGap(147, 147, 147)
+                                            .addComponent(btn_save_relatorio)
+                                            .addGap(31, 31, 31)
+                                            .addComponent(btn_delete_relatorio)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btn_4))))
+                                .addGap(0, 179, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_atualizar)
+                        .addGap(47, 47, 47))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -634,9 +643,9 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(26, 26, 26)
                 .addComponent(btn_atualizar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -659,11 +668,17 @@ public class tela_dashbord extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -752,6 +767,7 @@ public class tela_dashbord extends javax.swing.JFrame {
          PanelDashbordPcd();
          PanelDashbordDificuldade();
          PanelDashbordAcessoSaude();
+         PanelDashbordDesempregoPCD();
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_atualizarActionPerformed
 
@@ -809,7 +825,6 @@ public class tela_dashbord extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
@@ -830,6 +845,7 @@ public class tela_dashbord extends javax.swing.JFrame {
     private javax.swing.JLabel label_dashbord_n_sem_ensino1;
     private javax.swing.JLabel label_dashbord_n_sem_ensino2;
     private javax.swing.JLabel label_dashbord_npcd;
+    private javax.swing.JLabel label_desempregos;
     private javax.swing.JLabel label_dificuldade_locomocao;
     private javax.swing.JLabel label_img_civil_login;
     private javax.swing.JLabel label_img_consulta_branco;
