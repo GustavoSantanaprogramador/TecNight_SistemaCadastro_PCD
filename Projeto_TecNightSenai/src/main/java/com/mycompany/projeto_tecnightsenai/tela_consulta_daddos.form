@@ -421,11 +421,6 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_logo_prefeitura.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>

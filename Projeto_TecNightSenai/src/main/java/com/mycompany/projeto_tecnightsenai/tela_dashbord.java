@@ -34,57 +34,33 @@ public class tela_dashbord extends javax.swing.JFrame {
         initComponents();
     }
     
-//     private void PanelDashbord(){
-//         
-//       btn_atualizar botao = new btn_atualizar("Atualizar");
-//
-//// Adiciona um ActionListener ao botão
-//botao.addActionListener(new ActionListener() {
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        Connection conexao = null;
-//        PreparedStatement statement = null;
-//
-//        String url = "jdbc:mysql://localhost/projeto_AcessaMais";
-//        String usuario = "root";
-//        String senha = "";
-//
-//        try {
-//            // Cria uma conexão com o banco de dados
-//            conexao = DriverManager.getConnection(url, usuario, senha);
-//
-//            // Cria um Statement para executar a consulta
-//            statement = conexao.prepareStatement("SELECT COUNT(*) AS count FROM sua_tabela WHERE possui_deficiencia = 'sim'");
-//
-//            // Executa a consulta
-//            ResultSet rs = statement.executeQuery();
-//
-//            // Obtém o resultado
-//            if (rs.next()) {
-//                int count = rs.getInt("count");
-//
-//                // Define o texto do JLabel para o resultado
-//                seuJLabel.setText(String.valueOf(count));
-//            }
-//        } catch (SQLException ex) {
-//            ex.printStackTrace();
-//        } finally {
-//            try {
-//                if (statement != null) {
-//                    statement.close();
-//                }
-//                if (conexao != null) {
-//                    conexao.close();
-//                }
-//            } catch (SQLException ex) {
-//                ex.printStackTrace();
-//            }
-//        }
-//    }
-//});
-//            
-//     }    
-  
+private void PanelDashbord(){
+    
+        try {
+             Connection conexao = null;
+        PreparedStatement statement = null;
+
+        String url = "jdbc:mysql://localhost/projeto_AcessaMais";
+        String usuario = "root";
+        String senha = "admin";
+
+        conexao = DriverManager.getConnection(url, usuario, senha);
+
+        String sql = "SELECT COUNT(*) AS total FROM cadastro_civil WHERE possui_deficiencia = 'Sim'";
+        statement = conexao.prepareStatement(sql);
+        ResultSet rs = statement.executeQuery();
+
+        if (rs.next()) {
+            int total = rs.getInt("total");
+            label_pessoas_cadastradas.setText(String.valueOf(total));
+        }
+        
+        conexao.close();
+        
+        } catch (SQLException ex) {
+           Logger.getLogger(tela_dashbord.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -722,6 +698,8 @@ public class tela_dashbord extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_delete_relatorioActionPerformed
 
     private void btn_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atualizarActionPerformed
+
+         PanelDashbord();
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_atualizarActionPerformed
 

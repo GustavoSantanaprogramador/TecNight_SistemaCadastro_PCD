@@ -29,7 +29,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     public void PopularJTable(String sql){
         
         try {
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
             banco.execute();
             ResultSet resultado = banco.executeQuery(sql);
@@ -217,8 +217,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
 
         javax.swing.GroupLayout menu_lateralLayout = new javax.swing.GroupLayout(menu_lateral);
         menu_lateral.setLayout(menu_lateralLayout);
