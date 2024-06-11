@@ -75,12 +75,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         label_img_consulta_preto = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        tx_filtro_bairro = new javax.swing.JTextField();
-        tx_filtro_nome = new javax.swing.JTextField();
-        label_filtro_bairro = new javax.swing.JLabel();
-        label_filtro_nome = new javax.swing.JLabel();
-        label_filtro_tipo_def = new javax.swing.JLabel();
-        tx_filtro_tipo_def = new javax.swing.JTextField();
         menu_lateral = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -95,11 +89,13 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         btn_pesquisa = new javax.swing.JButton();
         btn_pesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1711, 954));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -196,18 +192,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        tx_filtro_bairro.setText("Bairro 1");
-
-        tx_filtro_nome.setText("Fulano de ciclano");
-
-        label_filtro_bairro.setText("Filtrar por bairro:");
-
-        label_filtro_nome.setText("Filtrar por nome:");
-
-        label_filtro_tipo_def.setText("Filtrar por tipo de deficiência:");
-
-        tx_filtro_tipo_def.setText("Deficiencia X");
-
         menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
 
         tela_cadastro_civil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -234,6 +218,8 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icone_logo_prefeitura.png"))); // NOI18N
+
         javax.swing.GroupLayout menu_lateralLayout = new javax.swing.GroupLayout(menu_lateral);
         menu_lateral.setLayout(menu_lateralLayout);
         menu_lateralLayout.setHorizontalGroup(
@@ -243,18 +229,20 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                     .addGroup(menu_lateralLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(menu_lateralLayout.createSequentialGroup()
-                                    .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel16)
-                                        .addComponent(jLabel15))
-                                    .addGap(67, 67, 67))
-                                .addGroup(menu_lateralLayout.createSequentialGroup()
-                                    .addComponent(label_sair)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel19)
-                                        .addComponent(jLabel20))))
+                            .addGroup(menu_lateralLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(menu_lateralLayout.createSequentialGroup()
+                                        .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel16)
+                                            .addComponent(jLabel15))
+                                        .addGap(67, 67, 67))
+                                    .addGroup(menu_lateralLayout.createSequentialGroup()
+                                        .addComponent(label_sair)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel19)
+                                            .addComponent(jLabel20)))))
                             .addComponent(jLabel17)
                             .addGroup(menu_lateralLayout.createSequentialGroup()
                                 .addGap(9, 9, 9)
@@ -269,17 +257,22 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                         .addComponent(tela_cadastro_civil))
                     .addGroup(menu_lateralLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2)))
+                        .addComponent(jLabel2))
+                    .addGroup(menu_lateralLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menu_lateralLayout.setVerticalGroup(
             menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(34, 34, 34)
+                .addGap(74, 74, 74)
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tela_cadastro_civil)
@@ -329,27 +322,14 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_filtro_bairro)
-                                    .addComponent(tx_filtro_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(77, 77, 77)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_filtro_tipo_def)
-                                    .addComponent(tx_filtro_tipo_def, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(106, 106, 106)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btn_pesquisar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btn_add_civil))
-                                    .addComponent(label_filtro_nome))))
-                        .addGap(0, 118, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_pesquisar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_add_civil)))
+                        .addGap(0, 138, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,16 +337,8 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
+                        .addGap(43, 43, 43)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(label_filtro_bairro)
-                            .addComponent(label_filtro_tipo_def)
-                            .addComponent(label_filtro_nome))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tx_filtro_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tx_filtro_tipo_def, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tx_filtro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_add_civil)
                             .addComponent(btn_pesquisar))
                         .addGap(43, 43, 43)
@@ -509,13 +481,11 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_cadastro_civil;
-    private javax.swing.JLabel label_filtro_bairro;
-    private javax.swing.JLabel label_filtro_nome;
-    private javax.swing.JLabel label_filtro_tipo_def;
     private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_img_consulta_preto;
     private javax.swing.JLabel label_sair;
@@ -523,8 +493,5 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     private javax.swing.JPanel menu_lateral;
     private javax.swing.JTable tbl_users;
     private javax.swing.JLabel tela_cadastro_civil;
-    private javax.swing.JTextField tx_filtro_bairro;
-    private javax.swing.JTextField tx_filtro_nome;
-    private javax.swing.JTextField tx_filtro_tipo_def;
     // End of variables declaration//GEN-END:variables
 }
