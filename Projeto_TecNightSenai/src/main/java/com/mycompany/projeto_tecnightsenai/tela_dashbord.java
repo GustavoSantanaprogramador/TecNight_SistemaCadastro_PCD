@@ -120,7 +120,7 @@ public class tela_dashbord extends javax.swing.JFrame {
 
         if (rs.next()) {
             int total = rs.getInt("total");
-         label_desempregos.setText(String.valueOf(total));
+             label_desempregos.setText(String.valueOf(total));
         }
         
         conexao.close();
