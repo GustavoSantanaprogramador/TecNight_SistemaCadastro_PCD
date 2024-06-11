@@ -96,12 +96,14 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel3.setText("Descreva sobre o Projeto Social");
@@ -217,17 +219,13 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
             
             conexao= DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "INSERT INTO sobre_projeto (missao_projeto) VALUES (?)";
+            String sql = "INSERT INTO missao_projeto (missao_projetoTela) VALUES (?)";
             statement = conexao.prepareStatement(sql);
             
             statement.setString(1,jTextAreaMissao.getText());
             statement.execute();
             statement.close();
-            JOptionPane.showMessageDialog(null, "Dados gravados");
-            
-         
-           
-            
+            JOptionPane.showMessageDialog(null, "Dados gravados");         
             
             
         } catch (SQLException ex) {
