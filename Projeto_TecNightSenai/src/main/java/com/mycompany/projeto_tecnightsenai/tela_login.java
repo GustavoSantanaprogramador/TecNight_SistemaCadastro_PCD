@@ -89,7 +89,7 @@ public class tela_login extends javax.swing.JFrame {
         jButton2.setText("Esqueci minha senha");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 620, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lsnunes\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 810));
 
         jLabel4.setText("jLabel4");
@@ -113,7 +113,7 @@ public class tela_login extends javax.swing.JFrame {
             
             
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","admin");
             
          
             

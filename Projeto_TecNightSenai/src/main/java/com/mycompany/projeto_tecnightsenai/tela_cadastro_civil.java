@@ -935,9 +935,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
 
-        label_consulta.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
-
-        tela_cadastro_civil.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
         tela_cadastro_civil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tela_cadastro_civilMouseClicked(evt);
@@ -950,7 +947,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
-        label_sair.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\sair 1.png")); // NOI18N
         label_sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_sairMouseClicked(evt);
@@ -963,9 +959,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
-
-        label_dashbord.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
         label_dashbord.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_dashbordMouseClicked(evt);
@@ -1028,7 +1021,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addGroup(menu_lateralLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(tela_cadastro_civil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1))
                     .addGroup(menu_lateralLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1090,21 +1083,21 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         btn_2Layout.setVerticalGroup(
             btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_2Layout.createSequentialGroup()
-                .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(panel_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_save_relatorio)
-                    .addComponent(btn_4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btn_2Layout.createSequentialGroup()
+                        .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(panel_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_save_relatorio)
+                            .addComponent(btn_4))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(menu_lateral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
