@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import java.time.LocalDate;
@@ -38,6 +39,15 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         initComponents();
         
     }
+    
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://localhost/projeto_AcessaMais";
+            String usuario = "root";
+            String senha = "admin";
+            
+            
     public String formatoData(String data) {
         String dateStr = data;//Data no formato DD/MM/YYYY
         DateTimeFormatter formatterInput = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -1133,7 +1143,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
            String desktopPath = System.getProperty("user.home") + "/Desktop/";
             File desktopDir = new File(desktopPath);
             if (!desktopDir.exists()) {
-                desktopDir.mkdirs(); // Cria o diretório se não existir
+                desktopDir.mkdirs(); 
             }
             String filePath = desktopPath + "RELATORIO.txt";
             FileWriter arquivo = new FileWriter(filePath);
@@ -1148,7 +1158,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             Logger.getLogger(tela_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Erro ao exportar o arquivo!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        // TODO add your handling code here:
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_4ActionPerformed
 
@@ -1173,7 +1183,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
     private void tela_cadastro_civilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tela_cadastro_civilMouseClicked
 
-         tela_cadastro_civil.this.dispose();
+        tela_cadastro_civil.this.dispose();
         tela_cadastro_civil objeto = new tela_cadastro_civil();
         objeto.setVisible(true);
         // TODO add your handling code here:
@@ -1202,27 +1212,42 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    
+    private void CpfExiste(){
+        
+        try {
+        
+            conexao = DriverManager.getConnection(url, usuario,senha);  
+            
+            String sqlCheck = "SELECT cpf_civil FROM cadastro_civil WHERE cpf_civil = ?";
+            statement = conexao.prepareStatement(sqlCheck);
+            statement.setString(1, txt_cpf_civil.getText());
+            ResultSet rs = statement.executeQuery();
+            
+            if (rs.next()) {
+               
+                JOptionPane.showMessageDialog(null, "CPF já cadastrado!");
+                return;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(tela_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     private void btn_save_estruturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_estruturaActionPerformed
             
             
  
         try {
-            Connection conexao = null;
-            PreparedStatement statement = null;
+        
             
-            String url = "jdbc:mysql://localhost/projeto_AcessaMais";
-            String usuario = "root";
-            String senha = "admin";
+        conexao = DriverManager.getConnection(url, usuario,senha);
             
-            conexao = DriverManager.getConnection(url, usuario,senha);
-            
+           CpfExiste();
            
-            String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc,nome_tutor_civil,cpf_tutor_civil,possui_deficiencia,status_civil,sexo_civil,nivel_autonomia, tipo_deficiencia,nome_deficiencia,possui_cuidador,foto_civil, municipio_civil, bairro_civil,numero_res_civil,cep_civil, rua_civil,localidade_civil,tipo_res_civil,nivel_esc,nivel_socieconomico,possui_dificuldadeLocomocao,acesso_saude,acesso_local,recebe_aux,num_cel) VALUES(?,?,?,now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            statement = conexao.prepareStatement(sql);
-         
-   
            
-            
+        String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc,nome_tutor_civil,cpf_tutor_civil,possui_deficiencia,status_civil,sexo_civil,nivel_autonomia, tipo_deficiencia,nome_deficiencia,possui_cuidador,foto_civil, municipio_civil, bairro_civil,numero_res_civil,cep_civil, rua_civil,localidade_civil,tipo_res_civil,nivel_esc,nivel_socieconomico,possui_dificuldadeLocomocao,acesso_saude,acesso_local,recebe_aux,num_cel) VALUES(?,?,?,now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        statement = conexao.prepareStatement(sql);
+
             String groupDef = "";
             if(radio_s_def.isSelected()) {
                 groupDef+="Sim";
