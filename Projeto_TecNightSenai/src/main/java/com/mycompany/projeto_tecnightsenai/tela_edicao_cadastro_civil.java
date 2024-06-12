@@ -1217,11 +1217,11 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_label_sairMouseClicked
-public void PreencherCampo(String cpf){
+public void PreencherCampo(String cpfEdit){
     
     
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
             String sql = "SELECT * FROM cadastro_civil WHERE cpf_civil = ?";
             PreparedStatement banco = con.prepareStatement(sql);
             
@@ -1231,6 +1231,7 @@ public void PreencherCampo(String cpf){
               if (resultado.next()) {
             tx_nome_civil_edit.setText(resultado.getString("nome_civil"));
             tx_cpf_civil_edit.setText(resultado.getString("cpf_civil"));
+            System.out.print(cpfEdit);
             // etc.
         }
 

@@ -44,11 +44,16 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                  {
                      model.addRow(new Object[]
                      {
+                       
                          resultado.getString("nome_civil") + " " + resultado.getString("sobrenome_civil"),
                          resultado.getString("cpf_civil"),
                          resultado.getString("possui_deficiencia"),
                          resultado.getString("tipo_deficiencia"),
+                         resultado.getString("nome_deficiencia"),
+                         resultado.getDate("date_criacao"),
                          resultado.getString("bairro_civil"),
+                         resultado.getString("status_civil"),
+                         resultado.getString("num_cel"),
                      });   
                  }
             banco.close();
@@ -115,24 +120,16 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         tbl_users.setBackground(new java.awt.Color(226, 226, 226));
         tbl_users.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nome", "Cpf", "Possui Deficiência", "Tipo deficiência", "Bairro"
+                "Nome", "Cpf", "Possui Deficiência", "Tipo deficiência", "Nome deficiência", "Data cadastro", "Bairro", "Status", "Contato"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, true, true, true, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         tbl_users.setToolTipText("");
         tbl_users.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

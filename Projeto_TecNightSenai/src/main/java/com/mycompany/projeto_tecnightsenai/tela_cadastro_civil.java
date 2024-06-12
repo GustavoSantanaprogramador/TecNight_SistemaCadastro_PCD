@@ -1249,13 +1249,13 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         try {
         
             
-            conexao = DriverManager.getConnection(url, usuario,senha);
+           conexao = DriverManager.getConnection(url, usuario,senha);
             
            CpfExiste();
            
            
-        String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc,nome_tutor_civil,cpf_tutor_civil,possui_deficiencia,status_civil,sexo_civil,nivel_autonomia, tipo_deficiencia,nome_deficiencia,possui_cuidador,foto_civil, municipio_civil, bairro_civil,numero_res_civil,cep_civil, rua_civil,localidade_civil,tipo_res_civil,nivel_esc,nivel_socieconomico,possui_dificuldadeLocomocao,acesso_saude,acesso_local,recebe_aux,num_cel) VALUES(?,?,?,now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        statement = conexao.prepareStatement(sql);
+           String sql = "INSERT INTO cadastro_civil(cpf_civil,nome_civil,sobrenome_civil,date_criacao,data_nasc,nome_tutor_civil,cpf_tutor_civil,possui_deficiencia,status_civil,sexo_civil,nivel_autonomia, tipo_deficiencia,nome_deficiencia,possui_cuidador,foto_civil, municipio_civil, bairro_civil,numero_res_civil,cep_civil, rua_civil,localidade_civil,tipo_res_civil,nivel_esc,nivel_socieconomico,possui_dificuldadeLocomocao,acesso_saude,acesso_local,recebe_aux,num_cel) VALUES(?,?,?,now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+           statement = conexao.prepareStatement(sql);
          
          
   

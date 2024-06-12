@@ -55,14 +55,14 @@ public class tela_login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("E-mail:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, -1, -1));
-        getContentPane().add(txt_login_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 310, 34));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, -1, -1));
+        getContentPane().add(txt_login_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 350, 34));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Senha:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, -1, -1));
-        getContentPane().add(txt_login_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 430, 310, 34));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, -1, -1));
+        getContentPane().add(txt_login_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, 350, 34));
 
         jButton1.setBackground(new java.awt.Color(143, 198, 144));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -84,16 +84,19 @@ public class tela_login extends javax.swing.JFrame {
                 btn_loginActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 540, -1, -1));
+        getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 630, -1, -1));
 
         jButton2.setText("Esqueci minha senha");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 620, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 700, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lsnunes\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 810));
+        jLabel2.setMaximumSize(new java.awt.Dimension(2000, 1500));
+        jLabel2.setMinimumSize(new java.awt.Dimension(2000, 1500));
+        jLabel2.setPreferredSize(new java.awt.Dimension(2000, 1500));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
 
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1590, 800));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 6, 1520, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

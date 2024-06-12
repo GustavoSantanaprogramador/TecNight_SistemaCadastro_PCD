@@ -125,12 +125,16 @@
                   <Color blue="e2" green="e2" red="e2" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="5">
+                  <Table columnCount="9" rowCount="5">
                     <Column editable="true" title="Nome" type="java.lang.Object"/>
                     <Column editable="true" title="Cpf" type="java.lang.Object"/>
                     <Column editable="true" title="Possui Defici&#xea;ncia" type="java.lang.Object"/>
                     <Column editable="true" title="Tipo defici&#xea;ncia" type="java.lang.Object"/>
-                    <Column editable="false" title="Bairro" type="java.lang.Object"/>
+                    <Column editable="true" title="Nome defici&#xea;ncia" type="java.lang.Object"/>
+                    <Column editable="true" title="Data cadastro" type="java.lang.Object"/>
+                    <Column editable="true" title="Bairro" type="java.lang.Object"/>
+                    <Column editable="true" title="Status" type="java.lang.Object"/>
+                    <Column editable="true" title="Contato" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
