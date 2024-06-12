@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -40,6 +41,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
    // public CpfRecebe  cpfEdit;
     public tela_edicao_cadastro_civil() {
         initComponents();
+        PreencherCampo();
         
     }
     
@@ -49,9 +51,27 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost/projeto_AcessaMais";
             String usuario = "root";
-            String senha = "admin";
+            String senha = "";
             
             
+        private void carregarFoto(){
+        JFileChooser jfc = new JFileChooser();
+        jfc.setDialogTitle("Selecione o arquivo!");
+        jfc.setFileFilter(new FileNameExtensionFilter("Arquivo de imagens (*.PNG, *.JPG, *.JPEG)", "png", "jpg", "jpeg"));
+     int resultado = jfc.showOpenDialog(this);
+     
+     if(resultado == JFileChooser.APPROVE_OPTION){
+         try{
+             fis = new FileInputStream(jfc.getSelectedFile());
+             tamanho = (int) jfc.getSelectedFile().length();
+             Image foto = ImageIO.read(jfc.getSelectedFile()).getScaledInstance(lbl_foto_edit.getWidth(),lbl_foto_edit.getHeight(), Image.SCALE_SMOOTH);
+             lbl_foto_edit.setIcon(new ImageIcon(foto));
+             
+         }catch(Exception e){
+             System.out.print(e);
+         }
+     }
+    }
     public String formatoData(String data) {
         String dateStr = data;//Data no formato DD/MM/YYYY
         DateTimeFormatter formatterInput = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -72,24 +92,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
     
     
     //abrir explorador de arqiuvos
-    private void carregarFoto(){
-        JFileChooser jfc = new JFileChooser();
-        jfc.setDialogTitle("Selecione o arquivo!");
-        jfc.setFileFilter(new FileNameExtensionFilter("Arquivo de imagens (*.PNG, *.JPG, *.JPEG)", "png", "jpg", "jpeg"));
-     int resultado = jfc.showOpenDialog(this);
-     
-     if(resultado == JFileChooser.APPROVE_OPTION){
-         try{
-             fis = new FileInputStream(jfc.getSelectedFile());
-             tamanho = (int) jfc.getSelectedFile().length();
-             Image foto = ImageIO.read(jfc.getSelectedFile()).getScaledInstance(lbl_foto.getWidth(), lbl_foto.getHeight(), Image.SCALE_SMOOTH);
-             lbl_foto.setIcon(new ImageIcon(foto));
-             
-         }catch(Exception e){
-             System.out.print(e);
-         }
-     }
-    }
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,17 +152,17 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         radio_n_b = new javax.swing.JRadioButton();
         radio_n_def = new javax.swing.JRadioButton();
         tx_nome_civil_edit = new javax.swing.JTextField();
-        txt_sobrenome_civil = new javax.swing.JTextField();
-        tx_nome_tutor = new javax.swing.JTextField();
-        txt_nmr_civil = new javax.swing.JFormattedTextField();
+        txt_sobrenome_civil_edit = new javax.swing.JTextField();
+        tx_nome_tutor_edit = new javax.swing.JTextField();
+        txt_nmr_civil_edit = new javax.swing.JFormattedTextField();
         tx_cpf_civil_edit = new javax.swing.JFormattedTextField();
-        txt_cpf_tutor = new javax.swing.JFormattedTextField();
-        txt_data_nasc = new javax.swing.JFormattedTextField();
+        txt_cpf_tutor_edit = new javax.swing.JFormattedTextField();
+        txt_data_nasc_edit = new javax.swing.JFormattedTextField();
         panel_pcd = new javax.swing.JPanel();
         label_tipo_de_def = new javax.swing.JLabel();
-        cb_tipo_def = new javax.swing.JComboBox<>();
+        cb_tipo_def_edit = new javax.swing.JComboBox<>();
         label_nome_def = new javax.swing.JLabel();
-        cb_nome_def = new javax.swing.JComboBox<>();
+        cb_nome_def_edit = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         radio_cuidador = new javax.swing.JRadioButton();
@@ -171,7 +174,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         label_laudo_foto = new javax.swing.JLabel();
         tempo_def = new javax.swing.JFormattedTextField();
         btn_select_img = new javax.swing.JButton();
-        lbl_foto = new javax.swing.JLabel();
+        lbl_foto_edit = new javax.swing.JLabel();
         panel_endereco = new javax.swing.JPanel();
         label_mun = new javax.swing.JLabel();
         label_bairro = new javax.swing.JLabel();
@@ -379,14 +382,14 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
-        tx_nome_tutor.addActionListener(new java.awt.event.ActionListener() {
+        tx_nome_tutor_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tx_nome_tutorActionPerformed(evt);
+                tx_nome_tutor_editActionPerformed(evt);
             }
         });
 
         try {
-            txt_nmr_civil.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-#####")));
+            txt_nmr_civil_edit.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -398,19 +401,19 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         }
 
         try {
-            txt_cpf_tutor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txt_cpf_tutor_edit.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            txt_data_nasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txt_data_nasc_edit.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txt_data_nasc.addActionListener(new java.awt.event.ActionListener() {
+        txt_data_nasc_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_data_nascActionPerformed(evt);
+                txt_data_nasc_editActionPerformed(evt);
             }
         });
 
@@ -426,11 +429,11 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                             .addGroup(panel_identificacaoLayout.createSequentialGroup()
                                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label_data_nasc)
-                                    .addComponent(txt_data_nasc, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txt_data_nasc_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(66, 66, 66)
                                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label_nome_tutor)
-                                    .addComponent(tx_nome_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tx_nome_tutor_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(label_sobrenome)))
                             .addGroup(panel_identificacaoLayout.createSequentialGroup()
                                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -439,12 +442,12 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                                     .addComponent(tx_nome_civil_edit, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                                     .addComponent(tx_cpf_civil_edit, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                                     .addComponent(label_cpf, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_nmr_civil))
+                                    .addComponent(txt_nmr_civil_edit))
                                 .addGap(66, 66, 66)
                                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_cpf_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_cpf_tutor_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(label_cpf_tutor)
-                                    .addComponent(txt_sobrenome_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txt_sobrenome_civil_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(panel_identificacaoLayout.createSequentialGroup()
                         .addGap(402, 402, 402)
                         .addComponent(label_sexo))
@@ -483,7 +486,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                             .addComponent(label_nome))
                         .addGap(3, 3, 3)
                         .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txt_sobrenome_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_sobrenome_civil_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tx_nome_civil_edit))
                         .addGap(12, 12, 12)
                         .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -520,16 +523,16 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                             .addComponent(radio_s_def))))
                 .addGap(1, 1, 1)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(tx_nome_tutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(txt_data_nasc, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(tx_nome_tutor_edit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(txt_data_nasc_edit, javax.swing.GroupLayout.Alignment.LEADING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_cpf_tutor)
                     .addComponent(label_numero_civil))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_nmr_civil, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(txt_cpf_tutor))
+                    .addComponent(txt_nmr_civil_edit, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(txt_cpf_tutor_edit))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -540,11 +543,11 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
 
         label_tipo_de_def.setText("Tipo de deficiência:");
 
-        cb_tipo_def.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Física", "Mental", "Intelectual", "Sensorial", "Multiplas deficiências", "Visual", "Auditiva" }));
+        cb_tipo_def_edit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Física", "Mental", "Intelectual", "Sensorial", "Multiplas deficiências", "Visual", "Auditiva" }));
 
         label_nome_def.setText("Nome da deficiência:");
 
-        cb_nome_def.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralisia Cerebral", "Distrofia Muscular", "Amputação", "Esquizofrenia", "Transtorno Bipolar", "Surdez Profunda", "Perda Auditiva Neurossensorial", "Síndrome de Down", "Retardo Mental", "Austismo", "Glaucoma", "Cegueira", "Baixa visão" }));
+        cb_nome_def_edit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralisia Cerebral", "Distrofia Muscular", "Amputação", "Esquizofrenia", "Transtorno Bipolar", "Surdez Profunda", "Perda Auditiva Neurossensorial", "Síndrome de Down", "Retardo Mental", "Austismo", "Glaucoma", "Cegueira", "Baixa visão" }));
 
         jLabel23.setText("A quanto tempo possui?");
 
@@ -577,7 +580,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
             }
         });
 
-        lbl_foto.setBorder(new javax.swing.border.MatteBorder(null));
+        lbl_foto_edit.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout panel_pcdLayout = new javax.swing.GroupLayout(panel_pcd);
         panel_pcd.setLayout(panel_pcdLayout);
@@ -588,7 +591,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                 .addGroup(panel_pcdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_nivel_autonomia)
                     .addComponent(label_nome_def)
-                    .addComponent(cb_nome_def, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_nome_def_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panel_pcdLayout.createSequentialGroup()
                         .addComponent(radio_nivel_aut)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -596,7 +599,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(radio_nivel_nenhuma))
                     .addGroup(panel_pcdLayout.createSequentialGroup()
-                        .addComponent(cb_tipo_def, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cb_tipo_def_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(71, 71, 71)
                         .addGroup(panel_pcdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tempo_def, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -612,7 +615,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                         .addComponent(jLabel23)))
                 .addGap(135, 135, 135)
                 .addGroup(panel_pcdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_foto, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_foto_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_laudo_foto)
                     .addComponent(btn_select_img))
                 .addContainerGap(91, Short.MAX_VALUE))
@@ -630,14 +633,14 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(btn_select_img)
                     .addGroup(panel_pcdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(tempo_def, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                        .addComponent(cb_tipo_def)))
+                        .addComponent(cb_tipo_def_edit)))
                 .addGap(1, 1, 1)
                 .addGroup(panel_pcdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_pcdLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(label_nome_def)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cb_nome_def, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cb_nome_def_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(label_nivel_autonomia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -656,7 +659,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panel_pcdLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(lbl_foto, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_foto_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -1137,9 +1140,9 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_save_relatorioActionPerformed
 
-    private void tx_nome_tutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nome_tutorActionPerformed
+    private void tx_nome_tutor_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nome_tutor_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tx_nome_tutorActionPerformed
+    }//GEN-LAST:event_tx_nome_tutor_editActionPerformed
 
     private void tx_nome_civil_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nome_civil_editActionPerformed
         // TODO add your handling code here:
@@ -1217,21 +1220,58 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_label_sairMouseClicked
-public void PreencherCampo(String cpfEdit){
+ 
+  
+    
+    public void PreencherCampo(){
     
     
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
+         
+        
+            conexao = DriverManager.getConnection(url, usuario, senha);
+              
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
             String sql = "SELECT * FROM cadastro_civil WHERE cpf_civil = ?";
+                   
+
             PreparedStatement banco = con.prepareStatement(sql);
             
             banco.setString(1, cpfEdit);
             ResultSet resultado = banco.executeQuery();
             
               if (resultado.next()) {
-            tx_nome_civil_edit.setText(resultado.getString("nome_civil"));
-            tx_cpf_civil_edit.setText(resultado.getString("cpf_civil"));
-            System.out.print(cpfEdit);
+             tx_nome_civil_edit.setText(resultado.getString("nome_civil"));
+             txt_sobrenome_civil_edit.setText(resultado.getString("sobrenome_civil"));
+             tx_cpf_civil_edit.setText(resultado.getString("cpf_civil"));
+             txt_data_nasc_edit.setText(resultado.getString("data_nasc"));
+             txt_nmr_civil_edit.setText(resultado.getString("num_cel"));
+             tx_nome_tutor_edit.setText(resultado.getString("nome_tutor_civil"));
+             txt_cpf_tutor_edit.setText(resultado.getString("cpf_tutor_civil"));
+             Blob blob = resultado.getBlob("foto_civil");
+             int blobLength = (int) blob.length();  
+
+         
+            byte[] bytes = blob.getBytes(1, blobLength);
+
+           
+            ImageIcon imageIcon = new ImageIcon(bytes);       
+            lbl_foto_edit.setIcon(imageIcon);
+            
+            String tipo_deficiencia = resultado.getString("tipo_deficiencia");
+             cb_tipo_def_edit.setSelectedItem(tipo_deficiencia);
+             
+            String nome_def = resultado.getString("nome_deficiencia");
+            cb_nome_def_edit.setSelectedItem(nome_def);
+    
+  
+          
+          
+          //  
+         //   txt_data_nasc_edit.setText(resultado.getString("date_nasc"));
+         //   txt_nmr_civil_edit.setText(resultado.getString("num_cel"));
+         //   txt_nmr_civil_edit.setText(resultado.getString("sobrenome_civil"));
+         
             // etc.
         }
 
@@ -1363,23 +1403,23 @@ public void PreencherCampo(String cpfEdit){
             
             
             
-            String ComboBox_TipoDef = (String) cb_tipo_def.getSelectedItem();
-            String ComboBox_NomeDef = (String) cb_nome_def.getSelectedItem();
+            String ComboBox_TipoDef = (String) cb_tipo_def_edit.getSelectedItem();
+            String ComboBox_NomeDef = (String) cb_nome_def_edit.getSelectedItem();
             String ComboBox_Municipio = (String) cb_municipio.getSelectedItem();
             String ComboBox_Bairro = (String) cb_bairro.getSelectedItem();
             String ComboBox_Residencia = (String) cb_tipo_residencia.getSelectedItem();
             String ComboBox_Economica = (String) cb_condEconomica.getSelectedItem();
             String ComboBox_Escola = (String) cb_escolaridade.getSelectedItem();
 
-            String data = txt_data_nasc.getText();
+            String data = txt_data_nasc_edit.getText();
             String datanascimento = formatoData(data);
 
             statement.setString(1, tx_cpf_civil_edit.getText());
             statement.setString(2, tx_nome_civil_edit.getText());
-            statement.setString(3, txt_sobrenome_civil.getText());
+            statement.setString(3, txt_sobrenome_civil_edit.getText());
             statement.setString(4, datanascimento);
-            statement.setString(5, tx_nome_tutor.getText());
-            statement.setString(6, txt_cpf_tutor.getText());
+            statement.setString(5, tx_nome_tutor_edit.getText());
+            statement.setString(6, txt_cpf_tutor_edit.getText());
             statement.setString(7, groupDef);
             statement.setString(8, groupStatus);
             statement.setString(9, groupSexo);     
@@ -1401,7 +1441,7 @@ public void PreencherCampo(String cpfEdit){
             statement.setString(25, groupAcessSaude);   
             statement.setString(26, groupAcess); 
             statement.setString(27, groupAuxilio); 
-            statement.setString(28, txt_nmr_civil.getText());
+            statement.setString(28, txt_nmr_civil_edit.getText());
             
             statement.execute();
                
@@ -1431,9 +1471,9 @@ public void PreencherCampo(String cpfEdit){
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_select_imgActionPerformed
 
-    private void txt_data_nascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_data_nascActionPerformed
+    private void txt_data_nasc_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_data_nasc_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_data_nascActionPerformed
+    }//GEN-LAST:event_txt_data_nasc_editActionPerformed
 
     private void label_dashbordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_dashbordMouseClicked
 
@@ -1498,8 +1538,8 @@ public void PreencherCampo(String cpfEdit){
     private javax.swing.JComboBox<String> cb_condEconomica;
     private javax.swing.JComboBox<String> cb_escolaridade;
     private javax.swing.JComboBox<String> cb_municipio;
-    private javax.swing.JComboBox<String> cb_nome_def;
-    private javax.swing.JComboBox<String> cb_tipo_def;
+    private javax.swing.JComboBox<String> cb_nome_def_edit;
+    private javax.swing.JComboBox<String> cb_tipo_def_edit;
     private javax.swing.JComboBox<String> cb_tipo_residencia;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -1574,7 +1614,7 @@ public void PreencherCampo(String cpfEdit){
     private javax.swing.JLabel label_status;
     private javax.swing.JLabel label_tipo_de_def;
     private javax.swing.JLabel label_tipo_residencia;
-    private javax.swing.JLabel lbl_foto;
+    private javax.swing.JLabel lbl_foto_edit;
     private javax.swing.JPanel menu_decima;
     private javax.swing.JPanel menu_lateral;
     private javax.swing.JTabbedPane panel_cadastro;
@@ -1608,14 +1648,14 @@ public void PreencherCampo(String cpfEdit){
     private javax.swing.JFormattedTextField tempo_def;
     private javax.swing.JFormattedTextField tx_cpf_civil_edit;
     private javax.swing.JTextField tx_nome_civil_edit;
-    private javax.swing.JTextField tx_nome_tutor;
+    private javax.swing.JTextField tx_nome_tutor_edit;
     private javax.swing.JTextField tx_numero_casa;
     private javax.swing.JTextField tx_relatorio;
     private javax.swing.JTextField tx_rua;
     private javax.swing.JFormattedTextField txt_cep_civil;
-    private javax.swing.JFormattedTextField txt_cpf_tutor;
-    private javax.swing.JFormattedTextField txt_data_nasc;
-    private javax.swing.JFormattedTextField txt_nmr_civil;
-    private javax.swing.JTextField txt_sobrenome_civil;
+    private javax.swing.JFormattedTextField txt_cpf_tutor_edit;
+    private javax.swing.JFormattedTextField txt_data_nasc_edit;
+    private javax.swing.JFormattedTextField txt_nmr_civil_edit;
+    private javax.swing.JTextField txt_sobrenome_civil_edit;
     // End of variables declaration//GEN-END:variables
 }

@@ -344,12 +344,12 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="label_data_nasc" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txt_data_nasc" min="-2" pref="262" max="-2" attributes="0"/>
+                                              <Component id="txt_data_nasc_edit" min="-2" pref="262" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="label_nome_tutor" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tx_nome_tutor" min="-2" pref="262" max="-2" attributes="0"/>
+                                              <Component id="tx_nome_tutor_edit" min="-2" pref="262" max="-2" attributes="0"/>
                                               <Component id="label_sobrenome" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -360,13 +360,13 @@
                                               <Component id="tx_nome_civil_edit" alignment="1" pref="262" max="32767" attributes="0"/>
                                               <Component id="tx_cpf_civil_edit" alignment="1" pref="262" max="32767" attributes="0"/>
                                               <Component id="label_cpf" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txt_nmr_civil" max="32767" attributes="0"/>
+                                              <Component id="txt_nmr_civil_edit" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txt_cpf_tutor" min="-2" pref="262" max="-2" attributes="0"/>
+                                              <Component id="txt_cpf_tutor_edit" min="-2" pref="262" max="-2" attributes="0"/>
                                               <Component id="label_cpf_tutor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txt_sobrenome_civil" alignment="0" min="-2" pref="262" max="-2" attributes="0"/>
+                                              <Component id="txt_sobrenome_civil_edit" alignment="0" min="-2" pref="262" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -420,7 +420,7 @@
                                   </Group>
                                   <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="txt_sobrenome_civil" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="txt_sobrenome_civil_edit" min="-2" pref="36" max="-2" attributes="0"/>
                                       <Component id="tx_nome_civil_edit" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -471,8 +471,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="tx_nome_tutor" alignment="0" pref="36" max="32767" attributes="0"/>
-                              <Component id="txt_data_nasc" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tx_nome_tutor_edit" alignment="0" pref="36" max="32767" attributes="0"/>
+                              <Component id="txt_data_nasc_edit" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -481,8 +481,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txt_nmr_civil" pref="36" max="32767" attributes="0"/>
-                              <Component id="txt_cpf_tutor" max="32767" attributes="0"/>
+                              <Component id="txt_nmr_civil_edit" pref="36" max="32767" attributes="0"/>
+                              <Component id="txt_cpf_tutor_edit" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="39" max="32767" attributes="0"/>
                       </Group>
@@ -589,14 +589,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tx_nome_civil_editActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_sobrenome_civil">
+                <Component class="javax.swing.JTextField" name="txt_sobrenome_civil_edit">
                 </Component>
-                <Component class="javax.swing.JTextField" name="tx_nome_tutor">
+                <Component class="javax.swing.JTextField" name="tx_nome_tutor_edit">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tx_nome_tutorActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tx_nome_tutor_editActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txt_nmr_civil">
+                <Component class="javax.swing.JFormattedTextField" name="txt_nmr_civil_edit">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="(##)####-#####" subtype="-1" type="5"/>
@@ -610,21 +610,21 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txt_cpf_tutor">
+                <Component class="javax.swing.JFormattedTextField" name="txt_cpf_tutor_edit">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="###.###.###-##" subtype="-1" type="5"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="txt_data_nasc">
+                <Component class="javax.swing.JFormattedTextField" name="txt_data_nasc_edit">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="##/##/####" subtype="-1" type="5"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_data_nascActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_data_nasc_editActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -652,7 +652,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="label_nivel_autonomia" min="-2" max="-2" attributes="0"/>
                               <Component id="label_nome_def" min="-2" max="-2" attributes="0"/>
-                              <Component id="cb_nome_def" min="-2" pref="229" max="-2" attributes="0"/>
+                              <Component id="cb_nome_def_edit" min="-2" pref="229" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="radio_nivel_aut" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -661,7 +661,7 @@
                                   <Component id="radio_nivel_nenhuma" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="cb_tipo_def" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <Component id="cb_tipo_def_edit" min="-2" pref="235" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="tempo_def" min="-2" pref="140" max="-2" attributes="0"/>
@@ -683,7 +683,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbl_foto" min="-2" pref="209" max="-2" attributes="0"/>
+                              <Component id="lbl_foto_edit" min="-2" pref="209" max="-2" attributes="0"/>
                               <Component id="label_laudo_foto" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_select_img" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -705,7 +705,7 @@
                               <Component id="btn_select_img" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="tempo_def" pref="39" max="32767" attributes="0"/>
-                                  <Component id="cb_tipo_def" max="32767" attributes="0"/>
+                                  <Component id="cb_tipo_def_edit" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
@@ -714,7 +714,7 @@
                                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                   <Component id="label_nome_def" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="cb_nome_def" min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Component id="cb_nome_def_edit" min="-2" pref="39" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="label_nivel_autonomia" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -737,7 +737,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="lbl_foto" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Component id="lbl_foto_edit" min="-2" pref="195" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -751,7 +751,7 @@
                     <Property name="text" type="java.lang.String" value="Tipo de defici&#xea;ncia:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="cb_tipo_def">
+                <Component class="javax.swing.JComboBox" name="cb_tipo_def_edit">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="7">
@@ -774,7 +774,7 @@
                     <Property name="text" type="java.lang.String" value="Nome da defici&#xea;ncia:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="cb_nome_def">
+                <Component class="javax.swing.JComboBox" name="cb_nome_def_edit">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="13">
@@ -858,7 +858,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_select_imgActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lbl_foto">
+                <Component class="javax.swing.JLabel" name="lbl_foto_edit">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">

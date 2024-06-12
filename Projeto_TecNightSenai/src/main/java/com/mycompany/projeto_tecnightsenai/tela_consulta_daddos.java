@@ -25,6 +25,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
   
     public tela_consulta_daddos() {
         initComponents();
+          this.PopularJTable("SELECT * FROM cadastro_civil");
        
     }
 
@@ -33,7 +34,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     public void PopularJTable(String sql){
         
         try {
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
             banco.execute();
             ResultSet resultado = banco.executeQuery(sql);
@@ -421,7 +422,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
 
     private void btn_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisarActionPerformed
 
-      this.PopularJTable("SELECT * FROM cadastro_civil");
+    
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_pesquisarActionPerformed
 
@@ -434,6 +435,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     tela_consulta_daddos.this.dispose();
     tela_edicao_cadastro_civil telaEdicao = new  tela_edicao_cadastro_civil();
     
+     
    // telaEdicao.preencherCampos(cpf_civil);
     telaEdicao.setVisible(true);
 

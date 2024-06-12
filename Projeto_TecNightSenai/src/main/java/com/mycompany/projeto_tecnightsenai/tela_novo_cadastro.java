@@ -71,7 +71,7 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 380, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel6.setText("Senha provisoria:");
+        jLabel6.setText("Senha:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 470, -1, -1));
 
         cb_tipo_cadastro_novo_fun.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Funcionário" }));
@@ -143,8 +143,8 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 1060, 530));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\lsnunes\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\bacgorund_novo_user.png")); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, 0, 1850, 870));
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\bacgorund_novo_user.png")); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, 0, 1670, 870));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,7 +160,7 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost/projeto_AcessaMais";
             String usuario = "root";
-            String senha = "admin";
+            String senha = "";
             
             conexao = DriverManager.getConnection(url, usuario,senha);
             

@@ -38,7 +38,7 @@ public class tela_dashbord extends javax.swing.JFrame {
 
         String url = "jdbc:mysql://localhost/projeto_AcessaMais";
         String usuario = "root";
-        String senha = "admin";
+        String senha = "";
 
         
     private void PanelDashbordPcd(){
@@ -188,6 +188,8 @@ public class tela_dashbord extends javax.swing.JFrame {
         btn_atualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1433, 877));
+        setMinimumSize(new java.awt.Dimension(1433, 877));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
