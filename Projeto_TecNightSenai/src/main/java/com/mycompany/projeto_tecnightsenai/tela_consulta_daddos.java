@@ -431,8 +431,8 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
 
     private void tbl_usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_usersMouseClicked
 
-    int selectedRow = tbl_users.getSelectedRow();
-    cpfEdit = (String) model.getValueAt(selectedRow, 1); // Supondo que o CPF esteja na segunda coluna
+    int linha = tbl_users.getSelectedRow();
+    cpfEdit = tbl_users.getValueAt(linha, 1).toString(); // Supondo que o CPF esteja na segunda coluna
 
     tela_consulta_daddos.this.dispose();
     tela_edicao_cadastro_civil telaEdicao = new  tela_edicao_cadastro_civil();
