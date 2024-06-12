@@ -4,6 +4,7 @@
  */
 package com.mycompany.projeto_tecnightsenai;
 
+import static com.mycompany.projeto_tecnightsenai.tela_consulta_daddos.cpfEdit;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,15 +31,18 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author lnunes
  */
-public class tela_cadastro_civil extends javax.swing.JFrame {
+public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form atividade_01_19
      */
-    public tela_cadastro_civil() {
+   // public CpfRecebe  cpfEdit;
+    public tela_edicao_cadastro_civil() {
         initComponents();
         
     }
+    
     
             Connection conexao = null;
             PreparedStatement statement = null;
@@ -144,11 +148,11 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         radio_masc = new javax.swing.JRadioButton();
         radio_n_b = new javax.swing.JRadioButton();
         radio_n_def = new javax.swing.JRadioButton();
-        tx_nome_civil = new javax.swing.JTextField();
+        tx_nome_civil_edit = new javax.swing.JTextField();
         txt_sobrenome_civil = new javax.swing.JTextField();
         tx_nome_tutor = new javax.swing.JTextField();
         txt_nmr_civil = new javax.swing.JFormattedTextField();
-        txt_cpf_civil = new javax.swing.JFormattedTextField();
+        tx_cpf_civil_edit = new javax.swing.JFormattedTextField();
         txt_cpf_tutor = new javax.swing.JFormattedTextField();
         txt_data_nasc = new javax.swing.JFormattedTextField();
         panel_pcd = new javax.swing.JPanel();
@@ -369,9 +373,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         radio_n_def.setText("Não");
 
-        tx_nome_civil.addActionListener(new java.awt.event.ActionListener() {
+        tx_nome_civil_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tx_nome_civilActionPerformed(evt);
+                tx_nome_civil_editActionPerformed(evt);
             }
         });
 
@@ -388,7 +392,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         }
 
         try {
-            txt_cpf_civil.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            tx_cpf_civil_edit.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -432,8 +436,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                                 .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(label_numero_civil, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label_nome, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tx_nome_civil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-                                    .addComponent(txt_cpf_civil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                                    .addComponent(tx_nome_civil_edit, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                                    .addComponent(tx_cpf_civil_edit, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                                     .addComponent(label_cpf, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txt_nmr_civil))
                                 .addGap(66, 66, 66)
@@ -480,7 +484,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txt_sobrenome_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tx_nome_civil))
+                            .addComponent(tx_nome_civil_edit))
                         .addGap(12, 12, 12)
                         .addGroup(panel_identificacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_identificacaoLayout.createSequentialGroup()
@@ -503,7 +507,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                                             .addComponent(radio_fem)
                                             .addComponent(radio_masc)
                                             .addComponent(radio_n_b)
-                                            .addComponent(txt_cpf_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(tx_cpf_civil_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(18, 18, 18)
                                 .addComponent(label_nome_tutor)
                                 .addGap(17, 17, 17))))
@@ -909,7 +913,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         });
 
         label_cadastro.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        label_cadastro.setText("Cadastro de civil");
+        label_cadastro.setText("Edição cadastro de civil");
         label_cadastro.setMaximumSize(new java.awt.Dimension(200, 47));
         label_cadastro.setMinimumSize(new java.awt.Dimension(100, 16));
 
@@ -928,8 +932,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 510, Short.MAX_VALUE)
+                .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 442, Short.MAX_VALUE)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -1126,7 +1130,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
     private void btn_save_relatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_relatorioActionPerformed
 
-        tela_cadastro_civil.this.dispose();
+        tela_edicao_cadastro_civil.this.dispose();
         tela_consulta_daddos objeto1 = new tela_consulta_daddos();
         objeto1.setVisible(true);
 
@@ -1137,9 +1141,9 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tx_nome_tutorActionPerformed
 
-    private void tx_nome_civilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nome_civilActionPerformed
+    private void tx_nome_civil_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nome_civil_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tx_nome_civilActionPerformed
+    }//GEN-LAST:event_tx_nome_civil_editActionPerformed
 
     private void radio_s_defActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_s_defActionPerformed
         // TODO add your handling code here:
@@ -1163,9 +1167,11 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(null, "Arquivo exportado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
-            Logger.getLogger(tela_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(tela_edicao_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Erro ao exportar o arquivo!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
+       
+        // TODO add your handling code here:
        
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_4ActionPerformed
@@ -1191,15 +1197,15 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
     private void tela_cadastro_civilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tela_cadastro_civilMouseClicked
 
-        tela_cadastro_civil.this.dispose();
-        tela_cadastro_civil objeto = new tela_cadastro_civil();
+        tela_edicao_cadastro_civil.this.dispose();
+        tela_edicao_cadastro_civil objeto = new tela_edicao_cadastro_civil();
         objeto.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_tela_cadastro_civilMouseClicked
 
     private void label_img_consulta_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_img_consulta_brancoMouseClicked
 
-        tela_cadastro_civil.this.dispose();
+        tela_edicao_cadastro_civil.this.dispose();
         tela_consulta_daddos objeto = new tela_consulta_daddos();
         objeto.setVisible(true);
         // TODO add your handling code here:
@@ -1211,15 +1217,36 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_label_sairMouseClicked
+public void PreencherCampo(String cpf){
+    
+    
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
+            String sql = "SELECT * FROM cadastro_civil WHERE cpf_civil = ?";
+            PreparedStatement banco = con.prepareStatement(sql);
+            
+            banco.setString(1, cpfEdit);
+            ResultSet resultado = banco.executeQuery();
+            
+              if (resultado.next()) {
+            tx_nome_civil_edit.setText(resultado.getString("nome_civil"));
+            tx_cpf_civil_edit.setText(resultado.getString("cpf_civil"));
+            // etc.
+        }
 
+        banco.close();
+        con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(tela_edicao_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
 
-        tela_cadastro_civil.this.dispose();
+        tela_edicao_cadastro_civil.this.dispose();
         tela_dashbord objeto2 = new tela_dashbord();
         objeto2.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
-
 
     
     private void CpfExiste(){
@@ -1230,7 +1257,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             
             String sqlCheck = "SELECT cpf_civil FROM cadastro_civil WHERE cpf_civil = ?";
             statement = conexao.prepareStatement(sqlCheck);
-            statement.setString(1, txt_cpf_civil.getText());
+            statement.setString(1, tx_cpf_civil_edit.getText());
             ResultSet rs = statement.executeQuery();
             
             if (rs.next()) {
@@ -1239,7 +1266,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 return;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(tela_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(tela_edicao_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     private void btn_save_estruturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_save_estruturaActionPerformed
@@ -1346,8 +1373,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             String data = txt_data_nasc.getText();
             String datanascimento = formatoData(data);
 
-            statement.setString(1, txt_cpf_civil.getText());
-            statement.setString(2, tx_nome_civil.getText());
+            statement.setString(1, tx_cpf_civil_edit.getText());
+            statement.setString(2, tx_nome_civil_edit.getText());
             statement.setString(3, txt_sobrenome_civil.getText());
             statement.setString(4, datanascimento);
             statement.setString(5, tx_nome_tutor.getText());
@@ -1380,13 +1407,13 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
              statement.close();
              JOptionPane.showMessageDialog(null, "CIVIL CADASTRADO COM SUCESSO");
              
-                tela_cadastro_civil.this.dispose();
+                tela_edicao_cadastro_civil.this.dispose();
                 tela_consulta_daddos objeto = new tela_consulta_daddos();
                 objeto.setVisible(true);
           
             // TODO add your handling code here:
         } catch (SQLException ex) {
-            Logger.getLogger(tela_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(tela_edicao_cadastro_civil.class.getName()).log(Level.SEVERE, null, ex);
         }
         
          
@@ -1409,7 +1436,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
     private void label_dashbordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_dashbordMouseClicked
 
-        tela_cadastro_civil.this.dispose();
+        tela_edicao_cadastro_civil.this.dispose();
         tela_dashbord objeto2 = new tela_dashbord();
         objeto2.setVisible(true);
 
@@ -1434,14 +1461,18 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tela_cadastro_civil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_edicao_cadastro_civil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tela_cadastro_civil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_edicao_cadastro_civil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tela_cadastro_civil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_edicao_cadastro_civil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tela_cadastro_civil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_edicao_cadastro_civil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -1450,7 +1481,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tela_cadastro_civil().setVisible(true);
+                new tela_edicao_cadastro_civil().setVisible(true);
             }
         });
     }
@@ -1574,13 +1605,13 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JRadioButton radio_vida_status;
     private javax.swing.JLabel tela_cadastro_civil;
     private javax.swing.JFormattedTextField tempo_def;
-    private javax.swing.JTextField tx_nome_civil;
+    private javax.swing.JFormattedTextField tx_cpf_civil_edit;
+    private javax.swing.JTextField tx_nome_civil_edit;
     private javax.swing.JTextField tx_nome_tutor;
     private javax.swing.JTextField tx_numero_casa;
     private javax.swing.JTextField tx_relatorio;
     private javax.swing.JTextField tx_rua;
     private javax.swing.JFormattedTextField txt_cep_civil;
-    private javax.swing.JFormattedTextField txt_cpf_civil;
     private javax.swing.JFormattedTextField txt_cpf_tutor;
     private javax.swing.JFormattedTextField txt_data_nasc;
     private javax.swing.JFormattedTextField txt_nmr_civil;

@@ -17,14 +17,18 @@ import javax.swing.table.DefaultTableModel;
  * @author lnunes
  */
 public class tela_consulta_daddos extends javax.swing.JFrame {
-
+  private DefaultTableModel model;
     /**
      * Creates new form atividade_02
      */
+  public static String cpfEdit;
+  
     public tela_consulta_daddos() {
         initComponents();
+       
     }
 
+  
     
     public void PopularJTable(String sql){
         
@@ -94,7 +98,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         btn_pesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1711, 954));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -131,6 +134,11 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
             }
         });
         tbl_users.setToolTipText("");
+        tbl_users.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_usersMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbl_users);
 
         menu_decima.setBackground(new java.awt.Color(255, 255, 255));
@@ -419,6 +427,21 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
       this.PopularJTable("SELECT * FROM cadastro_civil");
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_pesquisarActionPerformed
+
+
+    private void tbl_usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_usersMouseClicked
+
+    int selectedRow = tbl_users.getSelectedRow();
+    cpfEdit = (String) model.getValueAt(selectedRow, 1); // Supondo que o CPF esteja na segunda coluna
+
+    tela_consulta_daddos.this.dispose();
+    tela_edicao_cadastro_civil telaEdicao = new  tela_edicao_cadastro_civil();
+    
+   // telaEdicao.preencherCampos(cpf_civil);
+    telaEdicao.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbl_usersMouseClicked
 
     /**
      * @param args the command line arguments
