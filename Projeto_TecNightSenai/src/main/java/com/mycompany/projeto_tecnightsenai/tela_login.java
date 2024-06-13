@@ -184,7 +184,7 @@ public class tela_login extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_esqueci_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_esqueci_senhaActionPerformed
-
+//hello
          try {
              
              conexao = DriverManager.getConnection(url, usuario, senha);
