@@ -4,11 +4,17 @@
  */
 package com.mycompany.projeto_tecnightsenai;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
@@ -25,6 +31,12 @@ public class tela_login extends javax.swing.JFrame {
         initComponents();
     }
 
+            Connection conexao = null;
+            PreparedStatement statement = null;
+            
+            String url = "jdbc:mysql://localhost/projeto_AcessaMais";
+            String usuario = "root";
+            String senha = "";
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,11 +53,15 @@ public class tela_login extends javax.swing.JFrame {
         txt_login_senha = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         btn_login = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_esqueci_senha = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1433, 877));
+        setMinimumSize(new java.awt.Dimension(1433, 877));
+        setPreferredSize(new java.awt.Dimension(1433, 877));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -55,14 +71,14 @@ public class tela_login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("E-mail:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, -1, -1));
-        getContentPane().add(txt_login_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 350, 34));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, -1, -1));
+        getContentPane().add(txt_login_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 350, 34));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Senha:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, -1, -1));
-        getContentPane().add(txt_login_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, 350, 34));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, -1, -1));
+        getContentPane().add(txt_login_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 350, 34));
 
         jButton1.setBackground(new java.awt.Color(143, 198, 144));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -73,7 +89,7 @@ public class tela_login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 20, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 40, -1, -1));
 
         btn_login.setBackground(new java.awt.Color(27, 202, 63));
         btn_login.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -84,25 +100,33 @@ public class tela_login extends javax.swing.JFrame {
                 btn_loginActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 630, -1, -1));
+        getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 580, -1, -1));
 
-        jButton2.setText("Esqueci minha senha");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 700, -1, -1));
+        btn_esqueci_senha.setText("Esqueci minha senha");
+        btn_esqueci_senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_esqueci_senhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_esqueci_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 660, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lsnunes\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(2000, 1500));
         jLabel2.setMinimumSize(new java.awt.Dimension(2000, 1500));
         jLabel2.setPreferredSize(new java.awt.Dimension(2000, 1500));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 960));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, -40, 1610, 960));
 
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 6, 1520, 800));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1530, 880));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        
+        
+      
       tela_login.this.dispose();
       tela_novo_cadastro objeto2 = new tela_novo_cadastro();
       objeto2.setVisible(true);
@@ -116,7 +140,7 @@ public class tela_login extends javax.swing.JFrame {
             
             
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","admin");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
             
          
             
@@ -158,6 +182,63 @@ public class tela_login extends javax.swing.JFrame {
           //  objeto2.setVisible(true);
                  // TODO add your handling code here:
     }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void btn_esqueci_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_esqueci_senhaActionPerformed
+
+         try {
+             
+             conexao = DriverManager.getConnection(url, usuario, senha);
+             
+             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
+             
+             Random rand = new Random();
+             String codigo = String.format("%05d", rand.nextInt(100000));
+             
+             String caminho = System.getProperty("user.home") + "/Desktop/codigo.txt";
+             try (FileWriter writer = new FileWriter(caminho)) {
+                 writer.write(codigo);
+                 writer.flush();  
+                 JOptionPane.showMessageDialog(this, "Verifique a área de trabalho e insira o código gerado.");
+                 
+                 
+                 String codigoInserido = JOptionPane.showInputDialog(this, "Insira o código:");
+                 String email = JOptionPane.showInputDialog(this, "Digite o seu e-mail:");
+                 String novaSenha = JOptionPane.showInputDialog(this, "Insira a nova senha:");
+                 
+                 
+                 if (codigo.equals(codigoInserido)) {
+                     
+                     String sql = "UPDATE usuario SET senha_usuario = ? WHERE email_usuario = ?";
+                     PreparedStatement banco = con.prepareStatement(sql);
+                     banco.setString(1, novaSenha);
+                    
+                     banco.setString(2, email);
+                     banco.executeUpdate();
+                     JOptionPane.showMessageDialog(this, "Senha atualizada com sucesso.");
+                 } else {
+                     JOptionPane.showMessageDialog(this, "Código incorreto.");
+                 }
+             } catch (IOException e) {
+                 JOptionPane.showMessageDialog(this, "Erro ao gerar seu código.");
+             }
+             
+             
+             
+             
+             // TODO add your handling code here:
+         } catch (SQLException ex) {
+             Logger.getLogger(tela_login.class.getName()).log(Level.SEVERE, null,ex);
+         }
+
+    
+
+
+
+    
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_esqueci_senhaActionPerformed
     //}
     /**
      * @param args the command line arguments
@@ -195,9 +276,9 @@ public class tela_login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_esqueci_senha;
     private javax.swing.JButton btn_login;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
