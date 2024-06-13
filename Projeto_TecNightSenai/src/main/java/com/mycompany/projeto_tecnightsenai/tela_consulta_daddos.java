@@ -34,7 +34,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     public void PopularJTable(String sql){
         
         try {
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
             banco.execute();
             ResultSet resultado = banco.executeQuery(sql);
@@ -101,7 +101,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btn_pesquisa = new javax.swing.JButton();
-        btn_pesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -308,13 +307,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
             }
         });
 
-        btn_pesquisar.setText("Pesquisar");
-        btn_pesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_pesquisarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -329,10 +321,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_pesquisar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_add_civil)))
+                            .addComponent(btn_add_civil, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(0, 138, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -342,9 +331,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_add_civil)
-                            .addComponent(btn_pesquisar))
+                        .addComponent(btn_add_civil)
                         .addGap(43, 43, 43)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 89, Short.MAX_VALUE))
@@ -413,18 +400,12 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
 
     private void btn_pesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisaActionPerformed
 
-                        this.PopularJTable("SELECT * FROM cadastro_civil");
+               
                     
                     
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_pesquisaActionPerformed
-
-    private void btn_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisarActionPerformed
-
-    
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_pesquisarActionPerformed
 
 
     private void tbl_usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_usersMouseClicked
@@ -486,7 +467,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add_civil;
     private javax.swing.JButton btn_pesquisa;
-    private javax.swing.JButton btn_pesquisar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

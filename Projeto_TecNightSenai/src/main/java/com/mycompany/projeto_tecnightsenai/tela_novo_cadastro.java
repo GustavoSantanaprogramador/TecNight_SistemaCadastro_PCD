@@ -160,7 +160,7 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost/projeto_AcessaMais";
             String usuario = "root";
-            String senha = "";
+            String senha = "admin";
             
             conexao = DriverManager.getConnection(url, usuario,senha);
             

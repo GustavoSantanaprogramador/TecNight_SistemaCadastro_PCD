@@ -36,7 +36,9 @@ public class tela_login extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost/projeto_AcessaMais";
             String usuario = "root";
-            String senha = "";
+            String senha = "admin";
+            
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,9 +60,7 @@ public class tela_login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1433, 877));
         setMinimumSize(new java.awt.Dimension(1433, 877));
-        setPreferredSize(new java.awt.Dimension(1433, 877));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -72,13 +72,13 @@ public class tela_login extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("E-mail:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, -1, -1));
-        getContentPane().add(txt_login_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 350, 34));
+        getContentPane().add(txt_login_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 390, 34));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Senha:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, -1, -1));
-        getContentPane().add(txt_login_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 350, 34));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, -1, -1));
+        getContentPane().add(txt_login_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, 390, 34));
 
         jButton1.setBackground(new java.awt.Color(143, 198, 144));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -89,7 +89,7 @@ public class tela_login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 40, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
         btn_login.setBackground(new java.awt.Color(27, 202, 63));
         btn_login.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -110,7 +110,7 @@ public class tela_login extends javax.swing.JFrame {
         });
         getContentPane().add(btn_esqueci_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 660, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lsnunes\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(2000, 1500));
         jLabel2.setMinimumSize(new java.awt.Dimension(2000, 1500));
         jLabel2.setPreferredSize(new java.awt.Dimension(2000, 1500));
@@ -140,7 +140,7 @@ public class tela_login extends javax.swing.JFrame {
             
             
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","admin");
             
          
             
@@ -156,6 +156,7 @@ public class tela_login extends javax.swing.JFrame {
             ResultSet rs = pstmt.executeQuery();
 
             if(rs.next()){
+              
                 dispose();
               tela_cadastro_civil cad = new tela_cadastro_civil();
               cad.show();
@@ -189,7 +190,7 @@ public class tela_login extends javax.swing.JFrame {
              
              conexao = DriverManager.getConnection(url, usuario, senha);
              
-             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
+             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
              
              Random rand = new Random();
              String codigo = String.format("%05d", rand.nextInt(100000));

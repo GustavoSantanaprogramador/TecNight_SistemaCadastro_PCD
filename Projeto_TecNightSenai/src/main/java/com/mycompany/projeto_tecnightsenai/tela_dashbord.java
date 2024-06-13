@@ -38,7 +38,7 @@ public class tela_dashbord extends javax.swing.JFrame {
 
         String url = "jdbc:mysql://localhost/projeto_AcessaMais";
         String usuario = "root";
-        String senha = "";
+        String senha = "admin";
 
         
     private void PanelDashbordPcd(){

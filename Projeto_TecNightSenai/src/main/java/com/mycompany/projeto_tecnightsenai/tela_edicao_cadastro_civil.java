@@ -51,7 +51,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost/projeto_AcessaMais";
             String usuario = "root";
-            String senha = "";
+            String senha = "admin";
             
             
         private void carregarFoto(){
