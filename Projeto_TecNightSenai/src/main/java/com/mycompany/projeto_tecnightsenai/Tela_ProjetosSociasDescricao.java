@@ -4,6 +4,7 @@
  */
 package com.mycompany.projeto_tecnightsenai;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -56,6 +57,8 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel11 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -165,8 +168,8 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,21 +185,32 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("SOBRE");
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                .addGap(31, 31, 31))
         );
 
         jPanel11.setBackground(new java.awt.Color(253, 253, 253));
@@ -219,8 +233,8 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(88, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,8 +242,8 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -361,9 +375,18 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
             Date data = new Date();
             String localSalvo = "";
             
-            nomeArquivo = JOptionPane.showInputDialog(null, "Informe um nome para o aquivo: ");
-            localSalvo = JOptionPane.showInputDialog(null,"Informo um lugar para salvar o arquivo: ");
             
+            // salvar arquivo
+            String desktopPath = System.getProperty("user.home") + "/Desktop/";
+            File salvarArquivo = new File(desktopPath);
+            
+            
+            nomeArquivo = JOptionPane.showInputDialog(null, "Informe um nome para o aquivo: ");
+            String filePath = desktopPath + "RELATORIO.txt";
+            
+           //localSalvo = JOptionPane.showInputDialog(null,"Informo um lugar para salvar o arquivo: ");
+             JOptionPane.showMessageDialog(null,"Aquivo salvo com sucesso! ");
+           
             FileWriter arquivo = new FileWriter(localSalvo + nomeArquivo + ".txt");
             PrintWriter escrever = new PrintWriter(arquivo);
             
@@ -481,7 +504,9 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextAreaMissao;
     private javax.swing.JTextField jTextFieldPara;
     // End of variables declaration//GEN-END:variables
