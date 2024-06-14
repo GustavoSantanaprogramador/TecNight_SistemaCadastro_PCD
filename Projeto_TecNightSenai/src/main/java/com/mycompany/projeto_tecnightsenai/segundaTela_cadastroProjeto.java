@@ -226,11 +226,11 @@ public class segundaTela_cadastroProjeto extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost:3306/projeto_AcessaMais";
             String usuario = "root";
-            String senha = "";
+            String senha = "admin";
             
             conexao= DriverManager.getConnection(url,usuario,senha);
             
-            String sql = "INSERT INTO missao_projeto (missao_projetoTela) VALUES (?)";
+            String sql = "INSERT INTO cadastro_projeto (missao_projeto, sobre_projeto) VALUES (?,?)";
             statement = conexao.prepareStatement(sql);
             
             statement.setString(1,jTextAreaMissao.getText());
