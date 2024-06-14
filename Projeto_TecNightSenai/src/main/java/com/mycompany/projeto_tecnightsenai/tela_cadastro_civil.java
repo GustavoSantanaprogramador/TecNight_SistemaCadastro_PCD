@@ -904,7 +904,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         });
 
         menu_decima.setBackground(new java.awt.Color(255, 255, 255));
-        menu_decima.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray));
         menu_decima.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 menu_decimaAncestorAdded(evt);
@@ -1098,7 +1097,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(btn_2Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGap(95, 95, 95)
                         .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
                             .addGroup(btn_2Layout.createSequentialGroup()
@@ -1126,7 +1125,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_save_relatorio)
                     .addComponent(btn_4))
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
             .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 

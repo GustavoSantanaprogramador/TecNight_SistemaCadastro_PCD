@@ -78,7 +78,7 @@ public class RecomendacoesProjeto_Tela extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(245, 245, 245));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(19004, 960));
 
         jPanel5.setBackground(new java.awt.Color(0, 80, 0));
