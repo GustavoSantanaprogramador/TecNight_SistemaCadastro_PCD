@@ -34,7 +34,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     public void PopularJTable(String sql){
         
         try {
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
             banco.execute();
             ResultSet resultado = banco.executeQuery(sql);

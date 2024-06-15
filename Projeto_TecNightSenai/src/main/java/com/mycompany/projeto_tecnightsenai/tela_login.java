@@ -36,7 +36,7 @@ public class tela_login extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost/projeto_AcessaMais";
             String usuario = "root";
-            String senha = "admin";
+            String senha = "";
             
   
     /**
@@ -89,7 +89,7 @@ public class tela_login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 20, -1, -1));
 
         btn_login.setBackground(new java.awt.Color(27, 202, 63));
         btn_login.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -110,7 +110,7 @@ public class tela_login extends javax.swing.JFrame {
         });
         getContentPane().add(btn_esqueci_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 660, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lsnunes\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(2000, 1500));
         jLabel2.setMinimumSize(new java.awt.Dimension(2000, 1500));
         jLabel2.setPreferredSize(new java.awt.Dimension(2000, 1500));
@@ -140,7 +140,7 @@ public class tela_login extends javax.swing.JFrame {
             
             
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","admin");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
             
          
             
@@ -190,7 +190,7 @@ public class tela_login extends javax.swing.JFrame {
              
              conexao = DriverManager.getConnection(url, usuario, senha);
              
-             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
+             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
              
              Random rand = new Random();
              String codigo = String.format("%05d", rand.nextInt(100000));
