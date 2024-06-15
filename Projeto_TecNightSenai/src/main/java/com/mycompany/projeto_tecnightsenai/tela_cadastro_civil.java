@@ -211,6 +211,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         label_nome_fun = new javax.swing.JLabel();
+        label_icon_cad_civil = new javax.swing.JLabel();
         menu_lateral = new javax.swing.JPanel();
         label_prefeitura = new javax.swing.JLabel();
         label_cadastro_branco = new javax.swing.JLabel();
@@ -878,10 +879,10 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_estruturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radio_s_recebe)
                     .addGroup(panel_estruturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cb_escolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(radio_n_recebe)))
+                        .addComponent(radio_s_recebe)
+                        .addComponent(radio_n_recebe))
+                    .addComponent(cb_escolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btn_save_estrutura)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -924,20 +925,27 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         label_nome_fun.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         label_nome_fun.setText("Fulano");
 
+        label_icon_cad_civil.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_cadastrocivil_preto.png")); // NOI18N
+
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
         menu_decimaLayout.setHorizontalGroup(
             menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_decimaLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menu_decimaLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(label_icon_cad_civil)))
                 .addGap(18, 18, 18)
-                .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 746, Short.MAX_VALUE)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(menu_decimaLayout.createSequentialGroup()
+                        .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 746, Short.MAX_VALUE)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(label_nome_fun)
@@ -948,19 +956,23 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
         menu_decimaLayout.setVerticalGroup(
             menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_decimaLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(10, 10, 10)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel14)
-                        .addComponent(jLabel5))
+                    .addGroup(menu_decimaLayout.createSequentialGroup()
+                        .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_icon_cad_civil)
+                            .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(menu_decimaLayout.createSequentialGroup()
                         .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(label_nome_fun))
                         .addGap(14, 14, 14)
                         .addComponent(jLabel6)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
@@ -1069,7 +1081,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
                 .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(btn_2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(btn_2Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
@@ -1509,6 +1521,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JLabel label_data_nasc;
     private javax.swing.JLabel label_deficiencia;
     private javax.swing.JLabel label_escolaridade;
+    private javax.swing.JLabel label_icon_cad_civil;
     private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_isaude;
     private javax.swing.JLabel label_laudo_foto;

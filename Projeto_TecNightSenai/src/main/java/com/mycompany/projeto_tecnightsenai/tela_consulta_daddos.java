@@ -123,6 +123,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         label_img_consulta_preto = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        label_icon_consulta_dados = new javax.swing.JLabel();
         btn_pesquisa = new javax.swing.JButton();
         menu_lateral = new javax.swing.JPanel();
         label_prefeitura = new javax.swing.JLabel();
@@ -190,14 +191,22 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
+        label_icon_consulta_dados.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados (1) 1.png")); // NOI18N
+
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
         menu_decimaLayout.setHorizontalGroup(
             menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_decimaLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(label_img_consulta_preto)
-                .addGap(24, 24, 24)
+                .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menu_decimaLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(label_img_consulta_preto)
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(label_icon_consulta_dados)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel14)
                     .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -213,13 +222,16 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                     .addGroup(menu_decimaLayout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel4)
-                        .addContainerGap(47, Short.MAX_VALUE))
+                        .addComponent(jLabel4))
                     .addGroup(menu_decimaLayout.createSequentialGroup()
+                        .addGap(0, 0, 0)
                         .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_img_consulta_preto, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(label_cadastro_civil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(18, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
+                                .addComponent(label_img_consulta_preto)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_icon_consulta_dados))
+                            .addComponent(label_cadastro_civil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         btn_pesquisa.setText("pesquisa");
@@ -368,7 +380,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                                 .addComponent(txt_pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(31, 31, 31)))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 89, Short.MAX_VALUE))
+                        .addGap(0, 70, Short.MAX_VALUE))
                     .addComponent(menu_lateral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -422,37 +434,12 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tbl_usersMouseClicked
 
-    private void label_cadastro_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_cadastro_brancoMouseClicked
-
-       tela_consulta_daddos.this.dispose();
-        tela_cadastro_civil objeto = new tela_cadastro_civil();
-        objeto.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_label_cadastro_brancoMouseClicked
-
-    private void label_img_consulta_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_img_consulta_brancoMouseClicked
-
-         tela_consulta_daddos.this.dispose();
-        tela_consulta_daddos objeto = new tela_consulta_daddos();
-        objeto.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_label_img_consulta_brancoMouseClicked
-
-    private void label_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_sairMouseClicked
-
-        JOptionPane.showMessageDialog(null, "Você saiu do sistema!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_label_sairMouseClicked
-
-    private void label_dashbordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_dashbordMouseClicked
+    private void label_projetosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_projetosMouseClicked
 
         tela_consulta_daddos.this.dispose();
-        tela_dashbord objeto2 = new tela_dashbord();
-        objeto2.setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_label_dashbordMouseClicked
+        RecomendacoesProjeto_Tela objeto = new  RecomendacoesProjeto_Tela();
+        objeto.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_label_projetosMouseClicked
 
     private void label_cadastro_projetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_cadastro_projetoMouseClicked
 
@@ -463,12 +450,37 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_label_cadastro_projetoMouseClicked
 
-    private void label_projetosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_projetosMouseClicked
+    private void label_dashbordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_dashbordMouseClicked
 
         tela_consulta_daddos.this.dispose();
-        RecomendacoesProjeto_Tela objeto = new  RecomendacoesProjeto_Tela();
-        objeto.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_label_projetosMouseClicked
+        tela_dashbord objeto2 = new tela_dashbord();
+        objeto2.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_dashbordMouseClicked
+
+    private void label_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_sairMouseClicked
+
+        JOptionPane.showMessageDialog(null, "Você saiu do sistema!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_sairMouseClicked
+
+    private void label_img_consulta_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_img_consulta_brancoMouseClicked
+
+        tela_consulta_daddos.this.dispose();
+        tela_consulta_daddos objeto = new tela_consulta_daddos();
+        objeto.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_img_consulta_brancoMouseClicked
+
+    private void label_cadastro_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_cadastro_brancoMouseClicked
+
+        tela_consulta_daddos.this.dispose();
+        tela_cadastro_civil objeto = new tela_cadastro_civil();
+        objeto.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_cadastro_brancoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -525,6 +537,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     private javax.swing.JLabel label_cadastro_civil;
     private javax.swing.JLabel label_cadastro_projeto;
     private javax.swing.JLabel label_dashbord;
+    private javax.swing.JLabel label_icon_consulta_dados;
     private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_img_consulta_preto;
     private javax.swing.JLabel label_prefeitura;

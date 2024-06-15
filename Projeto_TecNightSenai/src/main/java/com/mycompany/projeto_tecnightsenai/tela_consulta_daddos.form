@@ -97,7 +97,7 @@
                               </Group>
                           </Group>
                           <Component id="jScrollPane1" min="-2" pref="591" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="89" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
                       </Group>
                       <Component id="menu_lateral" alignment="1" max="32767" attributes="0"/>
                   </Group>
@@ -218,9 +218,18 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="label_img_consulta_preto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="label_img_consulta_preto" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="label_icon_consulta_dados" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                           <Component id="label_cadastro_civil" min="-2" pref="328" max="-2" attributes="0"/>
@@ -240,16 +249,20 @@
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="47" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label_img_consulta_preto" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="label_img_consulta_preto" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="label_icon_consulta_dados" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="label_cadastro_civil" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="18" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -279,6 +292,13 @@
             <Component class="javax.swing.JLabel" name="label_img_consulta_preto">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
+            </Component>
+            <Component class="javax.swing.JLabel" name="label_icon_consulta_dados">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\pesquisando-dados-no-banco-de-dados (1) 1.png"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
