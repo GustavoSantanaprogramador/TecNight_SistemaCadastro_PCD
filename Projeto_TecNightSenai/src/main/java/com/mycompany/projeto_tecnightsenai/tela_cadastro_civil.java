@@ -48,7 +48,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
             String senha = "";
             
          
-            
+   // formata a data
     public String formatoData(String data) {
         String dateStr = data;//Data no formato DD/MM/YYYY
         DateTimeFormatter formatterInput = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -1125,6 +1125,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
 
         try {
+            //exportando arquivo txt direto na area de trabalho
            String desktopPath = System.getProperty("user.home") + "/Desktop/";
             File desktopDir = new File(desktopPath);
             if (!desktopDir.exists()) {
@@ -1157,8 +1158,6 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
 
     private void menu_decimaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_menu_decimaAncestorAdded
 
-
-
         // TODO add your handling code here:
     }//GEN-LAST:event_menu_decimaAncestorAdded
 
@@ -1185,6 +1184,8 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
     
     private void CpfExiste(){
         
+        //confere se esse cpf ja foi cadastrado
+        
         try {
         
             conexao = DriverManager.getConnection(url, usuario,senha);  
@@ -1209,7 +1210,7 @@ public class tela_cadastro_civil extends javax.swing.JFrame {
  
         try {
         
-            
+            // cadastra civil
            conexao = DriverManager.getConnection(url, usuario,senha);
             
            CpfExiste();

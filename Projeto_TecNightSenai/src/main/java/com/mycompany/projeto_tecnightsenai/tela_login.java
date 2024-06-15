@@ -138,10 +138,11 @@ public class tela_login extends javax.swing.JFrame {
         
         try{
 
+
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
             conexao = DriverManager.getConnection(url, usuario,senha);  
-       
+
             String email = txt_login_email.getText();
             String senha = txt_login_senha.getText();
             
@@ -155,7 +156,7 @@ public class tela_login extends javax.swing.JFrame {
 
             if(rs.next()){
               
-                dispose();
+              dispose();
               tela_cadastro_civil cad = new tela_cadastro_civil();
               cad.show();
             }else{

@@ -143,9 +143,8 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 1060, 530));
 
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, 0, 1670, 870));
 
-
-       
 
         pack();
     }
