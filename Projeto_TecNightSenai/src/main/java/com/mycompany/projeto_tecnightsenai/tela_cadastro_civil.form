@@ -237,8 +237,12 @@
                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
 =======
                       <Group type="102" attributes="0">
+<<<<<<< HEAD
                           <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
 >>>>>>> 11708459a0cd06524bdaed2453283a96fd7d111c
+=======
+                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+>>>>>>> parent of 1170845 (subindo)
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -274,6 +278,7 @@
                       <Component id="btn_save_relatorio" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace pref="212" max="32767" attributes="0"/>
               </Group>
               <Component id="menu_lateral" max="32767" attributes="0"/>
           </Group>
