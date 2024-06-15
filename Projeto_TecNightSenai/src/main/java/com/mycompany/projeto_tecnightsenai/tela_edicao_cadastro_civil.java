@@ -213,7 +213,6 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         menu_decima = new javax.swing.JPanel();
         label_cadastro = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         menu_lateral = new javax.swing.JPanel();
@@ -922,9 +921,6 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel11.setText("Olá, Fulano Silva!");
-
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
         menu_decimaLayout.setHorizontalGroup(
@@ -936,14 +932,9 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 442, Short.MAX_VALUE)
-                .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(34, 34, 34))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(105, 105, 105))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 634, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(34, 34, 34))
         );
         menu_decimaLayout.setVerticalGroup(
             menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -954,10 +945,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                         .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14)
                         .addComponent(jLabel5))
-                    .addGroup(menu_decimaLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel6)))
+                    .addComponent(jLabel6))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -1542,7 +1530,6 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_tipo_def_edit;
     private javax.swing.JComboBox<String> cb_tipo_residencia;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;

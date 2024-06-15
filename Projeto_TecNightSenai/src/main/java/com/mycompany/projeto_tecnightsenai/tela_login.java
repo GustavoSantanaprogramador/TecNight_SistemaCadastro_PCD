@@ -124,13 +124,49 @@ public class tela_login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        
-        
-      
-      tela_login.this.dispose();
-      tela_novo_cadastro objeto2 = new tela_novo_cadastro();
-      objeto2.setVisible(true);
-        // TODO add your handling code here:
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
+            conexao = DriverManager.getConnection(url, usuario,senha);
+            
+            String cpf = JOptionPane.showInputDialog("Digite o CPF:");
+            if (cpf != null && !cpf.trim().isEmpty()) {
+                String sql = "SELECT tipo_cadastro FROM usuario WHERE cpf_usuario = ?";
+                try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+                    stmt.setString(1, cpf);
+                    try (ResultSet rs = stmt.executeQuery()) {
+                        if (rs.next()) {
+                            String tipoCadastro = rs.getString("tipo_cadastro");
+                            if ("Administrador".equals(tipoCadastro)) {
+                                
+                                JOptionPane.showMessageDialog(null, "Acesso permitido.");
+                                tela_login.this.dispose();
+                                tela_novo_cadastro objeto2 = new tela_novo_cadastro();
+                                objeto2.setVisible(true);
+                            } else {
+                                // O CPF existe, mas o usuário não é um administrador.
+                                JOptionPane.showMessageDialog(null, "Acesso negado. Usuário não é administrador.");
+                            }
+                        } else {
+                            // O CPF não está cadastrado no banco.
+                            JOptionPane.showMessageDialog(null, "CPF não cadastrado.");
+                        }
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Erro ao verificar o CPF.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "CPF não informado.");
+            }
+            
+            
+            // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(tela_login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(tela_login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed

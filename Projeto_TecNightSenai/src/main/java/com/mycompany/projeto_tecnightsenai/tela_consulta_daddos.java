@@ -10,7 +10,12 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -25,9 +30,43 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
   
     public tela_consulta_daddos() {
         initComponents();
+        //POPULANDO A TABELA
           this.PopularJTable("SELECT * FROM cadastro_civil");
-       
+          
+          
+          
+        //BARRA DE PESQUISA   
+        TableRowSorter<TableModel> sorter = new TableRowSorter<>(tbl_users.getModel());
+        tbl_users.setRowSorter(sorter);
+
+        txt_pesquisar.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                search(txt_pesquisar.getText());
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                search(txt_pesquisar.getText());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                search(txt_pesquisar.getText());
+            }
+
+            public void search(String str) {
+                if (str.length() == 0) {
+                    sorter.setRowFilter(null);
+                } else {
+                    // Se você quiser uma correspondência exata, use RowFilter.regexFilter("^" + str + "$");
+                    // Para uma correspondência que ignora maiúsculas e minúsculas, use "(?i)"
+                    sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+                }
+            }
+});
     }
+    
 
   
     
@@ -82,25 +121,19 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         menu_decima = new javax.swing.JPanel();
         label_cadastro_civil = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         label_img_consulta_preto = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        btn_pesquisa = new javax.swing.JButton();
         menu_lateral = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        tela_cadastro_civil = new javax.swing.JLabel();
+        label_prefeitura = new javax.swing.JLabel();
+        label_cadastro_branco = new javax.swing.JLabel();
         label_img_consulta_branco = new javax.swing.JLabel();
         label_sair = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        label_dashbord = new javax.swing.JLabel();
+        label_cadastro_projeto = new javax.swing.JLabel();
+        label_projetos = new javax.swing.JLabel();
+        txt_pesquisar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        btn_pesquisa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -139,7 +172,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbl_users);
 
         menu_decima.setBackground(new java.awt.Color(255, 255, 255));
-        menu_decima.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        menu_decima.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         menu_decima.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 menu_decimaAncestorAdded(evt);
@@ -157,9 +190,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel11.setText("Olá, Fulano Silva!");
-
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
         menu_decimaLayout.setHorizontalGroup(
@@ -172,8 +202,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                     .addComponent(jLabel14)
                     .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addGap(29, 29, 29))
         );
@@ -184,42 +212,72 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menu_decimaLayout.createSequentialGroup()
                         .addComponent(jLabel14)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel4)
+                        .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(menu_decimaLayout.createSequentialGroup()
                         .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(menu_decimaLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel4))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11)
-                                .addGap(14, 14, 14))))
-                    .addComponent(label_img_consulta_preto, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label_cadastro_civil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                            .addComponent(label_img_consulta_preto, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(label_cadastro_civil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(18, Short.MAX_VALUE))))
         );
 
-        menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
-
-        tela_cadastro_civil.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tela_cadastro_civilMouseClicked(evt);
+        btn_pesquisa.setText("pesquisa");
+        btn_pesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pesquisaActionPerformed(evt);
             }
         });
 
+        menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
+
+        label_prefeitura.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
+
+        label_cadastro_branco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_cadastro_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
+        label_cadastro_branco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_cadastro_brancoMouseClicked(evt);
+            }
+        });
+
+        label_img_consulta_branco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
         label_img_consulta_branco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_img_consulta_brancoMouseClicked(evt);
             }
         });
 
+        label_sair.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\sair 1.png")); // NOI18N
         label_sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_sairMouseClicked(evt);
             }
         });
 
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        label_dashbord.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_dashbord.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
+        label_dashbord.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                label_dashbordMouseClicked(evt);
+            }
+        });
+
+        label_cadastro_projeto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_cadastro_projeto.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_projeto_social.png")); // NOI18N
+        label_cadastro_projeto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_cadastro_projetoMouseClicked(evt);
+            }
+        });
+
+        label_projetos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_projetos.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Cadastro de Projetos.png")); // NOI18N
+        label_projetos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_projetosMouseClicked(evt);
             }
         });
 
@@ -230,98 +288,67 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
             .addGroup(menu_lateralLayout.createSequentialGroup()
                 .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(menu_lateralLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                                        .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel16)
-                                            .addComponent(jLabel15))
-                                        .addGap(67, 67, 67))
-                                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                                        .addComponent(label_sair)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel19)
-                                            .addComponent(jLabel20)))))
-                            .addComponent(jLabel17)
+                                .addContainerGap()
+                                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                    .addComponent(label_img_consulta_branco, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_dashbord, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_cadastro_branco, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_cadastro_projeto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_projetos, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(menu_lateralLayout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel18)
-                                    .addComponent(label_img_consulta_branco)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)))))
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(tela_cadastro_civil))
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(6, 6, 6)
+                                .addComponent(label_prefeitura)))
+                        .addGap(0, 3, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(label_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         menu_lateralLayout.setVerticalGroup(
             menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+            .addGroup(menu_lateralLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(label_prefeitura)
                 .addGap(74, 74, 74)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tela_cadastro_civil)
-                .addGap(83, 83, 83)
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel16)
-                .addGap(60, 60, 60)
+                .addComponent(label_cadastro_branco)
+                .addGap(59, 59, 59)
+                .addComponent(label_dashbord)
+                .addGap(58, 58, 58)
                 .addComponent(label_img_consulta_branco)
-                .addGap(69, 69, 69)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addGap(72, 72, 72)
-                .addComponent(jLabel9)
-                .addGap(69, 69, 69)
+                .addGap(65, 65, 65)
+                .addComponent(label_cadastro_projeto)
+                .addGap(64, 64, 64)
+                .addComponent(label_projetos)
+                .addGap(66, 66, 66)
                 .addComponent(label_sair)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
-                .addGap(107, 107, 107)
-                .addComponent(jLabel20)
-                .addGap(124, 124, 124))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btn_pesquisa.setText("pesquisa");
-        btn_pesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_pesquisaActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("Busque:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(3, 3, 3)
                 .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_add_civil, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(txt_pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btn_add_civil))))
                         .addGap(0, 138, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -330,12 +357,19 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(btn_add_civil)
-                        .addGap(43, 43, 43)
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_add_civil)
+                                .addGap(43, 43, 43))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(txt_pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 89, Short.MAX_VALUE))
-                    .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(menu_lateral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -367,17 +401,38 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menu_decimaAncestorAdded
 
-    private void tela_cadastro_civilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tela_cadastro_civilMouseClicked
+    private void btn_pesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisaActionPerformed
 
-        tela_consulta_daddos.this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_pesquisaActionPerformed
+
+
+    private void tbl_usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_usersMouseClicked
+
+        int linha = tbl_users.getSelectedRow();
+            cpfEdit = tbl_users.getValueAt(linha, 1).toString(); // Supondo que o CPF esteja na segunda coluna
+
+            tela_consulta_daddos.this.dispose();
+            tela_edicao_cadastro_civil telaEdicao = new  tela_edicao_cadastro_civil();
+
+
+           // telaEdicao.preencherCampos(cpf_civil);
+            telaEdicao.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbl_usersMouseClicked
+
+    private void label_cadastro_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_cadastro_brancoMouseClicked
+
+       tela_consulta_daddos.this.dispose();
         tela_cadastro_civil objeto = new tela_cadastro_civil();
         objeto.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_tela_cadastro_civilMouseClicked
+    }//GEN-LAST:event_label_cadastro_brancoMouseClicked
 
     private void label_img_consulta_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_img_consulta_brancoMouseClicked
 
-          tela_consulta_daddos.this.dispose();
+         tela_consulta_daddos.this.dispose();
         tela_consulta_daddos objeto = new tela_consulta_daddos();
         objeto.setVisible(true);
         // TODO add your handling code here:
@@ -390,38 +445,30 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_label_sairMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void label_dashbordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_dashbordMouseClicked
 
-      tela_consulta_daddos.this.dispose();
-      tela_dashbord objeto2 = new tela_dashbord();
-      objeto2.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void btn_pesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisaActionPerformed
-
-               
-                    
-                    
+        tela_consulta_daddos.this.dispose();
+        tela_dashbord objeto2 = new tela_dashbord();
+        objeto2.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_pesquisaActionPerformed
+    }//GEN-LAST:event_label_dashbordMouseClicked
 
+    private void label_cadastro_projetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_cadastro_projetoMouseClicked
 
-    private void tbl_usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_usersMouseClicked
-
-    int linha = tbl_users.getSelectedRow();
-    cpfEdit = tbl_users.getValueAt(linha, 1).toString(); // Supondo que o CPF esteja na segunda coluna
-
-    tela_consulta_daddos.this.dispose();
-    tela_edicao_cadastro_civil telaEdicao = new  tela_edicao_cadastro_civil();
-    
-     
-   // telaEdicao.preencherCampos(cpf_civil);
-    telaEdicao.setVisible(true);
+        tela_consulta_daddos.this.dispose();
+        tela_cadastroProjetos objeto = new tela_cadastroProjetos();
+        objeto.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbl_usersMouseClicked
+    }//GEN-LAST:event_label_cadastro_projetoMouseClicked
+
+    private void label_projetosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_projetosMouseClicked
+
+        tela_consulta_daddos.this.dispose();
+        RecomendacoesProjeto_Tela objeto = new  RecomendacoesProjeto_Tela();
+        objeto.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_label_projetosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -470,28 +517,22 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label_cadastro_branco;
     private javax.swing.JLabel label_cadastro_civil;
+    private javax.swing.JLabel label_cadastro_projeto;
+    private javax.swing.JLabel label_dashbord;
     private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_img_consulta_preto;
+    private javax.swing.JLabel label_prefeitura;
+    private javax.swing.JLabel label_projetos;
     private javax.swing.JLabel label_sair;
     private javax.swing.JPanel menu_decima;
     private javax.swing.JPanel menu_lateral;
     private javax.swing.JTable tbl_users;
-    private javax.swing.JLabel tela_cadastro_civil;
+    private javax.swing.JTextField txt_pesquisar;
     // End of variables declaration//GEN-END:variables
 }

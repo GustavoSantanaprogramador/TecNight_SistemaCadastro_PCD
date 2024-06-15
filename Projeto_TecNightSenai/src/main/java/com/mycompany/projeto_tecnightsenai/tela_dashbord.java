@@ -142,7 +142,6 @@ public class tela_dashbord extends javax.swing.JFrame {
         menu_decima = new javax.swing.JPanel();
         label_cadastro_civil = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         label_img_consulta_preto = new javax.swing.JLabel();
         label_img_civil_login = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -165,27 +164,20 @@ public class tela_dashbord extends javax.swing.JFrame {
         label_acesso_saude = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        menu_lateral = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        tela_cadastro_civil = new javax.swing.JLabel();
-        label_img_consulta_branco = new javax.swing.JLabel();
-        label_sair = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         tx_relatorio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         btn_delete_relatorio = new javax.swing.JButton();
         btn_4 = new javax.swing.JButton();
         btn_save_relatorio = new javax.swing.JButton();
         btn_atualizar = new javax.swing.JButton();
+        menu_lateral = new javax.swing.JPanel();
+        label_prefeitura = new javax.swing.JLabel();
+        label_cadastro_branco = new javax.swing.JLabel();
+        label_img_consulta_branco = new javax.swing.JLabel();
+        label_sair = new javax.swing.JLabel();
+        label_dashbord = new javax.swing.JLabel();
+        label_cadastro_projeto = new javax.swing.JLabel();
+        label_projetos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1433, 877));
@@ -195,7 +187,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         menu_decima.setBackground(new java.awt.Color(255, 255, 255));
-        menu_decima.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        menu_decima.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         menu_decima.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 menu_decimaAncestorAdded(evt);
@@ -213,9 +205,6 @@ public class tela_dashbord extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel11.setText("Olá, Fulano Silva!");
-
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
         menu_decimaLayout.setHorizontalGroup(
@@ -229,14 +218,13 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 418, Short.MAX_VALUE)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menu_decimaLayout.createSequentialGroup()
                         .addComponent(label_img_civil_login)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(29, 29, 29))))
         );
@@ -246,10 +234,7 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
-                    .addGroup(menu_decimaLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(12, 12, 12)
-                        .addComponent(label_img_civil_login))
+                    .addComponent(label_img_civil_login)
                     .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(label_img_consulta_preto)
                         .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -446,107 +431,6 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
-
-        tela_cadastro_civil.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tela_cadastro_civilMouseClicked(evt);
-            }
-        });
-
-        label_img_consulta_branco.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                label_img_consulta_brancoMouseClicked(evt);
-            }
-        });
-
-        label_sair.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                label_sairMouseClicked(evt);
-            }
-        });
-
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout menu_lateralLayout = new javax.swing.GroupLayout(menu_lateral);
-        menu_lateral.setLayout(menu_lateralLayout);
-        menu_lateralLayout.setHorizontalGroup(
-            menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menu_lateralLayout.createSequentialGroup()
-                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(menu_lateralLayout.createSequentialGroup()
-                                    .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel16)
-                                        .addComponent(jLabel15))
-                                    .addGap(67, 67, 67))
-                                .addGroup(menu_lateralLayout.createSequentialGroup()
-                                    .addComponent(label_sair)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel19)
-                                        .addComponent(jLabel20))))
-                            .addComponent(jLabel17)
-                            .addGroup(menu_lateralLayout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel18)
-                                    .addComponent(label_img_consulta_branco)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel7)))))
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(tela_cadastro_civil))
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))
-                    .addGroup(menu_lateralLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        menu_lateralLayout.setVerticalGroup(
-            menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addGap(74, 74, 74)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tela_cadastro_civil)
-                .addGap(83, 83, 83)
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel16)
-                .addGap(60, 60, 60)
-                .addComponent(label_img_consulta_branco)
-                .addGap(69, 69, 69)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addGap(72, 72, 72)
-                .addComponent(jLabel9)
-                .addGap(69, 69, 69)
-                .addComponent(label_sair)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
-                .addGap(107, 107, 107)
-                .addComponent(jLabel20)
-                .addGap(124, 124, 124))
-        );
-
         tx_relatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tx_relatorioActionPerformed(evt);
@@ -601,48 +485,41 @@ public class tela_dashbord extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(menu_decima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1025, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1025, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(135, 135, 135)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel6)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(135, 135, 135)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel6)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                    .addGap(43, 43, 43)
-                                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(35, 35, 35)
-                                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGap(14, 14, 14))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(147, 147, 147)
-                                            .addComponent(btn_save_relatorio)
-                                            .addGap(31, 31, 31)
-                                            .addComponent(btn_delete_relatorio)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btn_4))))
-                                .addGap(0, 179, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_atualizar)
-                        .addGap(47, 47, 47))))
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGap(43, 43, 43)
+                                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(35, 35, 35)
+                                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(14, 14, 14))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(147, 147, 147)
+                                    .addComponent(btn_save_relatorio)
+                                    .addGap(31, 31, 31)
+                                    .addComponent(btn_delete_relatorio)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btn_4))))
+                        .addGap(0, 259, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(1268, Short.MAX_VALUE)
+                .addComponent(btn_atualizar)
+                .addGap(47, 47, 47))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
@@ -654,7 +531,7 @@ public class tela_dashbord extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -666,12 +543,115 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addGap(37, 37, 37))
         );
 
+        menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
+
+        label_prefeitura.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
+
+        label_cadastro_branco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_cadastro_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
+        label_cadastro_branco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_cadastro_brancoMouseClicked(evt);
+            }
+        });
+
+        label_img_consulta_branco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
+        label_img_consulta_branco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_img_consulta_brancoMouseClicked(evt);
+            }
+        });
+
+        label_sair.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\sair 1.png")); // NOI18N
+        label_sair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_sairMouseClicked(evt);
+            }
+        });
+
+        label_dashbord.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_dashbord.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
+        label_dashbord.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_dashbordMouseClicked(evt);
+            }
+        });
+
+        label_cadastro_projeto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_cadastro_projeto.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_projeto_social.png")); // NOI18N
+        label_cadastro_projeto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_cadastro_projetoMouseClicked(evt);
+            }
+        });
+
+        label_projetos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_projetos.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Cadastro de Projetos.png")); // NOI18N
+        label_projetos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_projetosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menu_lateralLayout = new javax.swing.GroupLayout(menu_lateral);
+        menu_lateral.setLayout(menu_lateralLayout);
+        menu_lateralLayout.setHorizontalGroup(
+            menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_lateralLayout.createSequentialGroup()
+                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menu_lateralLayout.createSequentialGroup()
+                        .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(menu_lateralLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                    .addComponent(label_img_consulta_branco, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_dashbord, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_cadastro_branco, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_cadastro_projeto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_projetos, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(menu_lateralLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(label_prefeitura)))
+                        .addGap(0, 3, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_lateralLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(label_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+
+        menu_lateralLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {label_cadastro_branco, label_cadastro_projeto, label_dashbord, label_img_consulta_branco, label_projetos, label_sair});
+
+        menu_lateralLayout.setVerticalGroup(
+            menu_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_lateralLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(label_prefeitura)
+                .addGap(74, 74, 74)
+                .addComponent(label_cadastro_branco)
+                .addGap(59, 59, 59)
+                .addComponent(label_dashbord)
+                .addGap(58, 58, 58)
+                .addComponent(label_img_consulta_branco)
+                .addGap(65, 65, 65)
+                .addComponent(label_cadastro_projeto)
+                .addGap(64, 64, 64)
+                .addComponent(label_projetos)
+                .addGap(66, 66, 66)
+                .addComponent(label_sair)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        menu_lateralLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {label_cadastro_branco, label_cadastro_projeto, label_dashbord, label_img_consulta_branco, label_projetos, label_sair});
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(menu_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -679,7 +659,9 @@ public class tela_dashbord extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menu_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -690,37 +672,6 @@ public class tela_dashbord extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_menu_decimaAncestorAdded
-
-    private void tela_cadastro_civilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tela_cadastro_civilMouseClicked
-
-        tela_dashbord.this.dispose();
-        tela_cadastro_civil objeto = new tela_cadastro_civil();
-        objeto.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tela_cadastro_civilMouseClicked
-
-    private void label_img_consulta_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_img_consulta_brancoMouseClicked
-
-      tela_dashbord.this.dispose();
-        tela_consulta_daddos objeto = new tela_consulta_daddos();
-        objeto.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_label_img_consulta_brancoMouseClicked
-
-    private void label_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_sairMouseClicked
-
-        JOptionPane.showMessageDialog(null, "Você saiu do sistema!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_label_sairMouseClicked
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-
-        tela_dashbord.this.dispose();
-        tela_dashbord objeto2 = new tela_dashbord();
-        objeto2.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseClicked
 
     private void tx_relatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_relatorioActionPerformed
         // TODO add your handling code here:
@@ -773,6 +724,54 @@ public class tela_dashbord extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_atualizarActionPerformed
 
+    private void label_cadastro_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_cadastro_brancoMouseClicked
+
+       tela_dashbord.this.dispose();
+        tela_cadastro_civil objeto = new tela_cadastro_civil();
+        objeto.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_cadastro_brancoMouseClicked
+
+    private void label_img_consulta_brancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_img_consulta_brancoMouseClicked
+
+        tela_dashbord.this.dispose();
+        tela_consulta_daddos objeto = new tela_consulta_daddos();
+        objeto.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_img_consulta_brancoMouseClicked
+
+    private void label_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_sairMouseClicked
+
+        JOptionPane.showMessageDialog(null, "Você saiu do sistema!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_sairMouseClicked
+
+    private void label_dashbordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_dashbordMouseClicked
+
+       tela_dashbord.this.dispose();
+        tela_dashbord objeto2 = new tela_dashbord();
+        objeto2.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_dashbordMouseClicked
+
+    private void label_cadastro_projetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_cadastro_projetoMouseClicked
+
+      tela_dashbord.this.dispose();
+        tela_cadastroProjetos objeto = new tela_cadastroProjetos();
+        objeto.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_label_cadastro_projetoMouseClicked
+
+    private void label_projetosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_projetosMouseClicked
+
+         tela_dashbord.this.dispose();
+        RecomendacoesProjeto_Tela objeto = new  RecomendacoesProjeto_Tela();
+        objeto.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_label_projetosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -814,35 +813,26 @@ public class tela_dashbord extends javax.swing.JFrame {
     private javax.swing.JButton btn_atualizar;
     private javax.swing.JButton btn_delete_relatorio;
     private javax.swing.JButton btn_save_relatorio;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel label_acesso_saude;
+    private javax.swing.JLabel label_cadastro_branco;
     private javax.swing.JLabel label_cadastro_civil;
+    private javax.swing.JLabel label_cadastro_projeto;
+    private javax.swing.JLabel label_dashbord;
     private javax.swing.JLabel label_dashbord_n_sem_ensino;
     private javax.swing.JLabel label_dashbord_n_sem_ensino1;
     private javax.swing.JLabel label_dashbord_n_sem_ensino2;
@@ -853,10 +843,11 @@ public class tela_dashbord extends javax.swing.JFrame {
     private javax.swing.JLabel label_img_consulta_branco;
     private javax.swing.JLabel label_img_consulta_preto;
     private javax.swing.JLabel label_pessoas_cadastradas;
+    private javax.swing.JLabel label_prefeitura;
+    private javax.swing.JLabel label_projetos;
     private javax.swing.JLabel label_sair;
     private javax.swing.JPanel menu_decima;
     private javax.swing.JPanel menu_lateral;
-    private javax.swing.JLabel tela_cadastro_civil;
     private javax.swing.JTextField tx_relatorio;
     // End of variables declaration//GEN-END:variables
 }
