@@ -137,14 +137,10 @@ public class tela_login extends javax.swing.JFrame {
    
         
         try{
-            
-            
-<<<<<<< HEAD
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
-=======
             conexao = DriverManager.getConnection(url, usuario,senha);  
->>>>>>> 11708459a0cd06524bdaed2453283a96fd7d111c
+
             
          
             
