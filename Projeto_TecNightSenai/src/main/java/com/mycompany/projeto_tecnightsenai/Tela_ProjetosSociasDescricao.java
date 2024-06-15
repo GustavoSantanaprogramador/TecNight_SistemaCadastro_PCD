@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.Scanner;
@@ -67,7 +68,7 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         FildeRecomendaProjeto = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonteste = new javax.swing.JButton();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -280,6 +281,12 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
                 .addGap(24, 24, 24))
         );
 
+        jTextFieldPara.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldParaActionPerformed(evt);
+            }
+        });
+
         jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel6.setText("Para:");
 
@@ -292,10 +299,10 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel7.setText("Recomenda:");
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonteste.setText("PESQUISAR");
+        jButtonteste.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtontesteActionPerformed(evt);
             }
         });
 
@@ -311,21 +318,19 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(55, 55, 55)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jButton1)
-                                .addGap(65, 65, 65)
+                                .addComponent(jButtonteste)
+                                .addGap(56, 56, 56)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(FildeRecomendaProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(70, 70, 70)
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextFieldPara, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFieldPara, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -342,7 +347,7 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
                     .addComponent(FildeRecomendaProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButtonteste))
                 .addGap(37, 37, 37)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
@@ -411,20 +416,25 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonImprimirProjetoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtontesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtontesteActionPerformed
         try {
             Connection conexao = null;
             PreparedStatement statement = null;
+            ResultSet resultSet =null;
             
             String url = "jdbc:mysql://localhost/dados";
             String usuario = "root";
             String senha = "";
             
+            
+       
             conexao = DriverManager.getConnection(url,usuario,senha);
+            String sql = "SELECT missao_projetoTela FROM  missao_projeto";
+            resultSet = statement.executeQuery();
             statement.execute(); // entrar no banco
             statement.close(); // ecerrar o banco
             
-          // this.jTextAreaMissao("SELECT missao_projetoTela FROM  missao_projeto ") ;  
+           // this.jTextAreaMissao("SELECT missao_projetoTela FROM  missao_projeto ");  
              
             // TODO add your handling code here:
         } catch (SQLException ex) {
@@ -432,11 +442,19 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
         }
             
            
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtontesteActionPerformed
 
     private void FildeRecomendaProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FildeRecomendaProjetoActionPerformed
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_FildeRecomendaProjetoActionPerformed
+
+    private void jTextFieldParaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldParaActionPerformed
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldParaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -482,8 +500,8 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FildeRecomendaProjeto;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonImprimirProjeto;
+    private javax.swing.JButton jButtonteste;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
