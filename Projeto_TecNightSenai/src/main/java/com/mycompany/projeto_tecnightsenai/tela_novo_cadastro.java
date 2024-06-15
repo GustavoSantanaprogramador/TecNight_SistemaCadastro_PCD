@@ -144,12 +144,8 @@ public class tela_novo_cadastro extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 1060, 530));
 
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\bacgorund_novo_user.png")); // NOI18N
 
-            jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\lsnunes\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\bacgorund_novo_user.png")); // NOI18N
-
-
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, 0, 1670, 870));
+       
 
         pack();
     }

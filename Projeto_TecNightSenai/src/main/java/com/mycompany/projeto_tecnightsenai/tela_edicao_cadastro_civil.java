@@ -1231,7 +1231,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         
             conexao = DriverManager.getConnection(url, usuario, senha);
               
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "admin");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais", "root", "");
             String sql = "SELECT * FROM cadastro_civil WHERE cpf_civil = ?";
                    
 

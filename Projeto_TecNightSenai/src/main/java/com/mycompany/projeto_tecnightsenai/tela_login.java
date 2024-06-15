@@ -137,20 +137,18 @@ public class tela_login extends javax.swing.JFrame {
    
         
         try{
+
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/projeto_AcessaMais","root","");
             conexao = DriverManager.getConnection(url, usuario,senha);  
-
-            
-         
-            
+       
             String email = txt_login_email.getText();
             String senha = txt_login_senha.getText();
             
-            Statement stm = conexao.createStatement();
+            Statement stm = con.createStatement();
             
            String sql = "SELECT * FROM usuario WHERE email_usuario= ? AND senha_usuario= ?";
-            PreparedStatement pstmt = conexao.prepareStatement(sql);
+            PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, email);
             pstmt.setString(2, senha);
             ResultSet rs = pstmt.executeQuery();
@@ -166,7 +164,7 @@ public class tela_login extends javax.swing.JFrame {
                 txt_login_senha.setText("");
             }
             
-            conexao.close();
+            con.close();
             
         }catch(Exception e){
             System.out.println(e.getMessage());

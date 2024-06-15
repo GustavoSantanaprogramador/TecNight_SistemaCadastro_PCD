@@ -418,7 +418,7 @@ public class Tela_ProjetosSociasDescricao extends javax.swing.JFrame {
             
             String url = "jdbc:mysql://localhost/dados";
             String usuario = "root";
-            String senha = "admin";
+            String senha = "";
             
             conexao = DriverManager.getConnection(url,usuario,senha);
             statement.execute(); // entrar no banco
