@@ -12,8 +12,7 @@ public class Projeto_TecNightSenai {
 
     public static void main(String[] args) {
   
-
-        
-        
+        tela_login objeto2 = new tela_login();
+        objeto2.setVisible(true);
     }
 }
