@@ -71,7 +71,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="138" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="99" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -218,25 +218,11 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="label_img_consulta_preto" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="label_icon_consulta_dados" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                          <Component id="label_cadastro_civil" min="-2" pref="328" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="label_icon_consulta_dados" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="label_cadastro_civil" min="-2" pref="328" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -245,22 +231,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="label_img_consulta_preto" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="label_icon_consulta_dados" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="label_cadastro_civil" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="label_icon_consulta_dados" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_cadastro_civil" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="13" max="32767" attributes="0"/>
                   </Group>
@@ -282,21 +254,10 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="10" style="0"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="label_img_consulta_preto">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
-            </Component>
             <Component class="javax.swing.JLabel" name="label_icon_consulta_dados">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\pesquisando-dados-no-banco-de-dados (1) 1.png"/>
+                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\pesquisando-dados-no-banco-de-dados (1) 1.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -376,7 +337,7 @@
             <Component class="javax.swing.JLabel" name="label_prefeitura">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_logo_prefeitura.png"/>
+                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_logo_prefeitura.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -386,7 +347,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\Group 27475.png"/>
+                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\Group 27475.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -399,7 +360,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\pesquisando-dados-no-banco-de-dados 1.png"/>
+                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\pesquisando-dados-no-banco-de-dados 1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -412,7 +373,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\sair 1.png"/>
+                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\sair 1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -425,7 +386,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_dashbord_branco.png"/>
+                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_dashbord_branco.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -438,7 +399,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_projeto_social.png"/>
+                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\Cadastro de Projetos.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -451,7 +412,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lahra\OneDrive\Documents\GitHub\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\Cadastro de Projetos.png"/>
+                  <Image iconType="2" name="D:\Users\lnunes\Desktop\pasta_nova\TecNight_SistemaCadastro_PCD\Projeto_TecNightSenai\src\main\java\icones\icone_projeto_social.png"/>
                 </Property>
               </Properties>
               <Events>

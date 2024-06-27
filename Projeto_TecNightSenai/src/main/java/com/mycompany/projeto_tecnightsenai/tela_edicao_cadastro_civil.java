@@ -212,9 +212,6 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         btn_save_relatorio = new javax.swing.JButton();
         menu_decima = new javax.swing.JPanel();
         label_cadastro = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         label_icon_edit_civil = new javax.swing.JLabel();
         menu_lateral = new javax.swing.JPanel();
         label_prefeitura = new javax.swing.JLabel();
@@ -914,9 +911,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         label_cadastro.setMaximumSize(new java.awt.Dimension(200, 47));
         label_cadastro.setMinimumSize(new java.awt.Dimension(100, 16));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-
-        label_icon_edit_civil.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_cadastrocivil_preto.png")); // NOI18N
+        label_icon_edit_civil.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_cadastrocivil_preto.png")); // NOI18N
 
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
@@ -925,39 +920,26 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
             .addGroup(menu_decimaLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(label_icon_edit_civil)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(34, 34, 34))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menu_decimaLayout.setVerticalGroup(
             menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_decimaLayout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menu_decimaLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel6))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
-                        .addContainerGap(13, Short.MAX_VALUE)
-                        .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel5)
-                            .addComponent(label_icon_edit_civil))))
+                    .addComponent(label_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_icon_edit_civil))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
         menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
 
-        label_prefeitura.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
+        label_prefeitura.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
 
         label_cadastro_branco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_cadastro_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
+        label_cadastro_branco.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
         label_cadastro_branco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_cadastro_brancoMouseClicked(evt);
@@ -965,7 +947,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         });
 
         label_img_consulta_branco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
+        label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
         label_img_consulta_branco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_img_consulta_brancoMouseClicked(evt);
@@ -973,7 +955,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         });
 
         label_sair.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\sair 1.png")); // NOI18N
+        label_sair.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\sair 1.png")); // NOI18N
         label_sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_sairMouseClicked(evt);
@@ -981,7 +963,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         });
 
         label_dashbord.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_dashbord.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
+        label_dashbord.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
         label_dashbord.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_dashbordMouseClicked(evt);
@@ -989,7 +971,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         });
 
         label_cadastro_projeto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_cadastro_projeto.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_projeto_social.png")); // NOI18N
+        label_cadastro_projeto.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Cadastro de Projetos.png")); // NOI18N
         label_cadastro_projeto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_cadastro_projetoMouseClicked(evt);
@@ -997,7 +979,7 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
         });
 
         label_projetos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_projetos.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Cadastro de Projetos.png")); // NOI18N
+        label_projetos.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_projeto_social.png")); // NOI18N
         label_projetos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_projetosMouseClicked(evt);
@@ -1525,13 +1507,10 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_nome_def_edit;
     private javax.swing.JComboBox<String> cb_tipo_def_edit;
     private javax.swing.JComboBox<String> cb_tipo_residencia;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;

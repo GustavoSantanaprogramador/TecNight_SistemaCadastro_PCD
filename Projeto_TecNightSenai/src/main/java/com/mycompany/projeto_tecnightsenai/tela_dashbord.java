@@ -141,11 +141,6 @@ public class tela_dashbord extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         menu_decima = new javax.swing.JPanel();
         label_cadastro_civil = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        label_img_consulta_preto = new javax.swing.JLabel();
-        label_img_civil_login = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         label_icon_dashbord = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         label_dashbord_npcd = new javax.swing.JLabel();
@@ -167,7 +162,6 @@ public class tela_dashbord extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         tx_relatorio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        btn_delete_relatorio = new javax.swing.JButton();
         btn_4 = new javax.swing.JButton();
         btn_save_relatorio = new javax.swing.JButton();
         btn_atualizar = new javax.swing.JButton();
@@ -181,9 +175,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         label_projetos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1433, 877));
         setMinimumSize(new java.awt.Dimension(1433, 877));
-        setPreferredSize(new java.awt.Dimension(1433, 877));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -205,9 +197,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         label_cadastro_civil.setMaximumSize(new java.awt.Dimension(200, 47));
         label_cadastro_civil.setMinimumSize(new java.awt.Dimension(100, 16));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-
-        label_icon_dashbord.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_preto.png")); // NOI18N
+        label_icon_dashbord.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_preto.png")); // NOI18N
 
         javax.swing.GroupLayout menu_decimaLayout = new javax.swing.GroupLayout(menu_decima);
         menu_decima.setLayout(menu_decimaLayout);
@@ -216,44 +206,17 @@ public class tela_dashbord extends javax.swing.JFrame {
             .addGroup(menu_decimaLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(label_icon_dashbord)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_img_consulta_preto)
-                .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menu_decimaLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel22)
-                        .addGap(352, 352, 352)
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(menu_decimaLayout.createSequentialGroup()
-                                .addComponent(label_img_civil_login)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_decimaLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel4)
-                                .addGap(29, 29, 29))))
-                    .addGroup(menu_decimaLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addGap(24, 24, 24)
+                .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1061, Short.MAX_VALUE))
         );
         menu_decimaLayout.setVerticalGroup(
             menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_decimaLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(label_img_civil_login)
-                    .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel14)
-                        .addGroup(menu_decimaLayout.createSequentialGroup()
-                            .addComponent(jLabel22)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(label_icon_dashbord)
-                                .addComponent(label_img_consulta_preto)
-                                .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(16, 16, 16)
+                .addGroup(menu_decimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_icon_dashbord)
+                    .addComponent(label_cadastro_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -453,16 +416,6 @@ public class tela_dashbord extends javax.swing.JFrame {
 
         jLabel6.setText("Relatorio geral:");
 
-        btn_delete_relatorio.setBackground(new java.awt.Color(212, 0, 0));
-        btn_delete_relatorio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_delete_relatorio.setForeground(new java.awt.Color(255, 255, 255));
-        btn_delete_relatorio.setText("Excluir relatorio");
-        btn_delete_relatorio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_delete_relatorioActionPerformed(evt);
-            }
-        });
-
         btn_4.setBackground(new java.awt.Color(76, 175, 79));
         btn_4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_4.setForeground(new java.awt.Color(255, 255, 255));
@@ -499,67 +452,60 @@ public class tela_dashbord extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(137, 137, 137)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1025, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(43, 43, 43)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_atualizar))
+                        .addGap(14, 14, 14))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(141, 141, 141)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGap(43, 43, 43)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(35, 35, 35)
-                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(14, 14, 14))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(153, 153, 153)
                             .addComponent(btn_save_relatorio)
-                            .addGap(31, 31, 31)
-                            .addComponent(btn_delete_relatorio)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_4))))
+                            .addComponent(btn_4))
+                        .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1025, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 325, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(1334, Short.MAX_VALUE)
-                .addComponent(btn_atualizar)
-                .addGap(47, 47, 47))
             .addComponent(menu_decima, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(menu_decima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addComponent(btn_atualizar)
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tx_relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_4)
-                    .addComponent(btn_delete_relatorio)
-                    .addComponent(btn_save_relatorio))
-                .addGap(37, 37, 37))
+                    .addComponent(btn_save_relatorio)
+                    .addComponent(btn_4))
+                .addGap(49, 49, 49))
         );
 
         menu_lateral.setBackground(new java.awt.Color(30, 101, 40));
 
-        label_prefeitura.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
+        label_prefeitura.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_logo_prefeitura.png")); // NOI18N
 
         label_cadastro_branco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_cadastro_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
+        label_cadastro_branco.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Group 27475.png")); // NOI18N
         label_cadastro_branco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_cadastro_brancoMouseClicked(evt);
@@ -567,7 +513,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         });
 
         label_img_consulta_branco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
+        label_img_consulta_branco.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\pesquisando-dados-no-banco-de-dados 1.png")); // NOI18N
         label_img_consulta_branco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_img_consulta_brancoMouseClicked(evt);
@@ -575,7 +521,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         });
 
         label_sair.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\sair 1.png")); // NOI18N
+        label_sair.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\sair 1.png")); // NOI18N
         label_sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_sairMouseClicked(evt);
@@ -583,7 +529,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         });
 
         label_dashbord.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_dashbord.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
+        label_dashbord.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_dashbord_branco.png")); // NOI18N
         label_dashbord.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_dashbordMouseClicked(evt);
@@ -591,7 +537,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         });
 
         label_cadastro_projeto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_cadastro_projeto.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_projeto_social.png")); // NOI18N
+        label_cadastro_projeto.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Cadastro de Projetos.png")); // NOI18N
         label_cadastro_projeto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_cadastro_projetoMouseClicked(evt);
@@ -599,7 +545,7 @@ public class tela_dashbord extends javax.swing.JFrame {
         });
 
         label_projetos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_projetos.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\Cadastro de Projetos.png")); // NOI18N
+        label_projetos.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\icone_projeto_social.png")); // NOI18N
         label_projetos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 label_projetosMouseClicked(evt);
@@ -651,7 +597,7 @@ public class tela_dashbord extends javax.swing.JFrame {
                 .addComponent(label_projetos)
                 .addGap(66, 66, 66)
                 .addComponent(label_sair)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         menu_lateralLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {label_cadastro_branco, label_cadastro_projeto, label_dashbord, label_img_consulta_branco, label_projetos, label_sair});
@@ -721,10 +667,6 @@ public class tela_dashbord extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_save_relatorioActionPerformed
-
-    private void btn_delete_relatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delete_relatorioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_delete_relatorioActionPerformed
 
     private void btn_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atualizarActionPerformed
 
@@ -822,15 +764,11 @@ public class tela_dashbord extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_4;
     private javax.swing.JButton btn_atualizar;
-    private javax.swing.JButton btn_delete_relatorio;
     private javax.swing.JButton btn_save_relatorio;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
@@ -851,9 +789,7 @@ public class tela_dashbord extends javax.swing.JFrame {
     private javax.swing.JLabel label_desempregos;
     private javax.swing.JLabel label_dificuldade_locomocao;
     private javax.swing.JLabel label_icon_dashbord;
-    private javax.swing.JLabel label_img_civil_login;
     private javax.swing.JLabel label_img_consulta_branco;
-    private javax.swing.JLabel label_img_consulta_preto;
     private javax.swing.JLabel label_pessoas_cadastradas;
     private javax.swing.JLabel label_prefeitura;
     private javax.swing.JLabel label_projetos;

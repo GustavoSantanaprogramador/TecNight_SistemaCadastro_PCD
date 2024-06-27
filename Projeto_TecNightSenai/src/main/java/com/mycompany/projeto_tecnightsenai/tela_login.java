@@ -110,7 +110,7 @@ public class tela_login extends javax.swing.JFrame {
         });
         getContentPane().add(btn_esqueci_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 660, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lahra\\OneDrive\\Documents\\GitHub\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Users\\lnunes\\Desktop\\pasta_nova\\TecNight_SistemaCadastro_PCD\\Projeto_TecNightSenai\\src\\main\\java\\icones\\BACKGROUND_LOGIN.png")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(2000, 1500));
         jLabel2.setMinimumSize(new java.awt.Dimension(2000, 1500));
         jLabel2.setPreferredSize(new java.awt.Dimension(2000, 1500));
