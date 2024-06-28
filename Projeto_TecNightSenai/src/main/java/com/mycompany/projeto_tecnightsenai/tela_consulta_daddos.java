@@ -59,8 +59,7 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
                 if (str.length() == 0) {
                     sorter.setRowFilter(null);
                 } else {
-                    // Se você quiser uma correspondência exata, use RowFilter.regexFilter("^" + str + "$");
-                    // Para uma correspondência que ignora maiúsculas e minúsculas, use "(?i)"
+                  
                     sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str));
                 }
             }
@@ -401,9 +400,6 @@ public class tela_consulta_daddos extends javax.swing.JFrame {
 
             tela_consulta_daddos.this.dispose();
             tela_edicao_cadastro_civil telaEdicao = new  tela_edicao_cadastro_civil();
-
-
-           // telaEdicao.preencherCampos(cpf_civil);
             telaEdicao.setVisible(true);
 
         // TODO add your handling code here:

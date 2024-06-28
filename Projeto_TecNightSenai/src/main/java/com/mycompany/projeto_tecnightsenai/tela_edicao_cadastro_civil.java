@@ -873,10 +873,10 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_estruturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radio_s_recebe)
                     .addGroup(panel_estruturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cb_escolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(radio_n_recebe)))
+                        .addComponent(radio_s_recebe)
+                        .addComponent(radio_n_recebe))
+                    .addComponent(cb_escolaridade, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btn_save_estrutura)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -1184,15 +1184,15 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
              txt_nmr_civil_edit.setText(resultado.getString("num_cel"));
              tx_nome_tutor_edit.setText(resultado.getString("nome_tutor_civil"));
              txt_cpf_tutor_edit.setText(resultado.getString("cpf_tutor_civil"));
-             Blob blob = resultado.getBlob("foto_civil");
-             int blobLength = (int) blob.length();  
+            // Blob blob = resultado.getBlob("foto_civil");
+            // int blobLength = (int) blob.length();  
 
          
-            byte[] bytes = blob.getBytes(1, blobLength);
+          //  byte[] bytes = blob.getBytes(1, blobLength);
 
            
-            ImageIcon imageIcon = new ImageIcon(bytes);       
-            lbl_foto_edit.setIcon(imageIcon);
+           // ImageIcon imageIcon = new ImageIcon(bytes);       
+         //   lbl_foto_edit.setIcon(imageIcon);
             
             String tipo_deficiencia = resultado.getString("tipo_deficiencia");
              cb_tipo_def_edit.setSelectedItem(tipo_deficiencia);
@@ -1200,7 +1200,6 @@ public class tela_edicao_cadastro_civil extends javax.swing.JFrame {
             String nome_def = resultado.getString("nome_deficiencia");
             cb_nome_def_edit.setSelectedItem(nome_def);
     
-  
           
           
           //  

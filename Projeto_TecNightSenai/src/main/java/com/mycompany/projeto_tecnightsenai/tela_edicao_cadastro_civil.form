@@ -1219,11 +1219,11 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="radio_s_recebe" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="cb_escolaridade" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="radio_s_recebe" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="radio_n_recebe" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="cb_escolaridade" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btn_save_estrutura" min="-2" max="-2" attributes="0"/>
